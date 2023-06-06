@@ -1,20 +1,22 @@
 import { NgModule, NO_ERRORS_SCHEMA, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+import { HeaderComponent } from './components/header/header.component';
 
-import { AuthRoutingModule } from './auth-routing.module';
-import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [HeaderComponent],
   imports: [
     CommonModule,
-    AuthRoutingModule,
-    SharedModule
+    IonicModule
+  ],
+  exports: [
+    HeaderComponent
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
   ]
 })
-export class AuthModule { }
+export class SharedModule { }
