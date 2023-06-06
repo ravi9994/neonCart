@@ -1,0 +1,66 @@
+<ion-header>
+  <ion-toolbar [color]="'dark'">
+    <div class="auth-header">
+      <div class="header-left">
+        <img src="assets/images/logo_27_1x.png" alt="neonCart" class="logo">
+      </div>
+      <div class="d-flex header-right">
+        <ion-buttons class="action-btn">
+          <ion-button fill="solid">
+            <ion-icon name="search-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons>
+          <ion-button fill="solid">
+            <ion-icon name="cart-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+        <ion-buttons>
+          <ion-button fill="solid">
+            <ion-icon name="menu-outline"></ion-icon>
+          </ion-button>
+        </ion-buttons>
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" [color]="'primary'">
+  <div class="py-8">
+    <ion-card class="py-50 px-30 page-background" [color]="'medium'">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12" size-sm="6" size-md="6">
+            <form>
+              <div class="mb-40">
+                <h2 class="ion-text-center fs-40 fw-700 text-dark mt-0">LOGIN</h2>
+              </div>
+              <div class="login-input">
+                <ion-list class="ion-no-padding">
+                  <ion-item>
+                    <ion-icon name="person-outline"></ion-icon>
+                    <ion-input placeholder="Username"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <ion-list class="ion-no-padding mt-15">
+                  <ion-item>
+                    <ion-icon name="lock-open-outline"></ion-icon>
+                    <ion-input placeholder="Password"></ion-input>
+                  </ion-item>
+                </ion-list>
+                <div class="mt-15 float-right">
+                  <ion-text class="fs-13 fw-500" color="primary">FORGOT PASSWORD?</ion-text>
+                </div>
+              </div>
+            </form>
+          </ion-col>
+        </ion-row>
+        <!-- <ion-row>
+          <ion-col>
+            <ion-button expand="block" color="danger" type="submit">LOGIN</ion-button>
+          </ion-col>
+        </ion-row> -->
+      </ion-grid>
+    </ion-card>
+  </div>
+</ion-content>

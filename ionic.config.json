@@ -1,0 +1,7 @@
+{
+  "name": "neon_cart",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
