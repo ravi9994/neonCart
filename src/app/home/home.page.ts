@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Platform } from '@ionic/angular';
 import Swiper from 'swiper';
 @Component({
   selector: 'app-home',
@@ -7,17 +8,195 @@ import Swiper from 'swiper';
 })
 export class HomePage {
   swiper: any;
+  swiper1: any;
   swiperActiveIndex: number = 0;
-  constructor() {
+  productList: any = [
+    {
+      image: './../../assets/images/cameras.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/shoose.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/cameras.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/shoose.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/cameras.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/shoose.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/cameras.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/shoose.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/cameras.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/shoose.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/cameras.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+    {
+      image: './../../assets/images/shoose.png',
+      title: 'Baby Shoes',
+      product: '21 Products'
+    },
+  ];
+  flashList: any = [
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+  ];
+  BestproductList: any = [
+    {
+      image: './../../assets/images/alexa.png',
+    },
+    {
+      image: './../../assets/images/bluetooth.png',
+    },
+    {
+      image: './../../assets/images/headphone.png',
+    },
+    {
+      image: './../../assets/images/alexa.png',
+    },
+    {
+      image: './../../assets/images/bluetooth.png',
+    },
+    {
+      image: './../../assets/images/headphone.png',
+    }
+  ];
+  sellerList: any = [
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+    {
+      image: './../../assets/images/shoose.png',
+    },
+    {
+      image: './../../assets/images/cameras.png',
+    },
+  ]
+  constructor(private platform: Platform) {
   }
 
   ngOnInit(): void {
+    this.platform.ready().then(() => {
+      // Platform is ready, you can now access its properties
+      this.getScreenSize();
+    });
     const swiper = new Swiper(".mySwiper", {
       pagination: {
         el: ".swiper-pagination",
       },
     });
+    var swiper1 = new Swiper(".mySwiper1", {
+      slidesPerView: 5,
+      spaceBetween: 30,
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+      },
+    });
   }
-
+  getScreenSize() {
+    const width = this.platform.width();
+    const height = this.platform.height();
+    console.log(`Screen size: ${width} x ${height}`);
+  }
 
 }
