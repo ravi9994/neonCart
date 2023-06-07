@@ -30,7 +30,97 @@ h1 {
   font-family: "Oswald", sans-serif;
 }
 
+h2 {
+  color: #000000;
+  line-height: 1;
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 5px;
+  font-family: "Open Sans", sans-serif;
+}
+
+h3 {
+  color: #000000;
+  line-height: 1;
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 5px;
+  font-family: "Open Sans", sans-serif;
+}
+
 .danger-btn {
   height: 50px;
   width: 190px;
+}
+
+.back-img {
+  background-image: url('./../../assets/images/mobile.jpg');
+  padding: 10px;
+}
+
+.back-img-camera {
+  background-image: url('./../../assets/images/backcamera.jpg');
+  padding: 10px;
+}
+
+.back-img-game {
+  background-image: url('./../../assets/images/game.jpg');
+  padding: 10px;
+}
+
+.item_title {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 10px;
+  font-family: "Poppins", sans-serif;
+  color: white
+}
+
+.bg-gray {
+  background-color: #f5f6f9;
+}
+
+.item_icon {
+  min-width: 30px;
+  height: 30px;
+  color: #2d2f30;
+  font-size: 14px;
+  line-height: 32px;
+  text-align: center;
+  margin-right: 15px;
+  border-radius: 100%;
+  background-color: #f1faff;
+}
+
+.back-img-orange {
+  background-image: url('./../../assets/images/orange.jpg');
+}
+
+.back-img-blue {
+  background-image: url('./../../assets/images/blue.jpg');
+}
+
+.cap-section {
+  border: 1px solid rgb(106, 106, 106);
+  height: 500px;
+
+  .cap-section-left {
+    width: 0;
+    height: 0;
+    border-bottom: 500px solid;
+    border-right: 100px solid transparent;
+  }
+
+  .cap-image-set {
+    position: absolute;
+    margin-left: -50%;
+  }
+}
+
+.header {
+  font-size: 30px;
+  color: white;
+  font-family: "Poppins",
+    sans-serif;
+  font-weight: 600;
 }
