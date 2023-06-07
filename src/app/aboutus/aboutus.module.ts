@@ -4,22 +4,23 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { LoginPageRoutingModule } from './login-routing.module';
 
-import { LoginPage } from './login.page';
+import { AboutusPageRoutingModule } from './aboutus-routing.module';
+
+import { AboutusPage } from './aboutus.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule,
+    AboutusPageRoutingModule,
     SharedModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
   ],
-  declarations: [LoginPage]
+  declarations: [AboutusPage]
 })
-export class LoginPageModule { }
+export class AboutusPageModule { }

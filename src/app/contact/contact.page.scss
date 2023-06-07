@@ -1,0 +1,38 @@
+.contact_info {
+  height: 70px;
+  min-width: 70px;
+  margin-right: 30px;
+  align-items: center;
+  border-radius: 100%;
+  display: inline-flex;
+  justify-content: center;
+  background-color: #f3f4f6;
+}
+
+.google-map {
+  height: 500px;
+}
+
+.last_div_ptb {
+  padding: 100px 0px;
+}
+
+input.custom {
+  height: 50px;
+  background-color: #f3f4f6;
+}
+
+textarea.custom {
+  background-color: #f3f4f6;
+}
+
+
+@media screen and (max-width: 820px) {
+  .last_div_ptb {
+    padding: 80px 2px;
+  }
+
+  .custom-margin {
+    margin-top: 25px !important;
+  }
+}

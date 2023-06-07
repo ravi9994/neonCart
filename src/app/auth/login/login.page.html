@@ -1,5 +1,6 @@
-<ion-content [fullscreen]="true">
-  <div class="page-background bg-img">
+<app-header></app-header>
+<ion-content [fullscreen]="true" [color]="'primary'">
+  <div class="page-background">
     <div class="container card_ptb">
       <ion-card class="card-background card-img reg_form_wrap" [color]="'medium'">
         <ion-grid>
@@ -23,7 +24,8 @@
                     </ion-item>
                   </ion-list>
                   <div class="ion-text-end py-30">
-                    <a class="fs-13 fw-500 no-underline" color="primary">FORGOT PASSWORD?</a>
+                    <a class="fs-13 fw-500 no-underline" color="primary" [routerLink]="['/auth/forgot-password']">FORGOT
+                      PASSWORD?</a>
                   </div>
                   <div>
                     <ion-button expand="block" class="neon-btn fs-14 fw-700" color="danger" type="submit">LOGIN
