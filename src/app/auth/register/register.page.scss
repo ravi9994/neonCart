@@ -1,0 +1,15 @@
+.bg-img {
+  background-image: url('../../../assets/images/regpagebg.jpg');
+}
+
+.card-img {
+  background-image: url('../../../assets/images/regpagecard.png');
+}
+
+ion-radio {
+  --border-radius: 4px;
+  --inner-border-radius: 4px;
+
+  --color: #ddd;
+  --color-checked: var(--ion-color-danger);
+}

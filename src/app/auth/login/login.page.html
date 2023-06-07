@@ -1,66 +1,60 @@
-<ion-header>
-  <ion-toolbar [color]="'dark'">
-    <div class="auth-header">
-      <div class="header-left">
-        <img src="assets/images/logo_27_1x.png" alt="neonCart" class="logo">
-      </div>
-      <div class="d-flex header-right">
-        <ion-buttons class="action-btn">
-          <ion-button fill="solid">
-            <ion-icon name="search-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-buttons>
-          <ion-button fill="solid">
-            <ion-icon name="cart-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-        <ion-buttons>
-          <ion-button fill="solid">
-            <ion-icon name="menu-outline"></ion-icon>
-          </ion-button>
-        </ion-buttons>
-      </div>
-    </div>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true" [color]="'primary'">
-  <div class="py-8">
-    <ion-card class="py-50 px-30 page-background" [color]="'medium'">
-      <ion-grid>
-        <ion-row>
-          <ion-col size="12" size-sm="6" size-md="6">
-            <form>
-              <div class="mb-40">
-                <h2 class="ion-text-center fs-40 fw-700 text-dark mt-0">LOGIN</h2>
-              </div>
-              <div class="login-input">
-                <ion-list class="ion-no-padding">
-                  <ion-item>
-                    <ion-icon name="person-outline"></ion-icon>
-                    <ion-input placeholder="Username"></ion-input>
-                  </ion-item>
-                </ion-list>
-                <ion-list class="ion-no-padding mt-15">
-                  <ion-item>
-                    <ion-icon name="lock-open-outline"></ion-icon>
-                    <ion-input placeholder="Password"></ion-input>
-                  </ion-item>
-                </ion-list>
-                <div class="mt-15 float-right">
-                  <ion-text class="fs-13 fw-500" color="primary">FORGOT PASSWORD?</ion-text>
+<ion-content [fullscreen]="true">
+  <div class="page-background bg-img">
+    <div class="container card_ptb">
+      <ion-card class="card-background card-img reg_form_wrap" [color]="'medium'">
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="8" size-lg="8">
+              <form>
+                <div class="mb-40">
+                  <h2 class="ion-text-center fs-40 fw-700 text-dark mt-0">LOGIN</h2>
                 </div>
-              </div>
-            </form>
-          </ion-col>
-        </ion-row>
-        <!-- <ion-row>
-          <ion-col>
-            <ion-button expand="block" color="danger" type="submit">LOGIN</ion-button>
-          </ion-col>
-        </ion-row> -->
-      </ion-grid>
-    </ion-card>
+                <div class="login-input">
+                  <ion-list class="ion-no-padding">
+                    <ion-item class="ion-no-padding">
+                      <ion-icon name="person-outline"></ion-icon>
+                      <ion-input placeholder="Username"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <ion-list class="ion-no-padding mt-15">
+                    <ion-item class="ion-no-padding">
+                      <ion-icon name="lock-open-outline"></ion-icon>
+                      <ion-input placeholder="Password"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <div class="ion-text-end py-30">
+                    <a class="fs-13 fw-500 no-underline" color="primary">FORGOT PASSWORD?</a>
+                  </div>
+                  <div>
+                    <ion-button expand="block" class="neon-btn fs-14 fw-700" color="danger" type="submit">LOGIN
+                    </ion-button>
+                  </div>
+                  <div class="ion-text-center mt-45">
+                    <ion-text class="fs-14 fw-600" color="primary">OR LOGIN WITH</ion-text>
+                    <div class="d-flex ion-justify-content-center ion-margin-top">
+                      <div class="social-icon facebook-icon">
+                        <ion-icon name="logo-facebook" class="fs-20" [color]="'light'"></ion-icon>
+                      </div>
+                      <div class="social-icon twitter-icon  ion-margin-horizontal">
+                        <ion-icon name="logo-twitter" class="fs-20" [color]="'light'"></ion-icon>
+                      </div>
+                      <div class="social-icon google-icon">
+                        <ion-icon name="logo-google" class="fs-20" [color]="'light'"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="mt-70 ion-text-center">
+                    <ion-text class="fs-14 fw-600" color="primary">HAVE NOT ACCOUNT YET?</ion-text>
+                  </div>
+                  <div class="mt-8 ion-text-center">
+                    <a class="fs-20 fw-700 no-underline text-dark" [routerLink]="['/auth/register']">SIGN UP</a>
+                  </div>
+                </div>
+              </form>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
   </div>
 </ion-content>

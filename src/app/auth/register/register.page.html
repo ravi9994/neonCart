@@ -1,0 +1,74 @@
+<ion-content [fullscreen]="true">
+  <div class="page-background bg-img">
+    <div class="container card_ptb">
+      <ion-card class="card-background card-img reg_form_wrap" [color]="'medium'">
+        <ion-grid>
+          <ion-row>
+            <ion-col size-md="8" size-lg="8">
+              <form>
+                <div class="mb-40">
+                  <h2 class="ion-text-start fs-40 fw-700 text-dark mt-0">REGISTER</h2>
+                </div>
+                <div>
+                  <ion-list class="ion-no-padding">
+                    <ion-item class="ion-no-padding">
+                      <ion-input placeholder="First Name"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <ion-list class="ion-no-padding mt-15">
+                    <ion-item class="ion-no-padding">
+                      <ion-input placeholder="Last Name"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <ion-list class="ion-no-padding mt-15">
+                    <ion-item class="ion-no-padding">
+                      <ion-input placeholder="Company Name"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <ion-list class="ion-no-padding mt-15">
+                    <ion-item class="ion-no-padding">
+                      <ion-input placeholder="Email"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <ion-list class="ion-no-padding mt-15">
+                    <ion-item class="ion-no-padding">
+                      <ion-input placeholder="Phone"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <ion-list class="ion-no-padding mt-15">
+                    <ion-item class="ion-no-padding">
+                      <ion-input placeholder="Password"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <ion-list class="ion-no-padding mt-15">
+                    <ion-item class="ion-no-padding">
+                      <ion-input placeholder="Confirm Password"></ion-input>
+                    </ion-item>
+                  </ion-list>
+                  <div class="d-flex py-30">
+                    <ion-radio-group value="custom-checked">
+                      <ion-radio value="custom" aria-label="Custom checkbox"></ion-radio>
+                    </ion-radio-group>
+                    <ion-text class="fs-16 fw-400 ml-10" color="primary">I agree to the Terms of User
+                    </ion-text>
+                  </div>
+                  <div class="mb-40">
+                    <ion-button expand="block" class="neon-btn fs-14 fw-700" color="danger" type="submit">CREATE ACCOUNT
+                    </ion-button>
+                  </div>
+                  <div class="ion-text-center">
+                    <ion-text class="fs-14 fw-600" color="primary">HAVE NOT ACCOUNT YET?</ion-text>
+                  </div>
+                  <div class="mt-8 ion-text-center">
+                    <a class="fs-20 fw-700  no-underline text-dark" [routerLink]="['/auth/login']">LOGIN
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
+  </div>
+</ion-content>
