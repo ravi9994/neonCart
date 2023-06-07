@@ -1,20 +1,71 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<app-header></app-header>
+<ion-content>
+  <section color="dark" class="bg-image">
+    <div class="container-lg">
+      <ion-row>
+        <ion-col size="3">
+          <ion-accordion-group>
+            <ion-accordion value="first">
+              <ion-item slot="header" color="light">
+                <ion-label>ALL DEPARTMENTS</ion-label>
+              </ion-item>
+            </ion-accordion>
+            <ion-accordion value="second">
+              <ion-item slot="header" color="light">
+                <ion-label>Free Gift Product</ion-label>
+              </ion-item>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Trending Product</ion-label>
+              </ion-item>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Discount Product</ion-label>
+              </ion-item>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Beaauty & Health</ion-label>
+              </ion-item>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Smart Phones & Tablets</ion-label>
+              </ion-item>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Diamond</ion-label>
+              </ion-item>
+            </ion-accordion>
+            <ion-accordion value="third">
+              <ion-item slot="header" color="light">
+                <ion-label>Men</ion-label>
+              </ion-item>
+            </ion-accordion>
+          </ion-accordion-group>
+        </ion-col>
+        <ion-col size="5">
+          <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">Slide 1</div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+              <div class="swiper-slide">Slide 6</div>
+              <div class="swiper-slide">Slide 7</div>
+              <div class="swiper-slide">Slide 8</div>
+              <div class="swiper-slide">Slide 9</div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+        </ion-col>
+        <ion-col size="4"></ion-col>
+      </ion-row>
+    </div>
+  </section>
 </ion-content>

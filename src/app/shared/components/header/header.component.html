@@ -1,0 +1,150 @@
+<ion-menu side="end" contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-menu-toggle>
+        <div class="d-flex ion-justify-content-end">
+          <ion-icon name="close-outline" class="fs-30"></ion-icon>
+        </div>
+      </ion-menu-toggle>
+      <div class="ion-text-center mt-15 mb-30">
+        <img src="assets/images/logo_25_1x.png" alt="neonCart">
+      </div>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <div class="px-30 mt-25">
+      <div class="d-flex">
+        <ion-icon name="menu-outline" class="fs-30"></ion-icon>
+        <p class="fs-18 fw-800 ml-10">MENU LIST</p>
+      </div>
+      <ion-accordion-group class="mt-10">
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Home</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">First Content</div>
+        </ion-accordion>
+      </ion-accordion-group>
+      <ion-accordion-group class="mt-10">
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Shop</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">First Content</div>
+        </ion-accordion>
+      </ion-accordion-group>
+      <ion-accordion-group class="mt-10">
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Pages</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">First Content</div>
+        </ion-accordion>
+      </ion-accordion-group>
+      <ion-accordion-group class="mt-10">
+        <ion-accordion value="first">
+          <ion-item slot="header" color="light">
+            <ion-label>Contact</ion-label>
+          </ion-item>
+          <div class="ion-padding" slot="content">First Content</div>
+        </ion-accordion>
+      </ion-accordion-group>
+      <hr />
+      <div class="d-flex">
+        <ion-icon name="menu-outline" class="fs-30"></ion-icon>
+        <p class="fs-18 fw-800 ml-10">USER INFO</p>
+      </div>
+      <div class="d-flex">
+        <img class="profile-img" src="assets/images/profile.png" alt="">
+        <div class="ml-10">
+          <h5 class="my-0">Johan Doe</h5>
+          <p>Seller</p>
+        </div>
+      </div>
+      <hr />
+      <div class="d-flex">
+        <ion-icon class="fs-28" name="person-circle-outline"></ion-icon>
+        <p class="ml-10">Profile</p>
+      </div>
+      <div class="d-flex">
+        <ion-icon class="fs-28" name="settings-outline"></ion-icon>
+        <p class="ml-10">Settings</p>
+      </div>
+      <div class="d-flex">
+        <ion-icon class="fs-28" name="log-out-outline"></ion-icon>
+        <p class="ml-10">Logout</p>
+      </div>
+    </div>
+  </ion-content>
+</ion-menu>
+<ion-header>
+  <ion-toolbar [color]="'dark'" class="ion-hide-lg-down">
+    <div class="container-lg">
+      <ion-row>
+        <ion-col size="8">
+          <p>Free Shipping on Domestic Orders over $150</p>
+        </ion-col>
+        <ion-col size="4" class="ion-text-end">
+          <ion-icon class="mr-6" name="logo-facebook"></ion-icon>
+          <ion-icon class="mr-6" name="logo-instagram"></ion-icon>
+          <ion-icon class="mr-6" name="logo-twitter"></ion-icon>
+          <ion-icon class="mr-6" name="logo-whatsapp"></ion-icon>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-toolbar>
+  <ion-toolbar [color]="'dark'" class="py-8">
+    <div class="container-lg">
+      <ion-row>
+        <ion-col size-md="6" size-lg="3">
+          <div>
+            <img src="assets/images/logo_27_1x.png" alt="neonCart">
+          </div>
+        </ion-col>
+        <ion-col size-lg="6" class="ion-hide-lg-down">
+          <ul class="d-flex justify-content-around">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pages</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </ion-col>
+        <ion-col size-md="6" size-lg="3" class="d-flex ion-justify-content-end">
+          <div class="d-flex">
+            <ion-buttons class="action-btn">
+              <ion-button fill="solid">
+                <ion-icon name="search-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-buttons class="ion-hide-lg-down action-btn">
+              <ion-button fill="solid">
+                <ion-icon name="person-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-buttons class="action-btn">
+              <ion-button fill="solid">
+                <ion-icon name="cart-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
+            <ion-buttons id="main-content" class="ion-hide-lg-up action-btn">
+              <ion-button fill="solid">
+                <ion-menu-button></ion-menu-button>
+              </ion-button>
+            </ion-buttons>
+          </div>
+        </ion-col>
+      </ion-row>
+    </div>
+  </ion-toolbar>
+</ion-header>

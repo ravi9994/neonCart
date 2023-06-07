@@ -232,6 +232,10 @@
   margin-top: 16px;
 }
 
+.mt-50 {
+  margin-top: 50px !important;
+}
+
 .m-auto {
   margin: auto;
 }
@@ -394,6 +398,10 @@
   line-height: 28px
 }
 
+.nav-link {
+  color: white !important;
+}
+
 .float-right {
   float: right !important;
 }
@@ -402,34 +410,10 @@
   text-align: end;
 }
 
-.no-underline {
-  text-decoration: none !important;
-}
-
-/*---- Auth Header ----*/
-.auth-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 15px;
-  margin-bottom: 15px;
-
-  .header-left {
-    text-align: center;
-
-    .logo {
-      height: 40px;
-      margin-left: 15px;
-    }
-  }
-
-  .header-right {
-    margin-right: 15px;
-
-    .action-btn {
-      border-radius: 50px;
-    }
-  }
+.action-btn {
+  height: 50px !important;
+  width: 50px !important;
+  border-radius: 50px !important;
 }
 
 .sc-ion-buttons-md-s ion-button:not(.button-round) {
@@ -497,3 +481,6 @@ ion-item {
     padding: 100px 15px;
   }
 }
+// ion-accordion.accordion-animated>[slot=header] .ion-accordion-toggle-icon {
+//   display: none;
+// }
