@@ -22,9 +22,9 @@
   padding-right: 8px;
 }
 
-.py-50 {
-  padding-top: 50px;
-  padding-bottom: 50px;
+.py-30 {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }
 
 .py-155 {
@@ -242,6 +242,10 @@
   margin-top: 44px;
 }
 
+.mt-70 {
+  margin-top: 70px;
+}
+
 .mt-7 {
   margin-top: 7px !important;
 }
@@ -444,6 +448,8 @@
   width: 38px;
 }
 
+// auth page css ----------------------------------
+
 .login-input {
   .native-input.sc-ion-input-md {
     padding-left: 15px;
@@ -454,6 +460,58 @@
   background-color: rgb(255, 193, 86);
 }
 
+
+.page-background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 1;
+}
+
+.card-background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left 480px center;
+}
+
+.neon-btn {
+  height: 60px;
+  border-radius: 4px;
+}
+
+.card_ptb {
+  padding: 140px 0px;
+}
+
+ion-item {
+  --background: #f0f2f1;
+  --color: inherit;
+}
+
+.reg_form_wrap {
+  margin: auto;
+  max-width: 800px;
+  border-radius: 4px;
+  padding: 80px 100px;
+  background-size: 100%;
+  background-color: #f0f2f1;
+}
+
+@media screen and (max-width: 480px) {
+  .neon-btn {
+    height: 45px;
+    border-radius: 4px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .reg_form_wrap {
+    padding: 50px 30px;
+  }
+
+  .card_ptb {
+    padding: 100px 15px;
+  }
+}
 
 // ion-accordion.accordion-animated>[slot=header] .ion-accordion-toggle-icon {
 //   display: none;
