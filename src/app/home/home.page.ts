@@ -109,18 +109,7 @@ export class HomePage {
     {
       image: './../../assets/images/shoose.png',
     },
-    {
-      image: './../../assets/images/cameras.png',
-    },
-    {
-      image: './../../assets/images/shoose.png',
-    },
-    {
-      image: './../../assets/images/cameras.png',
-    },
-    {
-      image: './../../assets/images/shoose.png',
-    },
+
   ];
   BestproductList: any = [
     {
@@ -184,19 +173,39 @@ export class HomePage {
         el: ".swiper-pagination",
       },
     });
-    var swiper1 = new Swiper(".mySwiper1", {
-      slidesPerView: 5,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
-      },
-    });
+
   }
   getScreenSize() {
     const width = this.platform.width();
     const height = this.platform.height();
-    console.log(`Screen size: ${width} x ${height}`);
+    if (width <= 480) {
+      var swiper1 = new Swiper(".mySwiper1", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    } else if (width <= 990) {
+      var swiper1 = new Swiper(".mySwiper1", {
+        slidesPerView: 3,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    } else {
+      var swiper1 = new Swiper(".mySwiper1", {
+        slidesPerView: 5,
+        spaceBetween: 30,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+    }
   }
 
 }
