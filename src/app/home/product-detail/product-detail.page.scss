@@ -1,0 +1,65 @@
+.cart-image-div {
+  min-height: 500px;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+
+  .image-set {
+    max-height: 450px;
+    height: 100%;
+  }
+}
+
+.button-native {
+  border-radius: 10px !important;
+}
+
+.action-btn1 {
+  height: 30px !important;
+  width: 30px !important;
+  border-radius: 50px !important;
+  background-color: rgb(204, 123, 74);
+}
+
+.action-btn2 {
+  height: 30px !important;
+  width: 30px !important;
+  border-radius: 50px !important;
+  background-color: rgb(182, 184, 186);
+  margin-left: 25px;
+}
+
+.action-btn3 {
+  height: 30px !important;
+  width: 30px !important;
+  border-radius: 50px !important;
+  background-color: rgb(221, 51, 51);
+  margin-left: 25px;
+
+}
+
+// .ul_li {
+//   justify-content: flex-start;
+// }
+
+// .ul_li,
+// .ul_li_right,
+// .ul_li_center {
+//   margin: 0px;
+//   padding: 0px;
+//   display: flex;
+//   flex-wrap: wrap;
+//   align-items: center;
+// }
+ul {
+  li {
+    text-decoration: none;
+  }
+}
+
+.btn {
+  border: 1px solid black;
+  padding: 15px;
+}
