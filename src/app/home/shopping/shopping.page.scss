@@ -1,0 +1,45 @@
+.cart-image-div {
+  min-height: 150px;
+  min-width: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+
+  .image-set {
+    max-height: 100px;
+    height: 100%;
+  }
+}
+
+.segment-btn {
+  background-color: #f8f9fa;
+  color: grey
+}
+
+.custom-input-set {
+  input:focus {
+    outline: none;
+  }
+
+  .custom-input {
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 1px solid gray;
+    margin-top: 5px;
+  }
+}
+
+h2 {
+  font-weight: 700;
+  font-family: "Jost",
+    sans-serif;
+}
+
+@media screen and (max-width: 480px) {
+  h3 {
+    font-size: 12px;
+  }
+
+}

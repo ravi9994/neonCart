@@ -2,6 +2,10 @@
   height: 50px;
 }
 
+.p-10 {
+  padding: 10px !important;
+}
+
 .p-30 {
   padding: 30px !important;
 }
@@ -588,6 +592,14 @@ ion-item {
   .card_ptb {
     padding: 100px 15px;
   }
+}
+
+.color-dark {
+  color: #000000;
+}
+
+.color-gray {
+  color: gray;
 }
 
 // ion-accordion.accordion-animated>[slot=header] .ion-accordion-toggle-icon {
