@@ -1,367 +1,363 @@
 <app-header></app-header>
 <ion-content>
-  <div class="p-10">
-    <!-- <ion-row> -->
-    <ion-segment class="friends-segment" [(ngModel)]="activeTab">
-      <!-- <ion-col size="4"> -->
-      <ion-segment-button value="Friends" class="segment-btn">
-        <h3 class="fw-700">01.Shopping Cart</h3>
-      </ion-segment-button>
-      <!-- </ion-col>
-      <ion-col size="4"> -->
-      <ion-segment-button value="Requests" class="segment-btn">
-        <h3 class="fw-700">02.checkout</h3>
-      </ion-segment-button>
-      <!-- </ion-col>
-      <ion-col size="4"> -->
-      <ion-segment-button value="Add" class="segment-btn">
-        <h3 class="fw-700">03.order Completed</h3>
-      </ion-segment-button>
-      <!-- </ion-col> -->
-    </ion-segment>
-    <!-- </ion-row> -->
+  <div class="main_div_ptb">
+    <div class="p-10">
+      <ion-segment class="friends-segment" [(ngModel)]="activeTab">
+        <ion-segment-button value="Friends" class="segment-btn">
+          <h3 class="fw-700">01.Shopping Cart</h3>
+        </ion-segment-button>
+        <ion-segment-button value="Requests" class="segment-btn">
+          <h3 class="fw-700">02.checkout</h3>
+        </ion-segment-button>
+        <ion-segment-button value="Add" class="segment-btn">
+          <h3 class="fw-700">03.order Completed</h3>
+        </ion-segment-button>
+      </ion-segment>
+    </div>
+    <ng-container *ngIf="activeTab === 'Friends'">
+      <div class="container-lg">
+        <div style="overflow-x:auto;">
+          <ion-row class="mt-5 text-dark bg-light">
+            <ion-col size="3">
+              <h2 class="fw-800 fs-18">
+                PHOTO</h2>
+            </ion-col>
+            <ion-col size="3">
+              <h2 class="fw-800 fs-18">PRODUCT NAME</h2>
+            </ion-col>
+            <ion-col size="3">
+              <h2 class="fw-800 fs-18">QUANTITY</h2>
+            </ion-col>
+            <ion-col size="3">
+              <h2 class="fw-800 fs-18">PRICE</h2>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <div *ngFor="let item of cartList">
+            <ion-row class="d-flex ion-align-items-center">
+              <ion-col size="3">
+                <div class="d-flex">
+                  <ion-buttons class="cart-close-btn">
+                    <ion-button>
+                      <ion-icon name="close-outline"></ion-icon>
+                    </ion-button>
+                  </ion-buttons>
+                  <div class="cart-image-div p-10">
+                    <img [src]="item.image" alt="" class="image-set">
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col size="3">
+                <div>
+                  <h2 class="fw-800 fs-18">{{item.name}}</h2>
+                </div>
+                <div>
+                  <ion-text class="fw-700" color="tertiary">{{item.type}}</ion-text>
+                </div>
+              </ion-col>
+              <ion-col size="3">
+                <ion-text>{{item.qty}}</ion-text>
+              </ion-col>
+              <ion-col size="3">
+                <ion-text class="fw-700" color="success">{{item.price}}</ion-text>
+              </ion-col>
+            </ion-row>
+            <hr>
+          </div>
+        </div>
+        <div class="d-flex">
+          <input type="text" placeholder="Coupon Code">
+          <ion-button color="danger" class="neon-btn">Apply Coupon</ion-button>
+        </div>
+        <ion-row>
+          <ion-col size="9"></ion-col>
+          <ion-col size="12" size-lg="3">
+            <ion-card>
+              <ion-card-header class="segment-btn">
+                <ion-card-title>
+                  <h2 class="fw-800 fs-20 ion-text-center">CART TOTAL</h2>
+                </ion-card-title>
+              </ion-card-header>
+              <ion-card-content>
+                <div class="pt-10">
+                  <ion-row>
+                    <ion-col size="6">
+                      <h2 class="text-dark fw-800 fs-18">SUB TOTAL</h2>
+                    </ion-col>
+                    <ion-col size="6">
+                      <ion-text>$197.99</ion-text>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="6">
+                      <h2 class="text-dark fw-800 fs-18">SHIPPING</h2>
+                    </ion-col>
+                    <ion-col size="6">
+                      <ion-text>calculate Shipping</ion-text>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="6">
+                      <h2 class="text-dark fw-800 fs-18">TOTAL</h2>
+                    </ion-col>
+                    <ion-col size="6">
+                      <ion-text color="success">$197.99</ion-text>
+                    </ion-col>
+                  </ion-row>
+                  <div class="text-center mt-2">
+                    <ion-button color="success" class="neon-btn">PROCEED TO CHECKOUT</ion-button>
+                  </div>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+        </ion-row>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="activeTab === 'Requests'">
+      <div class="container-lg">
+        <h2 class="color-dark fw-800 fs-18">Billing Details</h2>
+        <form style="border: 1px solid gray;" class="p-30">
+          <ion-row class="pt-lg-5">
+            <ion-col size="12" size-lg="2">
+              <ion-label>First Name:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="4">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+            <ion-col size="12" size-lg="2">
+              <ion-label>Last Name:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="4">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Company Name:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Country:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Address:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Town/City:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Country:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Postcode/Zip:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Phone:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Email Address:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Order Notes:</ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" />
+              </div>
+            </ion-col>
+          </ion-row>
+        </form>
+        <h2 class="color-dark fw-800 fs-18 mt-5">Your Order</h2>
+        <div style="border: 1px solid gray;" class="p-30">
+          <ion-row class="text-dark">
+            <ion-col size="3">
+              <h2 class="fw-800 fs-18">
+                PHOTO</h2>
+            </ion-col>
+            <ion-col size="3">
+              <h2 class="fw-800 fs-18">PRODUCT NAME</h2>
+            </ion-col>
+            <ion-col size="3">
+              <h2 class="fw-800 fs-18">QUANTITY</h2>
+            </ion-col>
+            <ion-col size="3">
+              <h2 class="fw-800 fs-18">PRICE</h2>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <div *ngFor="let item of cartList">
+            <ion-row class="d-flex ion-align-items-center">
+              <ion-col size="3">
+                <div class="d-flex">
+                  <div class="cart-image-div p-10">
+                    <img [src]="item.image" alt="" class="image-set">
+                  </div>
+                </div>
+              </ion-col>
+              <ion-col size="3">
+                <div>
+                  <h2 class="fw-800 fs-18">{{item.name}}</h2>
+                </div>
+                <div>
+                  <ion-text class="fw-700" color="tertiary">{{item.type}}</ion-text>
+                </div>
+              </ion-col>
+              <ion-col size="3">
+                <ion-text>{{item.qty}}</ion-text>
+              </ion-col>
+              <ion-col size="3">
+                <ion-text class="fw-700" color="success">{{item.price}}</ion-text>
+              </ion-col>
+            </ion-row>
+            <hr>
+          </div>
+          <ion-row class="text-dark">
+            <ion-col size="6">
+            </ion-col>
+            <ion-col size="6">
+              <ion-row class="text-dark">
+                <ion-col size="6">
+                  <h2 class="fw-800 fs-18">Sub Total</h2>
+                </ion-col>
+                <ion-col size="6">
+                  <h4 class="fw-700">$414.00</h4>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-row class="text-dark">
+            <ion-col size="6">
+              <ion-row class="text-dark">
+                <ion-col size="2">
+                  <h2 class="fw-800 fs-18 text-center">Total</h2>
+                </ion-col>
+                <ion-col size="6">
+                </ion-col>
+              </ion-row>
+            </ion-col>
+            <ion-col size="6">
+              <ion-row class="text-dark">
+                <ion-col size="6">
+                </ion-col>
+                <ion-col size="6">
+                  <h4 class="fw-700">$414.00</h4>
+                </ion-col>
+              </ion-row>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-row>
+            <ion-col size="12">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
+                class="ml-10">Direct Bank
+                Transfer</ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+              <ion-text>Make your payment directly into our bank account. Please use your Order ID as the payment
+                reference. Your order will not
+                be shipped until the funds have cleared in our account.</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-row>
+            <ion-col size="12">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
+                class="ml-10">Check
+                Payment</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-row>
+            <ion-col size="12">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
+                class="ml-10">Cash
+                On
+                Delivery</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-row>
+            <ion-col size="12">
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
+                class="ml-10">Paypal</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-button expand="block" color="danger" class="neon-btn">PLACE ORDER</ion-button>
+        </div>
+      </div>
+    </ng-container>
+    <ng-container *ngIf="activeTab === 'Add'">
+      <div class="container-lg">
+        <div class="mt-5 p-30  text-center" style="border:1px solid gray">
+          <h2 class="fs-30 fw-800">Congratulation! You've</h2>
+          <h2 class="text-danger fs-30 fw-800">Completed</h2>
+          <h2 class="fs-30 fw-800">Payment</h2>
+        </div>
+      </div>
+    </ng-container>
   </div>
-  <ng-container *ngIf="activeTab === 'Friends'">
-    <div class="container-lg">
-      <div style="overflow-x:auto;">
-        <ion-row class="mt-5 text-dark bg-light">
-          <ion-col size="3">
-            <h2 class="fw-800 fs-18">
-              PHOTO</h2>
-          </ion-col>
-          <ion-col size="3">
-            <h2 class="fw-800 fs-18">PRODUCT NAME</h2>
-          </ion-col>
-          <ion-col size="3">
-            <h2 class="fw-800 fs-18">QUANTITY</h2>
-          </ion-col>
-          <ion-col size="3">
-            <h2 class="fw-800 fs-18">PRICE</h2>
-          </ion-col>
-        </ion-row>
-        <hr>
-        <div *ngFor="let item of cartList">
-          <ion-row class="d-flex ion-align-items-center">
-            <ion-col size="3">
-              <div class="d-flex">
-                <ion-buttons class="action-btn">
-                  <ion-button fill="solid">
-                    <ion-icon name="close-outline"></ion-icon>
-                  </ion-button>
-                </ion-buttons>
-                <div class="cart-image-div p-10">
-                  <img [src]="item.image" alt="" class="image-set">
-                </div>
-              </div>
-            </ion-col>
-            <ion-col size="3">
-              <div>
-                <h2 class="fw-800 fs-18">{{item.name}}</h2>
-              </div>
-              <div>
-                <ion-text class="fw-700" color="tertiary">{{item.type}}</ion-text>
-              </div>
-            </ion-col>
-            <ion-col size="3">
-              <ion-text>{{item.qty}}</ion-text>
-            </ion-col>
-            <ion-col size="3">
-              <ion-text class="fw-700" color="success">{{item.price}}</ion-text>
-            </ion-col>
-          </ion-row>
-          <hr>
-        </div>
-      </div>
-      <div class="d-flex">
-        <input type="text" placeholder="Coupon Code">
-        <ion-button color="danger">Apply Coupon</ion-button>
-      </div>
-      <ion-row>
-        <ion-col size="9"></ion-col>
-        <ion-col size="12" size-lg="3">
-          <ion-card>
-            <ion-card-header class="segment-btn">
-              <ion-card-title>
-                <h2 class="fw-800 fs-20 ion-text-center">CART TOTAL</h2>
-              </ion-card-title>
-            </ion-card-header>
-            <ion-card-content>
-              <div class="pt-10">
-                <ion-row>
-                  <ion-col size="6">
-                    <h2 class="text-dark fw-800 fs-18">SUB TOTAL</h2>
-                  </ion-col>
-                  <ion-col size="6">
-                    <ion-text>$197.99</ion-text>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col size="6">
-                    <h2 class="text-dark fw-800 fs-18">SHIPPING</h2>
-                  </ion-col>
-                  <ion-col size="6">
-                    <ion-text>calculate Shipping</ion-text>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                  <ion-col size="6">
-                    <h2 class="text-dark fw-800 fs-18">TOTAL</h2>
-                  </ion-col>
-                  <ion-col size="6">
-                    <ion-text color="success">$197.99</ion-text>
-                  </ion-col>
-                </ion-row>
-                <div class="text-center mt-2">
-                  <ion-button color="success">PROCEED TO CHECKOUT</ion-button>
-                </div>
-              </div>
-            </ion-card-content>
-          </ion-card>
-        </ion-col>
-      </ion-row>
-    </div>
-  </ng-container>
-  <ng-container *ngIf="activeTab === 'Requests'">
-    <div class="container-lg">
-      <h2 class="color-dark fw-800 fs-18">Billing Details</h2>
-      <form style="border: 1px solid gray;" class="p-30">
-        <ion-row class="pt-lg-5">
-          <ion-col size="12" size-lg="2">
-            <ion-label>First Name:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="4">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-          <ion-col size="12" size-lg="2">
-            <ion-label>Last Name:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="4">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Company Name:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Country:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Address:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Town/City:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Country:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Postcode/Zip:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Phone:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Email Address:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-        <ion-row class="pt-3">
-          <ion-col size="12" size-lg="2">
-            <ion-label>Order Notes:</ion-label>
-          </ion-col>
-          <ion-col size="12" size-lg="10">
-            <div class="custom-input-set">
-              <input class="custom-input w-100" type="text" />
-            </div>
-          </ion-col>
-        </ion-row>
-      </form>
-      <h2 class="color-dark fw-800 fs-18 mt-5">Your Order</h2>
-      <div style="border: 1px solid gray;" class="p-30">
-        <ion-row class="text-dark">
-          <ion-col size="3">
-            <h2 class="fw-800 fs-18">
-              PHOTO</h2>
-          </ion-col>
-          <ion-col size="3">
-            <h2 class="fw-800 fs-18">PRODUCT NAME</h2>
-          </ion-col>
-          <ion-col size="3">
-            <h2 class="fw-800 fs-18">QUANTITY</h2>
-          </ion-col>
-          <ion-col size="3">
-            <h2 class="fw-800 fs-18">PRICE</h2>
-          </ion-col>
-        </ion-row>
-        <hr>
-        <div *ngFor="let item of cartList">
-          <ion-row class="d-flex ion-align-items-center">
-            <ion-col size="3">
-              <div class="d-flex">
-                <div class="cart-image-div p-10">
-                  <img [src]="item.image" alt="" class="image-set">
-                </div>
-              </div>
-            </ion-col>
-            <ion-col size="3">
-              <div>
-                <h2 class="fw-800 fs-18">{{item.name}}</h2>
-              </div>
-              <div>
-                <ion-text class="fw-700" color="tertiary">{{item.type}}</ion-text>
-              </div>
-            </ion-col>
-            <ion-col size="3">
-              <ion-text>{{item.qty}}</ion-text>
-            </ion-col>
-            <ion-col size="3">
-              <ion-text class="fw-700" color="success">{{item.price}}</ion-text>
-            </ion-col>
-          </ion-row>
-          <hr>
-        </div>
-        <ion-row class="text-dark">
-          <ion-col size="6">
-          </ion-col>
-          <ion-col size="6">
-            <ion-row class="text-dark">
-              <ion-col size="6">
-                <h2 class="fw-800 fs-18">Sub Total</h2>
-              </ion-col>
-              <ion-col size="6">
-                <h4 class="fw-700">$414.00</h4>
-              </ion-col>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-        <hr>
-        <ion-row class="text-dark">
-          <ion-col size="6">
-            <ion-row class="text-dark">
-              <ion-col size="2">
-                <h2 class="fw-800 fs-18 text-center">Total</h2>
-              </ion-col>
-              <ion-col size="6">
-              </ion-col>
-            </ion-row>
-          </ion-col>
-          <ion-col size="6">
-            <ion-row class="text-dark">
-              <ion-col size="6">
-              </ion-col>
-              <ion-col size="6">
-                <h4 class="fw-700">$414.00</h4>
-              </ion-col>
-            </ion-row>
-          </ion-col>
-        </ion-row>
-        <hr>
-        <ion-row>
-          <ion-col size="12">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
-              class="ml-10">Direct Bank
-              Transfer</ion-text>
-          </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col size="12">
-            <ion-text>Make your payment directly into our bank account. Please use your Order ID as the payment
-              reference. Your order will not
-              be shipped until the funds have cleared in our account.</ion-text>
-          </ion-col>
-        </ion-row>
-        <hr>
-        <ion-row>
-          <ion-col size="12">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text class="ml-10">Check
-              Payment</ion-text>
-          </ion-col>
-        </ion-row>
-        <hr>
-        <ion-row>
-          <ion-col size="12">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text class="ml-10">Cash
-              On
-              Delivery</ion-text>
-          </ion-col>
-        </ion-row>
-        <hr>
-        <ion-row>
-          <ion-col size="12">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
-              class="ml-10">Paypal</ion-text>
-          </ion-col>
-        </ion-row>
-        <hr>
-        <ion-button expand="block" color="danger">PLACE ORDER</ion-button>
-      </div>
-    </div>
-  </ng-container>
-  <ng-container *ngIf="activeTab === 'Add'">
-    <div class="container-lg">
-      <div class="mt-5 p-30  text-center" style="border:1px solid gray">
-        <h2 class="fs-30 fw-800">Congratulation! You've</h2>
-        <h2 class="text-danger fs-30 fw-800">Completed</h2>
-        <h2 class="fs-30 fw-800">Payment</h2>
-      </div>
-    </div>
-  </ng-container>
 </ion-content>
