@@ -55,17 +55,39 @@ h3 {
 
 .back-img {
   background-image: url('./../../assets/images/mobile.jpg');
-  padding: 15px;
+  background-size: cover;
+  padding: 25px;
 }
 
 .back-img-camera {
   background-image: url('./../../assets/images/backcamera.jpg');
-  padding: 15px;
+  background-size: cover;
+  padding: 25px;
 }
+
+.back-img-1 {
+  background-image: url('./../../assets/images/slide1.jpeg');
+  background-size: cover;
+  padding: 25px;
+
+  &.two {
+    background-image: url('./../../assets/images/slide2.jpeg');
+  }
+
+  &.three {
+    background-image: url('./../../assets/images/slide3.jpeg');
+  }
+}
+
 
 .back-img-game {
   background-image: url('./../../assets/images/game.jpg');
-  padding: 15px;
+  background-size: cover;
+  padding: 25px;
+}
+
+.padding-set-accesories {
+  padding-bottom: 13px;
 }
 
 .item_title {
@@ -118,11 +140,7 @@ h3 {
 }
 
 .header {
-  font-size: 30px;
   color: white;
-  font-family: "Poppins",
-    sans-serif;
-  font-weight: 600;
 }
 
 .image-set {
@@ -134,4 +152,49 @@ h3 {
     font-size: 30px;
   }
 
+}
+
+.left-side-camera-image {
+  min-height: 200px;
+  min-width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .camera-image-height {
+    max-height: 150px;
+    height: 100%;
+  }
+}
+
+.flash-deal-div {
+  background-color: var(--ion-color-danger) !important;
+}
+
+
+.best-product-swiper-div {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .swiper-image-best {
+    object-fit: contain;
+  }
+}
+
+.best-product-card-div {
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+
+  .image-best {
+    max-height: 150px;
+    height: 100%;
+  }
 }

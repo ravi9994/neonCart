@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { MenuController, PopoverController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,9 @@ import { MenuController } from '@ionic/angular';
 export class HeaderComponent implements OnInit {
   menuType: string;
   constructor(
-    private menuController: MenuController
+    private menuController: MenuController,
+    private router: Router,
+    private popoverController: PopoverController,
   ) { }
 
   ngOnInit() { }
@@ -17,6 +20,10 @@ export class HeaderComponent implements OnInit {
   async toggleMenu(type) {
     this.menuType = type;
     this.menuController.toggle('end')
+  }
+
+  goTo(url) {
+    this.router.navigate([url]);
   }
 
 }

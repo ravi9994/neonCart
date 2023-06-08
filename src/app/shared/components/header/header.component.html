@@ -163,7 +163,7 @@
     <div class="container-lg">
       <ion-row>
         <ion-col size="8">
-          <p>Free Shipping on Domestic Orders over $150</p>
+          <p class="mb-0 fs-14">Welcome to Worldwide Online marketplace Store</p>
         </ion-col>
         <ion-col size="4" class="ion-text-end">
           <ion-icon class="mr-6" name="logo-facebook"></ion-icon>
@@ -185,19 +185,59 @@
         <ion-col size-lg="6" class="ion-hide-lg-down">
           <ul class="d-flex justify-content-around">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" (click)="goTo('home')" role="button">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Shop</a>
+              <a class="nav-link" id="click-trigger" role="button">Shop</a>
+              <ion-popover trigger="click-trigger" triggerAction="click" class="shop-popover">
+                <ng-template>
+                  <div class="ion-padding">
+                    <div class="d-flex ion-justify-content-between">
+                      <ion-text>Carparts</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                    <div class="d-flex ion-justify-content-between ion-margin-top">
+                      <ion-text>Classic Ecommerce</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                    <div class="d-flex ion-justify-content-between ion-margin-top">
+                      <ion-text>Electronic</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                    <div class="d-flex ion-justify-content-between ion-margin-top">
+                      <ion-text>Fashion</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                    <div class="d-flex ion-justify-content-between ion-margin-top">
+                      <ion-text>Gadget</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                  </div>
+                </ng-template>
+              </ion-popover>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Pages</a>
+              <a class="nav-link" id="click-trigger-pages" role="button">Pages</a>
+              <ion-popover trigger="click-trigger-pages" triggerAction="click">
+                <ng-template>
+                  <div class="ion-padding">
+                    <div class="d-flex ion-justify-content-between" (click)="goTo('auth/login')">
+                      <ion-text>Login</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                    <div class="d-flex ion-justify-content-between ion-margin-top" (click)="goTo('auth/register')">
+                      <ion-text>Registration</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                  </div>
+                </ng-template>
+              </ion-popover>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/aboutus">About Us</a>
+              <a class="nav-link" (click)="goTo('aboutus')" role="button">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact Us</a>
+              <a class="nav-link" (click)="goTo('contact')" role="button">Contact Us</a>
             </li>
           </ul>
         </ion-col>
