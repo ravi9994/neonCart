@@ -1,14 +1,31 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
 })
-export class HeaderComponent  implements OnInit {
+export class HeaderComponent implements OnInit {
+  menuType: string;
 
-  constructor() { }
+  constructor(
+    private menuController: MenuController,
+    private router: Router
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+
+  }
+
+  async toggleMenu(type) {
+    this.menuType = type;
+    this.menuController.toggle('end')
+  }
+
+  goToHome() {
+    this.router.navigateByUrl('/cart');
+  }
 
 }
