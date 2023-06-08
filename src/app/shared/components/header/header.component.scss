@@ -7,3 +7,9 @@ li {
   width: 50px;
   border-radius: 50px;
 }
+
+@media (min-width: 1200px) {
+  .custome-width {
+    --width: 350px;
+  }
+}
