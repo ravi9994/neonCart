@@ -6,7 +6,11 @@ const routes: Routes = [
   {
     path: '',
     component: HomePage,
+  },  {
+    path: 'shopping',
+    loadChildren: () => import('./shopping/shopping.module').then( m => m.ShoppingPageModule)
   }
+
 ];
 
 @NgModule({

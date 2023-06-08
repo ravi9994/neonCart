@@ -2,7 +2,7 @@
 <ion-content>
   <section color="dark" class="bg-image">
     <div class="container-lg">
-      <ion-row class="py-50">
+      <ion-row class="py-30">
         <ion-col size="3" class="ion-hide-lg-down">
           <ion-card class="m-0">
             <ion-item color="danger">
@@ -101,7 +101,7 @@
             </div>
           </div>
         </ion-col>
-        <ion-col size-md="12" size-lg="3">
+        <ion-col size="12" size-lg="3">
           <ion-card class="back-img">
             <div class="item_title">
               <h5>Smart Phone BestSeller</h5>
@@ -184,11 +184,11 @@
       </div>
       <div class="pt-0 py-30">
         <ion-row>
-          <ion-col size-md="12" size-lg="4">
+          <ion-col size="12" size-lg="4">
             <ion-text>A WIDE SECTION OF ITEMS</ion-text>
             <h1 class="mt-0">Top Flash Deal</h1>
           </ion-col>
-          <ion-col size-md="12" size-lg="8">
+          <ion-col size="12" size-lg="8">
             <hr>
           </ion-col>
         </ion-row>
@@ -215,7 +215,7 @@
     <div class="container-lg">
       <div class="py-30">
         <ion-row>
-          <ion-col size-md="12" size-lg="4">
+          <ion-col size="12" size-lg="4">
             <ion-card>
               <ion-item color="danger">
                 <ion-text class="header">Top Flash Deal </ion-text>
@@ -254,13 +254,10 @@
                 <ion-text>Accesories</ion-text>
               </ion-item>
             </ion-card>
-            <ion-card size-md="6">
-              <img src="./../../assets/images/beg.jpg" alt="" class="w-100">
-            </ion-card>
           </ion-col>
-          <ion-col size-md="12" size-lg="8">
+          <ion-col size="12" size-lg="8">
             <ion-row>
-              <ion-col size-md="4" size-lg="3" *ngFor="let item of flashList">
+              <ion-col size="12" size-md="4" size-lg="3" *ngFor="let item of flashList">
                 <ion-card>
                   <div class="bg-gray">
                     <img [src]="item.image" alt="">
@@ -282,7 +279,7 @@
     <div class="container-lg">
       <div class="py-30">
         <ion-row>
-          <ion-col size-md="12" size-lg="4">
+          <ion-col size="12" size-lg="4">
             <ion-card class="back-img">
               <div class="item_title">
                 <h5>Smart Phone BestSeller</h5>
@@ -292,7 +289,7 @@
               </div>
             </ion-card>
           </ion-col>
-          <ion-col size-md="12" size-lg="4">
+          <ion-col size="12" size-lg="4">
             <ion-card class="back-img-camera">
               <div class="item_title">
                 <h5>Smart Phone BestSeller</h5>
@@ -302,7 +299,7 @@
               </div>
             </ion-card>
           </ion-col>
-          <ion-col size-md="12" size-lg="4">
+          <ion-col size="12" size-lg="4">
             <ion-card class="back-img-game">
               <div class="item_title">
                 <h5>Smart Phone BestSeller</h5>
@@ -316,9 +313,9 @@
       </div>
     </div>
     <div class="container-lg">
-      <div class="p-50">
+      <div class="pt-0 py-30">
         <ion-row>
-          <ion-col size-md="12" size-lg="5">
+          <ion-col size="12" size-lg="5">
             <ion-text>A WIDE SECTION OF ITEMS</ion-text>
             <h1 class="mt-0">Bestseller Products</h1>
           </ion-col>
@@ -327,10 +324,10 @@
           <ion-col class="p-0" size-md="6" size-lg="4" *ngFor="let item of BestproductList">
             <ion-card class="m-0" style="border:1px solid #efefef;">
               <ion-row class="p-30">
-                <ion-col size="6" class="bg-gray">
-                  <img [src]="item.image" alt="" style="height: 255px;">
+                <ion-col size="12" size-md="6" class="bg-gray">
+                  <img [src]="item.image" alt="" style="height: 255px;" class="image-set">
                 </ion-col>
-                <ion-col size="6" class="pl-3">
+                <ion-col size="12" size-md="6" class="pl-3">
                   <ion-badge class="py-7" style="background-color: rgb(0, 98, 189);">Watch</ion-badge>
                   <div class="d-flex py-7">
                     <ion-icon name="star"></ion-icon>
@@ -363,7 +360,7 @@
       </div>
       <div class="pt-0 p-30">
         <ion-row>
-          <ion-col size-md="12" size-lg="6">
+          <ion-col size="12" size-lg="6">
             <ion-card class="back-img-orange">
               <div class="item_title p-4">
                 <h5>Smart Phone BestSeller</h5>
@@ -373,7 +370,7 @@
               </div>
             </ion-card>
           </ion-col>
-          <ion-col size-md="12" size-lg="6">
+          <ion-col size="12" size-lg="6">
             <ion-card class="back-img-blue">
               <div class="item_title p-4">
                 <h5>Smart Phone BestSeller</h5>
@@ -387,7 +384,7 @@
       </div>
     </div>
   </section>
-  <section>
+  <!-- <section>
     <ion-row class="cap-section">
       <ion-col size="7" class="cap-section-left ion-no-padding">
         <div class="ion-text-center ps-5 mt-120">
@@ -401,17 +398,17 @@
         <img src="assets/images/cap.png" class="cap-image-set">
       </ion-col>
     </ion-row>
-  </section>
+  </section> -->
   <section class="bg-gray">
     <div class="container-lg">
       <ion-row class="p-30">
-        <ion-col size-md="6" size-lg="4">
+        <ion-col size="12" size-md="6" size-lg="4">
           <ion-text>A WIDE SECTION OF ITEMS</ion-text>
           <h2 class="mt-0">Bestseller Products</h2>
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col size-md="6" size-lg="4" *ngFor="let item of sellerList">
+        <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of sellerList">
           <ion-row>
             <ion-col size="6">
               <ion-card>

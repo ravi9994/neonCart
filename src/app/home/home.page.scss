@@ -55,17 +55,17 @@ h3 {
 
 .back-img {
   background-image: url('./../../assets/images/mobile.jpg');
-  padding: 10px;
+  padding: 15px;
 }
 
 .back-img-camera {
   background-image: url('./../../assets/images/backcamera.jpg');
-  padding: 10px;
+  padding: 15px;
 }
 
 .back-img-game {
   background-image: url('./../../assets/images/game.jpg');
-  padding: 10px;
+  padding: 15px;
 }
 
 .item_title {
@@ -123,4 +123,15 @@ h3 {
   font-family: "Poppins",
     sans-serif;
   font-weight: 600;
+}
+
+.image-set {
+  height: 255px;
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
 }
