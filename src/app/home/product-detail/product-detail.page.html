@@ -3,12 +3,29 @@
   <div class="container-lg">
     <h1 class="fw-800 fs-30">Product Detail</h1>
     <ion-row>
-      <ion-col size="4">
+      <ion-col size="12" size-md="4">
         <div class="cart-image-div">
-          <img src="./../../../assets/images/man.jpg" alt="" class="image-set">
+          <img src="assets/images/man.jpg" alt="" class="image-set">
+        </div>
+        <div class="swiper mySwiper mt-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/images/pink.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/darkpink.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/tshirt.jpg" alt="">
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/blueman.jpg" alt="">
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </ion-col>
-      <ion-col size="8" class="px-5">
+      <ion-col size="12" size-md="8" class="px-md-5">
         <ion-row>
           <ion-col size="12">
             <div>
@@ -19,20 +36,20 @@
         </ion-row>
         <hr>
         <ion-row>
-          <ion-col size="2">
+          <ion-col size="12" size-lg="2">
             <div class="d-flex">
               <h2 class="color-dark fw-800 fs-16 m-0 pr-14">Brands:</h2>
               <h2 class="color-dark fw-800 fs-16 m-0">TMS</h2>
             </div>
           </ion-col>
-          <ion-col size="2">
+          <ion-col size="12" size-lg="2">
             <ion-icon name="star" color="warning"></ion-icon>
             <ion-icon name="star" color="warning"></ion-icon>
             <ion-icon name="star" color="warning"></ion-icon>
             <ion-icon name="star" color="warning"></ion-icon>
             <ion-icon name="star" color="warning"></ion-icon>
           </ion-col>
-          <ion-col size="5">
+          <ion-col size="12" size-lg="5">
             <div class="d-flex">
               <h2 class="color-dark fw-800 fs-16 m-0 pl-10">4 Review(s) | Add Your Review</h2>
             </div>
@@ -93,9 +110,9 @@
           </ion-button>
         </div>
         <div class="d-flex mt-3 ion-align-items-center ">
-          <ion-button><ion-icon name="heart"></ion-icon></ion-button>
+          <ion-button color="dark"><ion-icon name="heart-outline"></ion-icon></ion-button>
           <ion-text class="pl-10">Add To Wishlist</ion-text>
-          <ion-button class="pl-10"><ion-icon name="shuffle"></ion-icon></ion-button>
+          <ion-button class="pl-10" color="dark"><ion-icon name="shuffle-outline"></ion-icon></ion-button>
           <ion-text class="pl-10">Compare</ion-text>
         </div>
         <hr>
@@ -110,6 +127,25 @@
         <div class="d-flex">
           <h2 class="fw-800 fs-16">Tags:</h2>
           <ion-text class="mt-3 ml-3 pl-10">Hot,Women</ion-text>
+        </div>
+      </ion-col>
+    </ion-row>
+    <hr>
+    <ion-row>
+      <ion-col size="12">
+        <div class="swiper mySwiper1">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide" *ngFor="let item of productList">
+              <ion-card class="w-100 br-10 ion-padding">
+                <div class="best-product-swiper-div">
+                  <img [src]="item.image" class="swiper-image-best w-100">
+                </div>
+                <h3 class="fs-24 fw-600">{{item.title}}</h3>
+                <ion-text class="fs-14 fw-400">{{item.product}}</ion-text>
+              </ion-card><br>
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
         </div>
       </ion-col>
     </ion-row>
