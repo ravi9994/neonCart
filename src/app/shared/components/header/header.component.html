@@ -71,12 +71,14 @@
       </div>
       <hr>
       <div class="px-4">
-        <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit" (click)="goTo('cart')">
+        <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit"
+          (click)="goTo('home/cart')">
           VIEW CART
         </ion-button>
       </div>
       <div class="px-4 mt-2">
-        <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit">CHECKOUT
+        <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit"
+          (click)="goTo('home/shopping')">CHECKOUT
         </ion-button>
       </div>
     </ion-content>
@@ -222,8 +224,16 @@
               <a class="nav-link" id="click-trigger-pages" role="button">Pages</a>
               <ion-popover trigger="click-trigger-pages" triggerAction="click">
                 <ng-template>
-                  <div class="ion-padding">
-                    <div class="d-flex ion-justify-content-between" (click)="goTo('auth/login')">
+                  <div class="ion-padding cursor-pointer">
+                    <div class="d-flex ion-justify-content-between" (click)="goTo('home/cart')">
+                      <ion-text>Shopping Cart</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                    <div class="d-flex ion-justify-content-between ion-margin-top" (click)="goTo('home/shopping')">
+                      <ion-text>Checkout</ion-text>
+                      <img src="assets/icon/arrow-right.svg">
+                    </div>
+                    <div class="d-flex ion-justify-content-between ion-margin-top" (click)="goTo('auth/login')">
                       <ion-text>Login</ion-text>
                       <img src="assets/icon/arrow-right.svg">
                     </div>
@@ -236,10 +246,10 @@
               </ion-popover>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="goTo('aboutus')" role="button">About Us</a>
+              <a class="nav-link" (click)="goTo('home/aboutus')" role="button">About Us</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" (click)="goTo('contact')" role="button">Contact Us</a>
+              <a class="nav-link" (click)="goTo('home/contact')" role="button">Contact Us</a>
             </li>
           </ul>
         </ion-col>
