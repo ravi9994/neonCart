@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import Swiper from 'swiper';
 @Component({
@@ -17,8 +18,8 @@ export class HomePage {
   swiperActiveIndex: number = 0;
   productList: any = [
     {
-      image: './../../assets/images/remote.png',
-      title: 'TV Remote',
+      image: './../../assets/images/man.jpg',
+      title: 'T-shirts',
       product: '11 Products'
     },
     {
@@ -209,7 +210,8 @@ export class HomePage {
       image: './../../assets/images/cameras.png',
     },
   ]
-  constructor(private platform: Platform) {
+  constructor(private platform: Platform,
+    private router: Router) {
   }
 
   ngOnInit(): void {
@@ -256,5 +258,7 @@ export class HomePage {
       });
     }
   }
-
+  goTo(url) {
+    this.router.navigate([url]);
+  }
 }

@@ -143,16 +143,6 @@ h3 {
   color: white;
 }
 
-.image-set {
-  height: 255px;
-}
-
-@media screen and (max-width: 480px) {
-  h1 {
-    font-size: 30px;
-  }
-
-}
 
 .left-side-camera-image {
   min-height: 200px;
@@ -174,7 +164,7 @@ h3 {
 
 .best-product-swiper-div {
   height: 200px;
-  width: 200px;
+  width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -182,6 +172,21 @@ h3 {
 
   .swiper-image-best {
     object-fit: contain;
+  }
+}
+
+.best-seller-product {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 170px;
+  background-color: #f5f6f9;
+  padding: 25px;
+
+  .seller-image-best {
+    object-fit: contain;
+    height: 200px;
   }
 }
 
@@ -196,5 +201,30 @@ h3 {
   .image-best {
     max-height: 150px;
     height: 100%;
+  }
+}
+
+
+@media screen and (max-width:900px) {
+  .best-product-card-div {
+    width: 185px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 30px;
+  }
+
+  .best-product-swiper-div {
+    width: 273px;
+  }
+
+  .best-seller-product {
+    width: 275px;
+  }
+
+  .best-product-card-div {
+    width: 319px;
   }
 }

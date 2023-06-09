@@ -15,16 +15,16 @@
       </ion-segment>
     </div>
     <ng-container *ngIf="activeTab === 'Friends'">
-      <div class="container">
+      <div class="container-lg">
         <ion-grid class="ion-text-wrap ion-margin-top">
-          <ion-row class="main-row-bg ion-hide-lg-down">
-            <ion-col size="5" class="ion-align-items-center d-flex">
+          <ion-row class="main-row-bg ion-hide-sm-down">
+            <ion-col size="4" class="ion-align-items-center d-flex">
               <h2 class="fs-18 fw-800 m-0">PHOTO</h2>
             </ion-col>
-            <ion-col size="2">
+            <ion-col size="3">
               <h2 class="fs-18 fw-800">PRODUCT NAME</h2>
             </ion-col>
-            <ion-col size="3" class="ion-justify-content-center d-flex">
+            <ion-col size="3">
               <h2 class="fs-18 fw-800">QUANTITY</h2>
             </ion-col>
             <ion-col size="2">
@@ -34,37 +34,27 @@
           <hr>
           <div *ngFor="let item of cartList">
             <ion-row class="py-25">
-              <ion-col size="12" sizeLg="5">
-                <ion-row>
-                  <ion-col size="12" sizeLg="6">
-                    <div class="d-flex">
-                      <div class="ion-align-items-center d-flex">
-                        <ion-buttons class="cart-close-btn">
-                          <ion-button>
-                            <ion-icon name="close" class="fs-30"></ion-icon>
-                          </ion-button>
-                        </ion-buttons>
-                      </div>
-                      <div class="cart-image-div p-10">
-                        <img [src]="item.image" alt="" class="image-set">
-                      </div>
-                    </div>
-                  </ion-col>
-                  <ion-col size="12" sizeLg="6" class="ion-align-items-center d-flex">
-                    <div>
-                      <h2 class="fs-18 fw-700 ml-10">{{item.name}}</h2>
-                      <span class="ml-10 text-primary">{{item.type}}</span>
-                    </div>
-                  </ion-col>
-                </ion-row>
-              </ion-col>
-
-              <ion-col size="6" sizeLg="2" class="ion-align-items-center d-flex">
-                <div>
-                  <ion-text class="fs-18 fw-800" [color]="'primary'">{{item.qty}}</ion-text>
+              <ion-col size="12" size-md="4">
+                <div class="d-flex">
+                  <div class="ion-align-items-center d-flex">
+                    <ion-buttons class="cart-close-btn">
+                      <ion-button>
+                        <ion-icon name="close" class="fs-30"></ion-icon>
+                      </ion-button>
+                    </ion-buttons>
+                  </div>
+                  <div class="cart-image-div p-10">
+                    <img [src]="item.image" alt="" class="image-set">
+                  </div>
                 </div>
               </ion-col>
-              <ion-col size="6" sizeLg="3" class="ion-align-items-center d-flex">
+              <ion-col size="12" size-md="3" class="ion-align-items-centerd-flex">
+                <div>
+                  <h2 class="fs-18 fw-700">{{item.name}}</h2>
+                  <span class="text-primary">{{item.type}}</span>
+                </div>
+              </ion-col>
+              <ion-col size="12" size-md="3" class="ion-align-items-center d-flex">
                 <div class="quantity_input">
                   <form>
                     <span>-</span>
@@ -73,7 +63,7 @@
                   </form>
                 </div>
               </ion-col>
-              <ion-col size="12" sizeLg="2" class="ion-align-items-center d-flex">
+              <ion-col size="12" size-md="2" class="ion-align-items-center d-flex">
                 <div>
                   <ion-text class="fs-18 fw-800" [color]="'success'">{{item.price}}</ion-text>
                 </div>
@@ -82,62 +72,62 @@
             <hr class="m-0">
           </div>
           <ion-row class="py-30">
-            <ion-col size="12" sizeLg="3">
+            <ion-col size="12" size-md="3">
               <div>
                 <input type="text" class="form-control custom" id="exampleInputEmail1" aria-describedby="emailHelp"
                   placeholder="Coupon Code">
               </div>
             </ion-col>
-            <ion-col size="12" sizeLg="2" class="p-0">
+            <ion-col size="12" size-md="2" class="p-0">
               <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="danger" type="submit">APPLY COUPON
               </ion-button>
             </ion-col>
-            <ion-col size="12" sizeLg="5"></ion-col>
-            <ion-col size="12" sizeLg="2" class="p-0">
+            <ion-col size="12" size-md="5"></ion-col>
+            <ion-col size="12" size-md="2" class="p-0">
               <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="primary" type="submit">UPDATE CART
               </ion-button>
             </ion-col>
           </ion-row>
 
           <ion-row class="ion-justify-content-end d-flex">
-            <ion-col size="12" sizeLg="4" >
-                <ion-card class="m-0">
-                  <ion-card-header>
-                    <h3 class="fs-24 text-dark fw-700 text-center">CART TOTAL</h3>
-                  </ion-card-header>
-                  <div class="py-30 px-5">
-                    <ion-row>
-                      <ion-col size="6">
-                        <ion-text class="fs-15 fw-800 text-dark">SUBTOTAL</ion-text>
-                      </ion-col>
-                      <ion-col size="6" class="ion-justify-content-end d-flex">
-                        <ion-text class="fs-15 fw-800">$197.99</ion-text>
-                      </ion-col>
-                    </ion-row>
-                    <ion-row>
-                      <ion-col size="5">
-                        <ion-text class="fs-15 fw-800 text-dark">SHIPPING</ion-text>
-                      </ion-col>
-                      <ion-col size="7" class="ion-justify-content-end d-flex">
-                        <a class="text-danger fs-14 fw-800">Calculate Shipping</a>
-                      </ion-col>
-                    </ion-row>
-                    <ion-row>
-                      <ion-col size="6">
-                        <ion-text class="fs-15 fw-800 text-dark">TOTAL</ion-text>
-                      </ion-col>
-                      <ion-col size="6" class="ion-justify-content-end d-flex">
-                        <ion-text class="fs-18 fw-800 text-success">$197.99</ion-text>
-                      </ion-col>
-                    </ion-row>
-                  </div>
-                  <div class="px-5 mb-30">
-                    <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="success" type="submit">
-                      Proceed to
-                      Checkout
-                    </ion-button>
-                  </div>
-                </ion-card>
+            <ion-col size="12" size-lg="4">
+              <ion-card class="m-0">
+                <ion-card-header>
+                  <h3 class="fs-24 text-dark fw-700 text-center">CART TOTAL</h3>
+                </ion-card-header>
+                <div class="py-30 px-5">
+                  <ion-row>
+                    <ion-col size="6">
+                      <ion-text class="fs-15 fw-800 text-dark">SUBTOTAL</ion-text>
+                    </ion-col>
+                    <ion-col size="6" class="ion-justify-content-end d-flex">
+                      <ion-text class="fs-15 fw-800">$197.99</ion-text>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="5">
+                      <ion-text class="fs-15 fw-800 text-dark">SHIPPING</ion-text>
+                    </ion-col>
+                    <ion-col size="7" class="ion-justify-content-end d-flex">
+                      <a class="text-danger fs-14 fw-800">Calculate Shipping</a>
+                    </ion-col>
+                  </ion-row>
+                  <ion-row>
+                    <ion-col size="6">
+                      <ion-text class="fs-15 fw-800 text-dark">TOTAL</ion-text>
+                    </ion-col>
+                    <ion-col size="6" class="ion-justify-content-end d-flex">
+                      <ion-text class="fs-18 fw-800 text-success">$197.99</ion-text>
+                    </ion-col>
+                  </ion-row>
+                </div>
+                <div class="px-5 mb-30">
+                  <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="success" type="submit">
+                    Proceed to
+                    Checkout
+                  </ion-button>
+                </div>
+              </ion-card>
             </ion-col>
           </ion-row>
         </ion-grid>
@@ -259,7 +249,7 @@
         </form>
         <h2 class="color-dark fw-800 fs-18 mt-5">Your Order</h2>
         <div style="border: 1px solid gray;" class="p-30">
-          <ion-row class="text-dark">
+          <ion-row class="text-dark ion-hide-sm-down">
             <ion-col size="3">
               <h2 class="fw-800 fs-18">
                 PHOTO</h2>
@@ -277,14 +267,14 @@
           <hr>
           <div *ngFor="let item of cartList">
             <ion-row class="d-flex ion-align-items-center">
-              <ion-col size="3">
+              <ion-col size="12" size-md="3">
                 <div class="d-flex">
                   <div class="cart-image-div p-10">
                     <img [src]="item.image" alt="" class="image-set">
                   </div>
                 </div>
               </ion-col>
-              <ion-col size="3">
+              <ion-col size="12" size-md="3">
                 <div>
                   <h2 class="fw-800 fs-18">{{item.name}}</h2>
                 </div>
@@ -292,10 +282,10 @@
                   <ion-text class="fw-700 text-primary">{{item.type}}</ion-text>
                 </div>
               </ion-col>
-              <ion-col size="3">
+              <ion-col size="12" size-md="3">
                 <ion-text>{{item.qty}}</ion-text>
               </ion-col>
-              <ion-col size="3">
+              <ion-col size="12" size-md="3">
                 <ion-text class="fw-700 text-success">{{item.price}}</ion-text>
               </ion-col>
             </ion-row>
@@ -304,33 +294,33 @@
           <ion-row class="text-dark">
             <ion-col size="6">
             </ion-col>
-            <ion-col size="6">
+            <ion-col size="12" size-md="6" class="p-0">
               <ion-row class="text-dark">
-                <ion-col size="6">
-                  <h2 class="fw-800 fs-18">Sub Total</h2>
+                <ion-col size-md="6" class="p-0">
+                  <h2 class="fw-800 fs-18 m-0">Sub Total</h2>
                 </ion-col>
-                <ion-col size="6">
-                  <h4 class="fw-700">$414.00</h4>
+                <ion-col size-md="6" class="p-0">
+                  <h4 class="fw-700 m-0">$414.00</h4>
                 </ion-col>
               </ion-row>
             </ion-col>
           </ion-row>
           <hr>
           <ion-row class="text-dark">
-            <ion-col size="6">
+            <ion-col size="6" size-md="6" class="p-0">
               <ion-row class="text-dark">
-                <ion-col size="2">
+                <ion-col size-md="2" class="p-0">
                   <h2 class="fw-800 fs-18 text-center">Total</h2>
                 </ion-col>
-                <ion-col size="6">
+                <ion-col size-md="6">
                 </ion-col>
               </ion-row>
             </ion-col>
-            <ion-col size="6">
+            <ion-col size="6" size-md="6">
               <ion-row class="text-dark">
-                <ion-col size="6">
+                <ion-col size-md="6">
                 </ion-col>
-                <ion-col size="6">
+                <ion-col size-md="6" class="p-0">
                   <h4 class="fw-700 text-success">$414.00</h4>
                 </ion-col>
               </ion-row>

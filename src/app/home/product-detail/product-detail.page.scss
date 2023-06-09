@@ -73,7 +73,7 @@ ul {
 
 .best-product-swiper-div {
   height: 200px;
-  width: 200px;
+  width: 175px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,5 +81,12 @@ ul {
 
   .swiper-image-best {
     object-fit: contain;
+  }
+}
+
+
+@media screen and (max-width:480px) {
+  .best-product-swiper-div {
+    width: 285px;
   }
 }
