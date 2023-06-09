@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./shopping.page.scss'],
 })
 export class ShoppingPage implements OnInit {
-  activeTab: string = 'Friends';
+  activeTab: string = 'shopping-card';
   cartList: any = [
     {
       image: './../../../assets/images/cameras.png',

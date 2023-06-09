@@ -1,20 +1,20 @@
 <app-header></app-header>
 <ion-content>
-  <div class="main_div_ptb">
+  <div class="p-lg-5">
     <div class="p-10">
       <ion-segment class="friends-segment" [(ngModel)]="activeTab">
-        <ion-segment-button value="Friends" class="segment-btn">
+        <ion-segment-button value="shopping-card" class="segment-btn">
           <h3 class="fw-700">01.Shopping Cart</h3>
         </ion-segment-button>
-        <ion-segment-button value="Requests" class="segment-btn">
+        <ion-segment-button value="checkout" class="segment-btn">
           <h3 class="fw-700">02.checkout</h3>
         </ion-segment-button>
-        <ion-segment-button value="Add" class="segment-btn">
+        <ion-segment-button value="order-complete" class="segment-btn">
           <h3 class="fw-700">03.order Completed</h3>
         </ion-segment-button>
       </ion-segment>
     </div>
-    <ng-container *ngIf="activeTab === 'Friends'">
+    <ng-container *ngIf="activeTab === 'shopping-card'">
       <div class="container-lg">
         <ion-grid class="ion-text-wrap ion-margin-top">
           <ion-row class="main-row-bg ion-hide-sm-down">
@@ -33,7 +33,7 @@
           </ion-row>
           <hr>
           <div *ngFor="let item of cartList">
-            <ion-row class="py-25">
+            <ion-row class="p-3">
               <ion-col size="12" size-md="4">
                 <div class="d-flex">
                   <div class="ion-align-items-center d-flex">
@@ -134,7 +134,7 @@
       </div>
 
     </ng-container>
-    <ng-container *ngIf="activeTab === 'Requests'">
+    <ng-container *ngIf="activeTab === 'checkout'">
       <div class="container-lg">
         <h2 class="color-dark fw-800 fs-18">Billing Details</h2>
         <form style="border: 1px solid gray;" class="p-30">
@@ -370,7 +370,7 @@
         </div>
       </div>
     </ng-container>
-    <ng-container *ngIf="activeTab === 'Add'">
+    <ng-container *ngIf="activeTab === 'order-complete'">
       <div class="container-lg">
         <div class="mt-5 p-30  text-center" style="border:1px solid gray">
           <h2 class="fs-30 fw-800">Congratulation! You've</h2>

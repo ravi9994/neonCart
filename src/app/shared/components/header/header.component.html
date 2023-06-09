@@ -102,7 +102,7 @@
           <p class="fs-15 fw-800 ml-10">MENU LIST</p>
         </div>
         <ion-accordion-group class="mt-10">
-          <ion-accordion value="first">
+          <ion-accordion value="first" (click)="goTo('home')">
             <ion-item slot="header" color="light">
               <ion-label>Home</ion-label>
             </ion-item>
@@ -114,7 +114,6 @@
             <ion-item slot="header" color="light">
               <ion-label>Shop</ion-label>
             </ion-item>
-            <div class="ion-padding" slot="content">First Content</div>
           </ion-accordion>
         </ion-accordion-group>
         <ion-accordion-group class="mt-10">
@@ -122,8 +121,8 @@
             <ion-item slot="header" color="light">
               <ion-label>Pages</ion-label>
             </ion-item>
-            <div class="p-2" slot="content" (click)="goTo('home/cart')">Shopping Cart</div>
-            <div class="p-2" slot="content" (click)="goTo('home/shopping')">Checkout</div>
+            <!-- <div class="p-2" slot="content" (click)="goTo('home/cart')">Shopping Cart</div>
+            <div class="p-2" slot="content" (click)="goTo('home/shopping')">Checkout</div> -->
             <div class="p-2" slot="content" (click)="goTo('home/login')">Login</div>
             <div class="p-2" slot="content" (click)="goTo('home/register')">Registration</div>
           </ion-accordion>
