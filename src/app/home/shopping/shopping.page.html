@@ -15,104 +15,134 @@
       </ion-segment>
     </div>
     <ng-container *ngIf="activeTab === 'Friends'">
-      <div class="container-lg">
-        <div style="overflow-x:auto;">
-          <ion-row class="mt-5 text-dark bg-light">
-            <ion-col size="3">
-              <h2 class="fw-800 fs-18">
-                PHOTO</h2>
+      <div class="container">
+        <ion-grid class="ion-text-wrap ion-margin-top">
+          <ion-row class="main-row-bg ion-hide-lg-down">
+            <ion-col size="5" class="ion-align-items-center d-flex">
+              <h2 class="fs-18 fw-800 m-0">PHOTO</h2>
             </ion-col>
-            <ion-col size="3">
-              <h2 class="fw-800 fs-18">PRODUCT NAME</h2>
+            <ion-col size="2">
+              <h2 class="fs-18 fw-800">PRODUCT NAME</h2>
             </ion-col>
-            <ion-col size="3">
-              <h2 class="fw-800 fs-18">QUANTITY</h2>
+            <ion-col size="3" class="ion-justify-content-center d-flex">
+              <h2 class="fs-18 fw-800">QUANTITY</h2>
             </ion-col>
-            <ion-col size="3">
-              <h2 class="fw-800 fs-18">PRICE</h2>
+            <ion-col size="2">
+              <h2 class="fs-18 fw-800">PRICE</h2>
             </ion-col>
           </ion-row>
           <hr>
           <div *ngFor="let item of cartList">
-            <ion-row class="d-flex ion-align-items-center">
-              <ion-col size="3">
-                <div class="d-flex">
-                  <ion-buttons class="cart-close-btn">
-                    <ion-button>
-                      <ion-icon name="close-outline"></ion-icon>
-                    </ion-button>
-                  </ion-buttons>
-                  <div class="cart-image-div p-10">
-                    <img [src]="item.image" alt="" class="image-set">
-                  </div>
-                </div>
+            <ion-row class="py-25">
+              <ion-col size="12" sizeLg="5">
+                <ion-row>
+                  <ion-col size="12" sizeLg="6">
+                    <div class="d-flex">
+                      <div class="ion-align-items-center d-flex">
+                        <ion-buttons class="cart-close-btn">
+                          <ion-button>
+                            <ion-icon name="close" class="fs-30"></ion-icon>
+                          </ion-button>
+                        </ion-buttons>
+                      </div>
+                      <div class="cart-image-div p-10">
+                        <img [src]="item.image" alt="" class="image-set">
+                      </div>
+                    </div>
+                  </ion-col>
+                  <ion-col size="12" sizeLg="6" class="ion-align-items-center d-flex">
+                    <div>
+                      <h2 class="fs-18 fw-700 ml-10">{{item.name}}</h2>
+                      <span class="ml-10 text-primary">{{item.type}}</span>
+                    </div>
+                  </ion-col>
+                </ion-row>
               </ion-col>
-              <ion-col size="3">
+
+              <ion-col size="6" sizeLg="2" class="ion-align-items-center d-flex">
                 <div>
-                  <h2 class="fw-800 fs-18">{{item.name}}</h2>
+                  <ion-text class="fs-18 fw-800" [color]="'primary'">{{item.qty}}</ion-text>
                 </div>
+              </ion-col>
+              <ion-col size="6" sizeLg="3" class="ion-align-items-center d-flex">
+                <div class="quantity_input">
+                  <form>
+                    <span>-</span>
+                    <input class="input-number" type="text" value="2">
+                    <span>+</span>
+                  </form>
+                </div>
+              </ion-col>
+              <ion-col size="12" sizeLg="2" class="ion-align-items-center d-flex">
                 <div>
-                  <ion-text class="fw-700" color="tertiary">{{item.type}}</ion-text>
+                  <ion-text class="fs-18 fw-800" [color]="'success'">{{item.price}}</ion-text>
                 </div>
-              </ion-col>
-              <ion-col size="3">
-                <ion-text>{{item.qty}}</ion-text>
-              </ion-col>
-              <ion-col size="3">
-                <ion-text class="fw-700" color="success">{{item.price}}</ion-text>
               </ion-col>
             </ion-row>
-            <hr>
+            <hr class="m-0">
           </div>
-        </div>
-        <div class="d-flex">
-          <input type="text" placeholder="Coupon Code">
-          <ion-button color="danger" class="neon-btn">Apply Coupon</ion-button>
-        </div>
-        <ion-row>
-          <ion-col size="9"></ion-col>
-          <ion-col size="12" size-lg="3">
-            <ion-card>
-              <ion-card-header class="segment-btn">
-                <ion-card-title>
-                  <h2 class="fw-800 fs-20 ion-text-center">CART TOTAL</h2>
-                </ion-card-title>
-              </ion-card-header>
-              <ion-card-content>
-                <div class="pt-10">
-                  <ion-row>
-                    <ion-col size="6">
-                      <h2 class="text-dark fw-800 fs-18">SUB TOTAL</h2>
-                    </ion-col>
-                    <ion-col size="6">
-                      <ion-text>$197.99</ion-text>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col size="6">
-                      <h2 class="text-dark fw-800 fs-18">SHIPPING</h2>
-                    </ion-col>
-                    <ion-col size="6">
-                      <ion-text>calculate Shipping</ion-text>
-                    </ion-col>
-                  </ion-row>
-                  <ion-row>
-                    <ion-col size="6">
-                      <h2 class="text-dark fw-800 fs-18">TOTAL</h2>
-                    </ion-col>
-                    <ion-col size="6">
-                      <ion-text color="success">$197.99</ion-text>
-                    </ion-col>
-                  </ion-row>
-                  <div class="text-center mt-2">
-                    <ion-button color="success" class="neon-btn">PROCEED TO CHECKOUT</ion-button>
+          <ion-row class="py-30">
+            <ion-col size="12" sizeLg="3">
+              <div>
+                <input type="text" class="form-control custom" id="exampleInputEmail1" aria-describedby="emailHelp"
+                  placeholder="Coupon Code">
+              </div>
+            </ion-col>
+            <ion-col size="12" sizeLg="2" class="p-0">
+              <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="danger" type="submit">APPLY COUPON
+              </ion-button>
+            </ion-col>
+            <ion-col size="12" sizeLg="5"></ion-col>
+            <ion-col size="12" sizeLg="2" class="p-0">
+              <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="primary" type="submit">UPDATE CART
+              </ion-button>
+            </ion-col>
+          </ion-row>
+
+          <ion-row class="ion-justify-content-end d-flex">
+            <ion-col size="12" sizeLg="4" >
+                <ion-card class="m-0">
+                  <ion-card-header>
+                    <h3 class="fs-24 text-dark fw-700 text-center">CART TOTAL</h3>
+                  </ion-card-header>
+                  <div class="py-30 px-5">
+                    <ion-row>
+                      <ion-col size="6">
+                        <ion-text class="fs-15 fw-800 text-dark">SUBTOTAL</ion-text>
+                      </ion-col>
+                      <ion-col size="6" class="ion-justify-content-end d-flex">
+                        <ion-text class="fs-15 fw-800">$197.99</ion-text>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size="5">
+                        <ion-text class="fs-15 fw-800 text-dark">SHIPPING</ion-text>
+                      </ion-col>
+                      <ion-col size="7" class="ion-justify-content-end d-flex">
+                        <a class="text-danger fs-14 fw-800">Calculate Shipping</a>
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col size="6">
+                        <ion-text class="fs-15 fw-800 text-dark">TOTAL</ion-text>
+                      </ion-col>
+                      <ion-col size="6" class="ion-justify-content-end d-flex">
+                        <ion-text class="fs-18 fw-800 text-success">$197.99</ion-text>
+                      </ion-col>
+                    </ion-row>
                   </div>
-                </div>
-              </ion-card-content>
-            </ion-card>
-          </ion-col>
-        </ion-row>
+                  <div class="px-5 mb-30">
+                    <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="success" type="submit">
+                      Proceed to
+                      Checkout
+                    </ion-button>
+                  </div>
+                </ion-card>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
       </div>
+
     </ng-container>
     <ng-container *ngIf="activeTab === 'Requests'">
       <div class="container-lg">
@@ -309,8 +339,8 @@
           <hr>
           <ion-row>
             <ion-col size="12">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
-                class="ml-10">Direct Bank
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <ion-text class="ml-10">Direct Bank
                 Transfer</ion-text>
             </ion-col>
           </ion-row>
@@ -324,16 +354,16 @@
           <hr>
           <ion-row>
             <ion-col size="12">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
-                class="ml-10">Check
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <ion-text class="ml-10">Check
                 Payment</ion-text>
             </ion-col>
           </ion-row>
           <hr>
           <ion-row>
             <ion-col size="12">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
-                class="ml-10">Cash
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <ion-text class="ml-10">Cash
                 On
                 Delivery</ion-text>
             </ion-col>
@@ -341,8 +371,8 @@
           <hr>
           <ion-row>
             <ion-col size="12">
-              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault"><ion-text
-                class="ml-10">Paypal</ion-text>
+              <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+              <ion-text class="ml-10">Paypal</ion-text>
             </ion-col>
           </ion-row>
           <hr>

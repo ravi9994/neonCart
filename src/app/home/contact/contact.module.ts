@@ -3,24 +3,22 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
-import { SharedModule } from '../shared/shared.module';
-
-import { CartPageRoutingModule } from './cart-routing.module';
-
-import { CartPage } from './cart.page';
+import { SharedModule } from '../../shared/shared.module';
+import { ContactPageRoutingModule } from './contact-routing.module';
+import { ContactPage } from './contact.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CartPageRoutingModule,
+    ContactPageRoutingModule,
     SharedModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA,
     NO_ERRORS_SCHEMA
   ],
-  declarations: [CartPage]
+  declarations: [ContactPage]
 })
-export class CartPageModule {}
+export class ContactPageModule { }
