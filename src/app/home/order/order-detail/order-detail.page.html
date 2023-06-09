@@ -1,6 +1,6 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true">
-  <div class="container">
+  <div class="container ion-hide-lg-down">
     <div class="page-background">
       <div class="container card_ptb">
         <ion-card class="p-2">
@@ -34,11 +34,12 @@
               </ion-col>
             </ion-row>
             <hr>
-            <ion-row class="main-row-bg ion-hide-lg-down p-0">
+
+            <ion-row class="main-row-bg  p-0">
               <ion-col size="1" class="ion-justify-content-center d-flex">
                 <h2 class="fs-18 fw-500 ">CREATED</h2>
               </ion-col>
-              <ion-col size="2" class="ion-justify-content-center d-flex">
+              <ion-col size="1" class="ion-justify-content-center d-flex">
                 <h2 class="fs-18 fw-500">PRODUCT</h2>
               </ion-col>
               <ion-col size="2" class="ion-justify-content-center d-flex">
@@ -56,6 +57,9 @@
               <ion-col size="1" class="ion-justify-content-center d-flex">
                 <h2 class="fs-18 fw-500 ">PRICE</h2>
               </ion-col>
+               <ion-col size="1" class="ion-justify-content-center d-flex">
+                 <h2 class="fs-18 fw-500 ">Action</h2>
+               </ion-col>
             </ion-row>
             <hr>
             <div *ngFor="let item of orderList">
@@ -65,7 +69,7 @@
                     <ion-text class="fs-15 fw-300 text-dark">{{item.created}}</ion-text>
                   </div>
                 </ion-col>
-                <ion-col size="2" class="ion-justify-content-center d-flex">
+                <ion-col size="1" class="ion-justify-content-center d-flex">
                   <div>
                     <ion-text class="fs-15 fw-300 text-dark">{{item.product}}</ion-text>
                   </div>
@@ -83,7 +87,8 @@
                 <ion-col size="2" class="ion-justify-content-center d-flex">
                   <div>
                     <ion-text class="fs-15 fw-300 text-dark">
-                      <ion-badge color="warning">{{item.status}}
+                      <ion-badge [ngClass]="(item.status === 'Cancelled') ? 'cancelled-bg' : (item.status === 'Booked') ? 'booked-bg':
+                  (item.status === 'Request') ? 'request-bg' : 'other-bg'">{{item.status}}
                       </ion-badge>
                     </ion-text>
                   </div>
@@ -99,6 +104,11 @@
                     <ion-text class="fs-15 fw-300" [color]="'success'">{{item.price}}</ion-text>
                   </div>
                 </ion-col>
+                <ion-col size="1" class="ion-justify-content-center d-flex cursor-pointer">
+                  <div>
+                    <ion-icon name="eye-outline" class="fs-20" routerLink="/home/order"></ion-icon>
+                  </div>
+                </ion-col>
               </ion-row>
             </div>
           </ion-grid>
@@ -106,4 +116,103 @@
       </div>
     </div>
   </div>
+
+  <ng-container>
+    <div class="ion-padding ion-hide-lg-up">
+      <h2 class="mt-0">Orders</h2>
+      <ion-row>
+        <ion-col size="12" sizeLg="3" class="p-0">
+          <ion-searchbar show-cancel-button="focus" placeholder="Search by any order..." mode="ios" class="p-0">
+          </ion-searchbar>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6">
+          <ion-select label="Products">
+            <ion-select-option value="apple">Apple</ion-select-option>
+            <ion-select-option value="banana">Banana</ion-select-option>
+            <ion-select-option value="orange">Orange</ion-select-option>
+          </ion-select>
+        </ion-col>
+        <ion-col size="6">
+          <ion-select label="Status">
+            <ion-select-option value="apple">Apple</ion-select-option>
+            <ion-select-option value="banana">Banana</ion-select-option>
+            <ion-select-option value="orange">Orange</ion-select-option>
+          </ion-select>
+        </ion-col>
+      </ion-row>
+    </div>
+    <div *ngFor="let item of orderList">
+      <ion-card class="ion-hide-lg-up main-row-bg p-0 ion-margin-top">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+              <ion-text class="hs-18 fw-400 text-dark">{{item.created}}</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr class="ion-no-margin">
+          <ion-row>
+            <ion-col>
+              <ion-text class="fs-15 fw-300">PRODUCTS</ion-text>
+            </ion-col>
+            <ion-col class="ion-justify-content-end d-flex">
+              <ion-text class="fs-15 fw-300 text-dark">{{item.product}}</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr class="ion-no-margin">
+          <ion-row>
+            <ion-col>
+              <ion-text class="fs-15 fw-300">START TIME</ion-text>
+            </ion-col>
+            <ion-col class="ion-justify-content-end d-flex">
+              <ion-text class="fs-15 fw-300 text-dark">{{item.start_time}}</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr class="ion-no-margin">
+          <ion-row>
+            <ion-col>
+              <ion-text class="fs-15 fw-300">END TIME</ion-text>
+            </ion-col>
+            <ion-col class="ion-justify-content-end d-flex">
+              <ion-text class="fs-15 fw-300 text-dark">{{item.end_time}}</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr class="ion-no-margin">
+          <ion-row>
+            <ion-col>
+              <ion-text class="fs-15 fw-300">STATUS</ion-text>
+            </ion-col>
+            <ion-col class="ion-justify-content-end d-flex">
+              <ion-text class="fs-15 fw-300 text-dark">
+                <ion-badge [ngClass]="(item.status === 'Cancelled') ? 'cancelled-bg' : (item.status === 'Booked') ? 'booked-bg':
+                  (item.status === 'Request') ? 'request-bg' : 'other-bg'">
+                  {{item.status}}
+                </ion-badge>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <hr class="ion-no-margin">
+          <ion-row>
+            <ion-col>
+              <ion-text class="fs-15 fw-300">DELIVERY STATUS</ion-text>
+            </ion-col>
+            <ion-col class="ion-justify-content-end d-flex">
+              <ion-text class="fs-15 fw-300 text-dark">{{item.delivery_status}}</ion-text>
+            </ion-col>
+          </ion-row>
+          <hr class="ion-no-margin">
+          <ion-row>
+            <ion-col>
+              <ion-text class="fs-15 fw-300">PRICE</ion-text>
+            </ion-col>
+            <ion-col class="ion-justify-content-end d-flex">
+              <ion-text class="fs-15 fw-300 text-dark">{{item.price}}</ion-text>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card>
+    </div>
+  </ng-container>
+  <app-footer></app-footer>
 </ion-content>

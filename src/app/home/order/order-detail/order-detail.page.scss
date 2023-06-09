@@ -1,0 +1,23 @@
+ion-select {
+  border: 1px solid #6b6b6b;
+  padding-left: 9px;
+  padding-right: 9px;
+  border-radius: 8px;
+  height: 19px
+}
+
+.cancelled-bg {
+  background-color: var(--ion-color-danger) !important;
+}
+
+.booked-bg {
+  background-color: var(--ion-color-secondary) !important;
+}
+
+.request-bg {
+  background-color: var(--ion-color-warning) !important;
+}
+
+.other-bg {
+  background-color: var(--ion-color-primary) !important;
+}

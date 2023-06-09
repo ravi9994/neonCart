@@ -106,7 +106,7 @@
             <ion-item slot="header" color="light">
               <ion-label>Home</ion-label>
             </ion-item>
-            <div class="ion-padding" slot="content">First Content</div>
+            <div class="ion-padding" slot="content" (click)="goTo('home')">Supermarket</div>
           </ion-accordion>
         </ion-accordion-group>
         <ion-accordion-group class="mt-10">
@@ -122,7 +122,10 @@
             <ion-item slot="header" color="light">
               <ion-label>Pages</ion-label>
             </ion-item>
-            <div class="ion-padding" slot="content">First Content</div>
+            <div class="p-2" slot="content" (click)="goTo('home/cart')">Shopping Cart</div>
+            <div class="p-2" slot="content" (click)="goTo('home/shopping')">Checkout</div>
+            <div class="p-2" slot="content" (click)="goTo('home/login')">Login</div>
+            <div class="p-2" slot="content" (click)="goTo('home/register')">Registration</div>
           </ion-accordion>
         </ion-accordion-group>
         <ion-accordion-group class="mt-10">
@@ -130,7 +133,6 @@
             <ion-item slot="header" color="light">
               <ion-label>Contact</ion-label>
             </ion-item>
-            <div class="ion-padding" slot="content">First Content</div>
           </ion-accordion>
         </ion-accordion-group>
         <hr />
@@ -153,6 +155,10 @@
         <div class="d-flex py-2">
           <ion-icon class="fs-20" name="settings-outline" [color]="'primary'"></ion-icon>
           <ion-text class="ml-10 fs-15 fw-500" [color]="'primary'"> Settings</ion-text>
+        </div>
+        <div class="d-flex mb-2" (click)="goTo('/home/order/order-detail')">
+          <ion-icon class="fs-20" name="reorder-three-outline" [color]="'primary'"></ion-icon>
+          <ion-text class="ml-10 fs-15 fw-400" [color]="'primary'"> Orders</ion-text>
         </div>
         <div class="d-flex">
           <ion-icon class="fs-20" name="log-out-outline" [color]="'primary'"></ion-icon>
@@ -283,7 +289,7 @@
                       <ion-icon class="fs-20" name="settings-outline" [color]="'primary'"></ion-icon>
                       <ion-text class="ml-10 fs-15 fw-400" [color]="'primary'"> Settings</ion-text>
                     </div>
-                    <div class="d-flex mb-2" (click)="goTo('home/order')">
+                    <div class="d-flex mb-2" (click)="goTo('home/order/order-detail')">
                       <ion-icon class="fs-20" name="reorder-three-outline" [color]="'primary'"></ion-icon>
                       <ion-text class="ml-10 fs-15 fw-400" [color]="'primary'"> Orders</ion-text>
                     </div>
