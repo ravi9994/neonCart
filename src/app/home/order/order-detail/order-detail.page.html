@@ -147,8 +147,13 @@
       <ion-card class="ion-hide-lg-up main-row-bg p-0 ion-margin-top">
         <ion-grid>
           <ion-row>
-            <ion-col>
+            <ion-col size="6">
               <ion-text class="hs-18 fw-400 text-dark">{{item.created}}</ion-text>
+            </ion-col>
+            <ion-col size="6" class="ion-justify-content-end d-flex">
+              <div>
+                <ion-icon name="eye-outline" class="fs-20" routerLink="/home/order"></ion-icon>
+              </div>
             </ion-col>
           </ion-row>
           <hr class="ion-no-margin">
