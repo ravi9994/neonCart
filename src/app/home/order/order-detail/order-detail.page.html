@@ -1,0 +1,109 @@
+<app-header></app-header>
+<ion-content [fullscreen]="true">
+  <div class="container">
+    <div class="page-background">
+      <div class="container card_ptb">
+        <ion-card class="p-2">
+          <ion-grid>
+            <ion-row>
+              <ion-col size="12">
+                <h1 class="text-dark m-0">Orders</h1>
+              </ion-col>
+            </ion-row>
+            <ion-row>
+              <ion-col size="12" sizeLg="3" class="p-0">
+                <ion-searchbar show-cancel-button="focus" placeholder="Search by any order..." mode="ios" class="p-0">
+                </ion-searchbar>
+              </ion-col>
+              <ion-col sizeLg="5"></ion-col>
+              <ion-col size="6" sizeLg="2" class="d-flex ion-align-items-center">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Products</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </ion-col>
+              <ion-col size="6" sizeLg="2" class="d-flex ion-align-items-center">
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Status</option>
+                  <option value="1">One</option>
+                  <option value="2">Two</option>
+                  <option value="3">Three</option>
+                </select>
+              </ion-col>
+            </ion-row>
+            <hr>
+            <ion-row class="main-row-bg ion-hide-lg-down p-0">
+              <ion-col size="1" class="ion-justify-content-center d-flex">
+                <h2 class="fs-18 fw-500 ">CREATED</h2>
+              </ion-col>
+              <ion-col size="2" class="ion-justify-content-center d-flex">
+                <h2 class="fs-18 fw-500">PRODUCT</h2>
+              </ion-col>
+              <ion-col size="2" class="ion-justify-content-center d-flex">
+                <h2 class="fs-18 fw-500">STAT TIME</h2>
+              </ion-col>
+              <ion-col size="2" class="ion-justify-content-center d-flex">
+                <h2 class="fs-18 fw-500">END TIME</h2>
+              </ion-col>
+              <ion-col size="2" class="ion-justify-content-center d-flex">
+                <h2 class="fs-18 fw-500 ">STATUS</h2>
+              </ion-col>
+              <ion-col size="2" class="ion-justify-content-center d-flex">
+                <h2 class="fs-18 fw-500 ">DELIVERY STATUS</h2>
+              </ion-col>
+              <ion-col size="1" class="ion-justify-content-center d-flex">
+                <h2 class="fs-18 fw-500 ">PRICE</h2>
+              </ion-col>
+            </ion-row>
+            <hr>
+            <div *ngFor="let item of orderList">
+              <ion-row>
+                <ion-col size="1" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300 text-dark">{{item.created}}</ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="2" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300 text-dark">{{item.product}}</ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="2" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300 text-dark">{{item.start_time}}</ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="2" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300 text-dark">{{item.end_time}}</ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="2" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300 text-dark">
+                      <ion-badge color="warning">{{item.status}}
+                      </ion-badge>
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="2" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300 text-dark">{{item.delivery_status}}
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="1" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300" [color]="'success'">{{item.price}}</ion-text>
+                  </div>
+                </ion-col>
+              </ion-row>
+            </div>
+          </ion-grid>
+        </ion-card>
+      </div>
+    </div>
+  </div>
+</ion-content>
