@@ -28,3 +28,9 @@ textarea.custom {
     margin-top: 25px !important;
   }
 }
+
+@media screen and (max-width: 480px) {
+  .fs-14 {
+    font-size: 12px;
+  }
+}

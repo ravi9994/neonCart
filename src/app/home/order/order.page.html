@@ -1,84 +1,80 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true">
-  <div class="container">
-    <div class="page-background">
-      <div class="container p-5">
-        <ion-card class="px-4 py-4">
-          <ion-grid>
-            <ion-row>
-              <ion-col size="12">
-                <div class="d-flex cursor-pointer">
-                  <div class="d-flex ion-align-items-center">
-                    <ion-text class="fs-20 fw-500" routerLink="/home/order/order-detail">Home</ion-text>
-                    <ion-icon name="chevron-forward-outline" class="fs-20 px-3"></ion-icon>
-                  </div>
-                  <div class="d-flex ion-align-items-center">
-                    <ion-text class="fs-20 fw-500">Orders</ion-text>
-                    <ion-icon name="chevron-forward-outline" class="fs-20 px-3"></ion-icon>
-                  </div>
-                  <div class="d-flex ion-align-items-center">
-                    <ion-text class="fs-20 fw-500">ID 452452565</ion-text>
-                  </div>
-                </div>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col size="12" sizeLg="6">
-                <h1 class="text-dark">Order ID: 452452565</h1>
-              </ion-col>
-              <ion-col size="12" sizeLg="6" class="d-flex ion-justify-content-end ion-align-items-center">
-                <ion-button color="tertiary">
-                  Track order
-                  <ion-icon slot="end" name="locate-outline"></ion-icon>
-                </ion-button>
-              </ion-col>
-            </ion-row>
-            <ion-row>
-              <ion-col>
-                <ion-text class="fs-18 fw-400">Order date: Feb 16,2022</ion-text> <span class="px-3 fs-20">|</span>
-                <ion-text class="fs-20 fw-400" color="success">
-                  <ion-icon name="airplane-outline" class="fs-20"></ion-icon> Estimated delivery: May 14,2022
-                </ion-text>
-              </ion-col>
-            </ion-row>
-            <hr>
-            <ion-row class="py-2" *ngFor="let item of [0,1,2]">
-              <ion-col size="12" sizeLg="2">
-                <div class="cart-image-div">
-                  <img src="assets/images/bluetooth.png" alt="" class="image-set">
-                </div>
-              </ion-col>
-              <ion-col size="12" sizeLg="6" class="d-flex ion-align-items-center">
-                <div>
-                  <h2 class="fs-22 ml-10 fw-500">Bluetooth</h2>
-                  <span class="ml-10 fs-20 text-medium">Space Gray</span>
-                </div>
-              </ion-col>
-              <ion-col size="12" sizeLg="4" class="d-flex ion-align-items-center ion-justify-content-end">
-                <div>
-                  <h2 class="fs-22 fw-500 text-dark">$549.00</h2>
-                  <ion-text class=" fs-20 text-medium">Qty: 1</ion-text>
-                </div>
-              </ion-col>
-            </ion-row>
-            <hr>
-            <ion-row>
-              <ion-col size="12" sizeLg="6">
-                <h2 class="text-dark">Payment</h2>
-                <ion-text class="fs-20">Visa**56</ion-text>
-              </ion-col>
-              <ion-col size="12" sizeLg="6">
-                <h2 class="text-dark">Delivery</h2>
-                <ion-text class="fs-20">Address</ion-text>
-                <div>
-                  <span class="fs-22">847 Jewess Bridge Apt.174 London, UK</span>
-                </div>
-              </ion-col>
-            </ion-row>
-          </ion-grid>
-        </ion-card>
-      </div>
-    </div>
+  <div class="container p-lg-5">
+    <ion-card class="px-lg-4 py-4">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="12">
+            <div class="d-flex cursor-pointer">
+              <div class="d-flex ion-align-items-center">
+                <ion-text class="fs-20 fw-500" routerLink="/home/order/order-detail">Home</ion-text>
+                <ion-icon name="chevron-forward-outline" class="fs-20 px-3"></ion-icon>
+              </div>
+              <div class="d-flex ion-align-items-center">
+                <ion-text class="fs-20 fw-500">Orders</ion-text>
+                <ion-icon name="chevron-forward-outline" class="fs-20 px-3"></ion-icon>
+              </div>
+              <div class="d-flex ion-align-items-center ion-hide-lg-down">
+                <ion-text class="fs-20 fw-500">ID 452452565</ion-text>
+              </div>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col size="12" sizeLg="6">
+            <h1 class="text-dark">Order ID: 452452565</h1>
+          </ion-col>
+          <ion-col size="12" sizeLg="6" class="d-flex ion-justify-content-end ion-align-items-center">
+            <ion-button color="tertiary">
+              Track order
+              <ion-icon slot="end" name="locate-outline"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-text class="fs-18 fw-400">Order date: Feb 16,2022</ion-text> <span class="px-3 fs-20">|</span>
+            <ion-text class="fs-20 fw-400" color="success">
+              <ion-icon name="airplane-outline" class="fs-20"></ion-icon> Estimated delivery: May 14,2022
+            </ion-text>
+          </ion-col>
+        </ion-row>
+        <hr>
+        <ion-row class="py-2" *ngFor="let item of [0,1,2]">
+          <ion-col size="12" sizeLg="2">
+            <div class="cart-image-div">
+              <img src="assets/images/bluetooth.png" alt="" class="image-set">
+            </div>
+          </ion-col>
+          <ion-col size="7" sizeLg="6" class="d-flex ion-align-items-center">
+            <div>
+              <h2 class="fs-22 ml-10 fw-500">Bluetooth</h2>
+              <span class="ml-10 fs-20 text-medium">Space Gray</span>
+            </div>
+          </ion-col>
+          <ion-col size="5" sizeLg="4" class="d-flex ion-align-items-center ion-justify-content-end">
+            <div>
+              <h2 class="fs-22 fw-500 text-dark">$549.00</h2>
+              <ion-text class=" fs-20 text-medium">Qty: 1</ion-text>
+            </div>
+          </ion-col>
+        </ion-row>
+        <hr>
+        <ion-row>
+          <ion-col size="12" sizeLg="6">
+            <h2 class="text-dark">Payment</h2>
+            <ion-text class="fs-20">Visa**56</ion-text>
+          </ion-col>
+          <ion-col size="12" sizeLg="6">
+            <h2 class="text-dark">Delivery</h2>
+            <ion-text class="fs-20">Address</ion-text>
+            <div>
+              <span class="fs-22">847 Jewess Bridge Apt.174 London, UK</span>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card>
   </div>
   <app-footer></app-footer>
 </ion-content>
