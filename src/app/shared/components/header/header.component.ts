@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-
   }
 
   async toggleMenu(type) {
