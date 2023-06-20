@@ -35,4 +35,23 @@ export class ShoppingPage implements OnInit {
   ngOnInit() {
   }
 
+  changeDecrement(i) {
+    console.log('dis');
+    if (this.cartList[i].qty > 0) {
+      this.cartList[i].qty = this.cartList[i].qty - 1;
+    } else {
+      this.cartList[i].qty = 0;
+    }
+  }
+
+  changeInputNumber(i) {
+    if (this.cartList[i].qty < 0) {
+      this.cartList[i].qty = 0;
+    }
+  }
+
+  changeIncrement(i) {
+    this.cartList[i].qty = this.cartList[i].qty + 1;
+  }
+
 }

@@ -245,8 +245,9 @@
         <ion-col size-md="6" size-lg="3" class="d-flex ion-justify-content-end p-0">
           <div class="d-flex">
             <ion-buttons class="action-btn">
-              <ion-button fill="solid">
-                <ion-icon name="search-outline"></ion-icon>
+              <ion-button fill="solid" (click)="isShow = !isShow">
+                <ion-icon name="search-outline" *ngIf="!isShow"></ion-icon>
+                <ion-icon name="close-outline" *ngIf="isShow"></ion-icon>
               </ion-button>
             </ion-buttons>
 
@@ -301,9 +302,9 @@
 
         </ion-col>
       </ion-row>
-      <ion-row>
+      <ion-row *ngIf="isShow">
         <ion-col>
-          <ion-searchbar class="p-0"></ion-searchbar>
+          <ion-searchbar class="p-0" color="light"></ion-searchbar>
         </ion-col>
       </ion-row>
     </div>
