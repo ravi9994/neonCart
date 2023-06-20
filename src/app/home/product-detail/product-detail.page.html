@@ -121,7 +121,7 @@
         <div class="ion-align-items-center d-flex">
           <div class="quantity_input">
             <span (click)="changeDecrement()">-</span>
-            <input class="input-number" type="text" [(ngModel)]="qty" (ngModelChange)="changeInputNumber()">
+            <input class="input-number" type="number" [(ngModel)]="qty" (ngModelChange)="changeInputNumber()">
             <span (click)="changeIncrement()">+</span>
           </div>
           <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit"

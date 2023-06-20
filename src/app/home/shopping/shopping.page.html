@@ -57,7 +57,8 @@
               <ion-col size="7" size-md="3" class="p-0 ion-align-items-center d-flex text-last">
                 <div class="quantity_input">
                   <span (click)="changeDecrement(i)">-</span>
-                  <input class="input-number" type="text" [(ngModel)]="item.qty" (ngModelChange)="changeInputNumber(i)">
+                  <input class="input-number" type="number" [(ngModel)]="item.qty"
+                    (ngModelChange)="changeInputNumber(i)">
                   <span (click)="changeIncrement(i)">+</span>
                 </div>
               </ion-col>
@@ -247,16 +248,16 @@
         <h2 class="color-dark fw-800 fs-24 py-4">Your Order</h2>
         <div style="border: 1px solid gray;" class="p-4 p-md-5">
           <ion-row class="text-dark ion-hide-sm-down">
-            <ion-col size="4"  class="ion-justify-content-center d-flex">
+            <ion-col size="4" class="ion-justify-content-center d-flex">
               <h2 class="fw-800 fs-18">PRODUCT NAME</h2>
             </ion-col>
-            <ion-col size="2" >
+            <ion-col size="2">
               <h2 class="fw-800 fs-18">PRICE</h2>
             </ion-col>
-            <ion-col size="2" >
+            <ion-col size="2">
               <h2 class="fw-800 fs-18">QUANTITY</h2>
             </ion-col>
-            <ion-col size="4"  class="ion-justify-content-center d-flex">
+            <ion-col size="4" class="ion-justify-content-center d-flex">
               <h2 class="fw-800 fs-18">TOTAL</h2>
             </ion-col>
           </ion-row>
