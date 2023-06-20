@@ -40,22 +40,22 @@
           </ion-col>
         </ion-row>
         <hr>
-        <ion-row class="py-2" *ngFor="let item of [0,1,2]">
-          <ion-col size="12" sizeLg="2">
+        <ion-row class="py-2" *ngFor="let item of productList">
+          <ion-col size="12" sizeMd="3" sizeLg="2">
             <div class="cart-image-div">
-              <img src="assets/images/bluetooth.png" alt="" class="image-set">
+              <img [src]="item.image" alt="" class="image-set">
             </div>
           </ion-col>
-          <ion-col size="7" sizeLg="6" class="d-flex ion-align-items-center">
-            <div>
-              <h2 class="fs-22 ml-10 fw-500">Bluetooth</h2>
-              <span class="ml-10 fs-20 text-medium">Space Gray</span>
+          <ion-col size="7" sizeMd="5" sizeLg="6" class="d-flex ion-align-items-center">
+            <div class="px-8">
+              <h2 class="fs-22 ml-10 fw-500">{{item.title}}</h2>
+              <span class="ml-10 fs-20 text-medium">{{item.product}}</span>
             </div>
           </ion-col>
-          <ion-col size="5" sizeLg="4" class="d-flex ion-align-items-center ion-justify-content-end">
-            <div>
-              <h2 class="fs-22 fw-500 text-dark">$549.00</h2>
-              <ion-text class=" fs-20 text-medium">Qty: 1</ion-text>
+          <ion-col size="5" sizeMd="4" sizeLg="4" class="d-flex ion-align-items-center ion-justify-content-end">
+            <div class="px-8">
+              <h2 class="fs-22 fw-500 text-dark">{{item.price}}</h2>
+              <ion-text class=" fs-20 text-medium">Qty: {{item.qty}}</ion-text>
             </div>
           </ion-col>
         </ion-row>
