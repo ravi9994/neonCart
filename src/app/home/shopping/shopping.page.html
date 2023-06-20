@@ -35,7 +35,7 @@
           <div *ngFor="let item of cartList;let i = index">
             <ion-row class="p-0 p-md-3">
               <ion-col class="p-0" size="12" size-md="4">
-                <div class="d-flex listDiv">
+                <div class="d-flex text-center">
                   <div class="ion-align-items-center d-flex">
                     <ion-buttons class="cart-close-btn">
                       <ion-button>
@@ -54,14 +54,14 @@
                   <span class="text-primary">{{item.type}}</span>
                 </div>
               </ion-col>
-              <ion-col size="7" size-md="3" class="p-0 ion-align-items-center d-flex">
+              <ion-col size="7" size-md="3" class="p-0 ion-align-items-center d-flex text-last">
                 <div class="quantity_input">
                   <span (click)="changeDecrement(i)">-</span>
                   <input class="input-number" type="text" [(ngModel)]="item.qty" (ngModelChange)="changeInputNumber(i)">
                   <span (click)="changeIncrement(i)">+</span>
                 </div>
               </ion-col>
-              <ion-col size="12" size-md="2" class="p-0 ion-align-items-center d-flex text-end">
+              <ion-col size="12" size-md="2" class="p-0 ion-align-items-center d-flex text-last">
                 <div>
                   <ion-text class="fs-18 fw-800" [color]="'success'">{{item.price}}</ion-text>
                 </div>
@@ -247,44 +247,38 @@
         <h2 class="color-dark fw-800 fs-24 py-4">Your Order</h2>
         <div style="border: 1px solid gray;" class="p-4 p-md-5">
           <ion-row class="text-dark ion-hide-sm-down">
-            <ion-col size="3">
-              <h2 class="fw-800 fs-18">
-                PHOTO</h2>
-            </ion-col>
-            <ion-col size="3">
+            <ion-col size="4"  class="ion-justify-content-center d-flex">
               <h2 class="fw-800 fs-18">PRODUCT NAME</h2>
             </ion-col>
-            <ion-col size="3">
+            <ion-col size="2" >
+              <h2 class="fw-800 fs-18">PRICE</h2>
+            </ion-col>
+            <ion-col size="2" >
               <h2 class="fw-800 fs-18">QUANTITY</h2>
             </ion-col>
-            <ion-col size="3">
-              <h2 class="fw-800 fs-18">PRICE</h2>
+            <ion-col size="4"  class="ion-justify-content-center d-flex">
+              <h2 class="fw-800 fs-18">TOTAL</h2>
             </ion-col>
           </ion-row>
           <hr>
           <div *ngFor="let item of cartList">
             <ion-row class="d-flex ion-align-items-center">
-              <ion-col size="12" size-md="3">
+              <ion-col size="12" size-md="2" size-lg="2">
                 <div class="cart-image-div p-10">
                   <img [src]="item.image" alt="" class="image-set">
                 </div>
-                <!-- <div class="cart-image-div p-10">
-                  <img src="assets/images/cartbag_image.jpg" alt="" class="image-set">
-                </div> -->
               </ion-col>
-              <ion-col size="12" size-md="3">
-                <div>
-                  <h2 class="fw-800 fs-18">{{item.name}}</h2>
-                </div>
-                <div>
-                  <ion-text class="fw-700 text-primary">{{item.type}}</ion-text>
-                </div>
+              <ion-col size="6" size-md="2" size-lg="2">
+                <ion-text class="fw-500 fs-18">{{item.name}}</ion-text>
               </ion-col>
-              <ion-col size="12" size-md="3">
+              <ion-col size="6" size-md="2" size-lg="2" class="text-last">
+                <ion-text>{{item.price}}</ion-text>
+              </ion-col>
+              <ion-col size="6" size-md="2" size-lg="2">
                 <ion-text>{{item.qty}}</ion-text>
               </ion-col>
-              <ion-col size="12" size-md="3">
-                <ion-text class="fw-700 text-success">{{item.price}}</ion-text>
+              <ion-col size="6" size-md="4" size-lg="4" class="ion-justify-content-center d-flex">
+                <ion-text class="fw-700 text-dark">{{item.total}}</ion-text>
               </ion-col>
             </ion-row>
             <hr>
@@ -294,32 +288,26 @@
             </ion-col>
             <ion-col size="12" size-md="6" class="p-0">
               <ion-row class="text-dark">
-                <ion-col size-md="6" class="p-0">
-                  <h2 class="fw-800 fs-18 m-0">Sub Total</h2>
+                <ion-col size-md="6" size-lg="6" class="p-0">
+                  <ion-text class="fw-600 fs-18 m-0">Sub Total</ion-text>
                 </ion-col>
-                <ion-col size-md="6" class="p-0">
-                  <h4 class="fw-700 m-0">$414.00</h4>
+                <ion-col size-md="6" size-lg="4" class="p-0" class="ion-justify-content-center d-flex">
+                  <ion-text class="fw-700 m-0">$414.00</ion-text>
                 </ion-col>
               </ion-row>
             </ion-col>
           </ion-row>
           <hr>
           <ion-row class="text-dark">
-            <ion-col size="6" size-md="6" class="p-0">
-              <ion-row class="text-dark">
-                <ion-col size-md="2" class="p-0">
-                  <h2 class="fw-800 fs-18 text-center">Total</h2>
-                </ion-col>
-                <ion-col size-md="6">
-                </ion-col>
-              </ion-row>
+            <ion-col size="6">
             </ion-col>
-            <ion-col size="6" size-md="6">
+            <ion-col size="12" size-md="6" class="p-0">
               <ion-row class="text-dark">
-                <ion-col size-md="6">
+                <ion-col size-md="6" size-lg="6" class="p-0">
+                  <ion-text class="fw-600 fs-18 m-0">TOTAL</ion-text>
                 </ion-col>
-                <ion-col size-md="6" class="p-0">
-                  <h4 class="fw-700 text-success">$414.00</h4>
+                <ion-col size-md="6" size-lg="4" class="p-0" class="ion-justify-content-center d-flex">
+                  <ion-text class="fw-700 m-0">$414.00</ion-text>
                 </ion-col>
               </ion-row>
             </ion-col>

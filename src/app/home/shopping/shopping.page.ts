@@ -12,22 +12,25 @@ export class ShoppingPage implements OnInit {
       image: './../../../assets/images/cameras.png',
       name: 'Camera',
       type: 'Electronics',
-      qty: 15,
-      price: '$138.00'
+      qty: 2,
+      price: '$69.00',
+      total: '$138.00'
     },
     {
       image: './../../../assets/images/alexa.png',
       name: 'Alexa',
       type: 'Electronics',
-      qty: 10,
-      price: '$26.00'
+      qty: 2,
+      price: '$69.00',
+      total: '$138.00'
     },
     {
       image: './../../../assets/images/bluetooth.png',
       name: 'Bluetooth',
       type: 'Electronics',
-      qty: 5,
-      price: '$36.00'
+      qty: 2,
+      price: '$69.00',
+      total: '$138.00'
     }
   ]
   constructor() { }
