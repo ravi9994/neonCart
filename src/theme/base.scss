@@ -572,6 +572,10 @@ ion-card-header {
   background-color: transparent;
 }
 
+.select-expanded{
+  box-shadow: none !important;
+}
+
 // auth page css ----------------------------------
 
 .login-input {
@@ -605,6 +609,7 @@ ion-item {
   --background: #f0f2f1;
   --color: inherit;
 }
+
 
 .reg_form_wrap {
   margin: auto;

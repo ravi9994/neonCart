@@ -114,6 +114,11 @@ h3 {
   background-image: url('./../../assets/images/blue.jpg');
 }
 
+ion-card {
+  --background: #f0f2f1;
+  --color: inherit;
+}
+
 // .cap-section {
 //   border: 1px solid rgb(106, 106, 106);
 //   height: 500px;

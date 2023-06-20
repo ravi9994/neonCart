@@ -17,10 +17,12 @@
   }
 }
 
-h2 {
-  font-weight: 700;
-  font-family: "Jost",
-    sans-serif;
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .cart-image-div {
+    min-height: 115px;
+    min-width: 115px;
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -32,11 +34,16 @@ h2 {
     font-size: 23px;
   }
 
-  .listDiv {
+  .text-center {
     justify-content: center;
   }
 
-  .text-end {
-    justify-content: end;
+  .ion-justify-content-center {
+    justify-content: end !important;
+  }
+
+  .text-last {
+    justify-content: end !important;
+    display: flex;
   }
 }
