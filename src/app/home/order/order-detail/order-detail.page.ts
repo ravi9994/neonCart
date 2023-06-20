@@ -6,8 +6,6 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-detail.page.scss'],
 })
 export class OrderDetailPage implements OnInit {
-
-
   detailCard;
   orderList: any = [
     {
@@ -118,7 +116,7 @@ export class OrderDetailPage implements OnInit {
       delivery_status: 'cancelled',
       price: '$138.00'
     },
-  ]
+  ];
   constructor() { }
 
   ngOnInit() {

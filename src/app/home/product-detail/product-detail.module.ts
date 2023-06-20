@@ -15,7 +15,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     FormsModule,
     IonicModule,
     ProductDetailPageRoutingModule,
-    SharedModule
+    SharedModule,
   ],
   declarations: [ProductDetailPage]
 })

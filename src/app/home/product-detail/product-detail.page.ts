@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
-import Swiper from 'swiper';
+import Swiper, { Navigation, Thumbs } from 'swiper';
 
+Swiper.use([Navigation, Thumbs]);
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.page.html',
   styleUrls: ['./product-detail.page.scss'],
 })
 export class ProductDetailPage implements OnInit {
+  qty: number = 0;
   productList: any = [
     {
       image: './../../assets/images/remote.png',
@@ -117,22 +119,34 @@ export class ProductDetailPage implements OnInit {
     },
   ];
   constructor(private router: Router,
-    private platform: Platform) { }
+    private platform: Platform,
+  ) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter(): void {
     this.platform.ready().then(() => {
-      // Platform is ready, you can now access its properties
       this.getScreenSize();
     });
-    var swiper = new Swiper(".mySwiper", {
-      slidesPerView: 3,
-      spaceBetween: 30,
-      pagination: {
-        el: ".swiper-pagination",
-        clickable: true,
+    let thumbSwiper = new Swiper(".thumbSwiper", {
+      spaceBetween: 10,
+      slidesPerView: 4,
+      freeMode: true,
+      watchSlidesProgress: true,
+    });
+    var swiper2 = new Swiper(".mySwiper2", {
+      spaceBetween: 10,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      thumbs: {
+        swiper: thumbSwiper,
       },
     });
   }
+
   goTo(url) {
     this.router.navigate([url]);
   }
@@ -144,29 +158,35 @@ export class ProductDetailPage implements OnInit {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 1,
         spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
       });
     } else if (width <= 990) {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 3,
         spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
       });
     } else {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 5,
         spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
       });
     }
+  }
+
+  changeDecrement() {
+    if (this.qty > 0) {
+      this.qty = this.qty - 1;
+    } else {
+      this.qty = 0;
+    }
+  }
+
+  changeInputNumber() {
+    if (this.qty < 0) {
+      this.qty = 0;
+    }
+  }
+
+  changeIncrement() {
+    this.qty = this.qty + 1;
   }
 }

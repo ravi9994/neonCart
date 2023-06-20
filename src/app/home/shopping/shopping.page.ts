@@ -36,7 +36,6 @@ export class ShoppingPage implements OnInit {
   }
 
   changeDecrement(i) {
-    console.log('dis');
     if (this.cartList[i].qty > 0) {
       this.cartList[i].qty = this.cartList[i].qty - 1;
     } else {

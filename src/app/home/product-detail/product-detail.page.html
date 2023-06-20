@@ -1,31 +1,53 @@
 <app-header></app-header>
 <ion-content>
+
   <div class="container-lg">
     <h1 class="fw-800 fs-30">Product Detail</h1>
     <ion-row>
-      <ion-col size="12" size-md="4">
-        <div class="cart-image-div">
-          <img src="assets/images/man.jpg" alt="" class="image-set">
-        </div>
-        <div class="swiper mySwiper mt-3">
-          <div class="swiper-wrapper">
+
+      <ion-col size="12" size-lg="4">
+        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+          <div class="swiper-wrapper ">
             <div class="swiper-slide">
-              <img src="assets/images/pink.jpg" alt="">
+              <img src="assets/images/man.jpg" />
             </div>
             <div class="swiper-slide">
-              <img src="assets/images/darkpink.jpg" alt="">
+              <img src="assets/images/pink.jpg" />
             </div>
             <div class="swiper-slide">
-              <img src="assets/images/tshirt.jpg" alt="">
+              <img src="assets/images/darkpink.jpg" />
             </div>
             <div class="swiper-slide">
-              <img src="assets/images/blueman.jpg" alt="">
+              <img src="assets/images/tshirt.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/blueman.jpg" />
             </div>
           </div>
-          <div class="swiper-pagination"></div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+        <div thumbsSlider="" class="swiper thumbSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="assets/images/man.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/pink.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/darkpink.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/tshirt.jpg" />
+            </div>
+            <div class="swiper-slide">
+              <img src="assets/images/blueman.jpg" />
+            </div>
+          </div>
         </div>
       </ion-col>
-      <ion-col size="12" size-md="8" class="px-md-5">
+      <ion-col size="12" size-lg="8" class="px-md-5">
         <ion-row>
           <ion-col size="12">
             <div>
@@ -97,19 +119,17 @@
           </ul>
         </div>
         <div class="ion-align-items-center d-flex">
-          <div class="br-0 quantity_input">
-            <form>
-              <span>-</span>
-              <input class="input-number" type="text" value="2">
-              <span>+</span>
-            </form>
+          <div class="quantity_input">
+            <span (click)="changeDecrement()">-</span>
+            <input class="input-number" type="text" [(ngModel)]="qty" (ngModelChange)="changeInputNumber()">
+            <span (click)="changeIncrement()">+</span>
           </div>
           <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit"
             (click)="goTo('home/shopping')">
             <ion-icon name="bag-outline" class="mr-10 pl-10"></ion-icon>ADD TO CART
           </ion-button>
         </div>
-        <div class="d-flex mt-3 ion-align-items-center ">
+        <div class="d-flex mt-3 ion-align-items-center">
           <ion-button color="dark"><ion-icon name="heart-outline"></ion-icon></ion-button>
           <ion-text class="pl-10">Add To Wishlist</ion-text>
           <ion-button class="pl-10" color="dark"><ion-icon name="shuffle-outline"></ion-icon></ion-button>
@@ -131,7 +151,7 @@
       </ion-col>
     </ion-row>
     <hr>
-    <ion-row>
+    <ion-row class="my-4">
       <ion-col size="12">
         <div class="swiper mySwiper1">
           <div class="swiper-wrapper">
