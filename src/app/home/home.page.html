@@ -309,7 +309,7 @@
           <ion-col size="12" size-lg="9">
             <ion-row>
               <ion-col class="p-0" size="12" size-md="4" size-lg="3" *ngFor="let item of flashList">
-                <ion-card>
+                <ion-card (click)="goTo('home/product-detail')">
                   <div class="bg-gray left-side-camera-image">
                     <img [src]="item.image" class="camera-image-height">
                   </div>
@@ -379,7 +379,7 @@
         </ion-row>
         <ion-row>
           <ion-col class="p-0" size-md="6" size-lg="4" *ngFor="let item of BestproductList">
-            <ion-card class="mt-1 m-md-0" style="border:1px solid #efefef;">
+            <ion-card class="mt-1 m-md-0" style="border:1px solid #efefef;" (click)="goTo('home/product-detail')">
               <ion-row class="p-4">
                 <ion-col size="12" size-md="6">
                   <div class="best-seller-product ">
@@ -449,7 +449,7 @@
   </section>
   <section class="bg-gray pb-5">
     <div class="container-lg">
-      <ion-row class="pt-5">
+      <ion-row class="pt-md-5">
         <ion-col size="12" size-md="6" size-lg="4">
           <ion-text>A WIDE SECTION OF ITEMS</ion-text>
           <h1 class="mt-0">Bestseller Products</h1>
@@ -459,7 +459,7 @@
         <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of sellerList">
           <ion-row>
             <ion-col size="12" size-md="6">
-              <ion-card class="m-0">
+              <ion-card class="m-0" (click)="goTo('home/product-detail')">
                 <div class="best-product-card-div">
                   <img [src]="item.image" alt="" class="image-best">
                 </div>

@@ -4,13 +4,13 @@
     <div class="p-10">
       <ion-segment class="friends-segment" [(ngModel)]="activeTab">
         <ion-segment-button value="shopping-card" class="segment-btn">
-          <h3 class="fw-700 m-0">01.Shopping Cart</h3>
+          <h3 class="fw-700">01.Shopping Cart</h3>
         </ion-segment-button>
         <ion-segment-button value="checkout" class="segment-btn">
-          <h3 class="fw-700 m-0">02.checkout</h3>
+          <h3 class="fw-700">02.checkout</h3>
         </ion-segment-button>
         <ion-segment-button value="order-complete" class="segment-btn">
-          <h3 class="fw-700 m-0">03.order Completed</h3>
+          <h3 class="fw-700">03.order Completed</h3>
         </ion-segment-button>
       </ion-segment>
     </div>
@@ -136,9 +136,9 @@
     </ng-container>
     <ng-container *ngIf="activeTab === 'checkout'">
       <div class="container-lg">
-        <h2 class="color-dark fw-800 fs-18">Billing Details</h2>
+        <h2 class="color-dark fw-800 fs-24 py-4">Billing Details</h2>
         <form style="border: 1px solid gray;" class="p-4">
-          <ion-row class="pt-lg-5">
+          <ion-row>
             <ion-col size="12" size-lg="2">
               <ion-label>First Name:</ion-label>
             </ion-col>
@@ -247,7 +247,7 @@
             </ion-col>
           </ion-row>
         </form>
-        <h2 class="color-dark fw-800 fs-18 mt-5">Your Order</h2>
+        <h2 class="color-dark fw-800 fs-24 py-4">Your Order</h2>
         <div style="border: 1px solid gray;" class="p-4 p-md-5">
           <ion-row class="text-dark ion-hide-sm-down">
             <ion-col size="3">
