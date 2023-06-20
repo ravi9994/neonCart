@@ -4,13 +4,13 @@
     <div class="p-10">
       <ion-segment class="friends-segment" [(ngModel)]="activeTab">
         <ion-segment-button value="shopping-card" class="segment-btn">
-          <h3 class="fw-700">01.Shopping Cart</h3>
+          <h3 class="fw-700 m-0">01.Shopping Cart</h3>
         </ion-segment-button>
         <ion-segment-button value="checkout" class="segment-btn">
-          <h3 class="fw-700">02.checkout</h3>
+          <h3 class="fw-700 m-0">02.checkout</h3>
         </ion-segment-button>
         <ion-segment-button value="order-complete" class="segment-btn">
-          <h3 class="fw-700">03.order Completed</h3>
+          <h3 class="fw-700 m-0">03.order Completed</h3>
         </ion-segment-button>
       </ion-segment>
     </div>
@@ -33,10 +33,10 @@
           </ion-row>
           <hr>
           <div *ngFor="let item of cartList">
-            <ion-row class="p-3">
-              <ion-col size="12" size-md="4">
-                <div class="d-flex">
-                  <div class="ion-align-items-center d-flex">
+            <ion-row class="p-0 p-md-3">
+              <ion-col class="p-0" size="12" size-md="4">
+                <div class="d-md-flex">
+                  <div class="ion-align-items-center d-flex d-none d-md-block">
                     <ion-buttons class="cart-close-btn">
                       <ion-button>
                         <ion-icon name="close" class="fs-30"></ion-icon>
@@ -48,13 +48,13 @@
                   </div>
                 </div>
               </ion-col>
-              <ion-col size="12" size-md="3" class="ion-align-items-centerd-flex">
+              <ion-col size="12" size-md="3" class="p-0 ion-align-items-centerd-flex">
                 <div>
-                  <h2 class="fs-18 fw-700">{{item.name}}</h2>
+                  <h2 class="fs-18 fw-700 ">{{item.name}}</h2>
                   <span class="text-primary">{{item.type}}</span>
                 </div>
               </ion-col>
-              <ion-col size="12" size-md="3" class="ion-align-items-center d-flex">
+              <ion-col size="12" size-md="3" class="p-0 ion-align-items-center d-flex">
                 <div class="quantity_input">
                   <form>
                     <span>-</span>
@@ -71,7 +71,7 @@
             </ion-row>
             <hr class="m-0">
           </div>
-          <ion-row class="py-30">
+          <ion-row class="py-5">
             <ion-col size="12" size-md="3">
               <div>
                 <input type="text" class="form-control custom" id="exampleInputEmail1" aria-describedby="emailHelp"
@@ -93,9 +93,9 @@
             <ion-col size="12" size-lg="4">
               <ion-card class="m-0">
                 <ion-card-header>
-                  <h3 class="fs-24 text-dark fw-700 text-center">CART TOTAL</h3>
+                  <h2 class="fs-24 text-dark fw-700 text-center">CART TOTAL</h2>
                 </ion-card-header>
-                <div class="py-30 px-5">
+                <div class="p-1 px-md-5">
                   <ion-row>
                     <ion-col size="6">
                       <ion-text class="fs-15 fw-800 text-dark">SUBTOTAL</ion-text>
@@ -108,7 +108,7 @@
                     <ion-col size="5">
                       <ion-text class="fs-15 fw-800 text-dark">SHIPPING</ion-text>
                     </ion-col>
-                    <ion-col size="7" class="ion-justify-content-end d-flex">
+                    <ion-col size="7" class="ion-text-end">
                       <a class="text-danger fs-14 fw-800">Calculate Shipping</a>
                     </ion-col>
                   </ion-row>
@@ -137,7 +137,7 @@
     <ng-container *ngIf="activeTab === 'checkout'">
       <div class="container-lg">
         <h2 class="color-dark fw-800 fs-18">Billing Details</h2>
-        <form style="border: 1px solid gray;" class="p-30">
+        <form style="border: 1px solid gray;" class="p-4">
           <ion-row class="pt-lg-5">
             <ion-col size="12" size-lg="2">
               <ion-label>First Name:</ion-label>
@@ -248,7 +248,7 @@
           </ion-row>
         </form>
         <h2 class="color-dark fw-800 fs-18 mt-5">Your Order</h2>
-        <div style="border: 1px solid gray;" class="p-30">
+        <div style="border: 1px solid gray;" class="p-4 p-md-5">
           <ion-row class="text-dark ion-hide-sm-down">
             <ion-col size="3">
               <h2 class="fw-800 fs-18">
@@ -268,10 +268,8 @@
           <div *ngFor="let item of cartList">
             <ion-row class="d-flex ion-align-items-center">
               <ion-col size="12" size-md="3">
-                <div class="d-flex">
-                  <div class="cart-image-div p-10">
-                    <img [src]="item.image" alt="" class="image-set">
-                  </div>
+                <div class="cart-image-div p-10">
+                  <img [src]="item.image" alt="" class="image-set">
                 </div>
               </ion-col>
               <ion-col size="12" size-md="3">
@@ -372,10 +370,10 @@
     </ng-container>
     <ng-container *ngIf="activeTab === 'order-complete'">
       <div class="container-lg">
-        <div class="mt-5 p-30  text-center" style="border:1px solid gray">
-          <h2 class="fs-30 fw-800">Congratulation! You've</h2>
-          <h2 class="text-danger fs-30 fw-800">Completed</h2>
-          <h2 class="fs-30 fw-800">Payment</h2>
+        <div class="mt-5 p-5  text-center" style="border:1px solid gray">
+          <h2 class="fs-30 fw-800 mt-0">Congratulation! You've</h2>
+          <h2 class="text-danger fs-30 mt-0 fw-800">Completed</h2>
+          <h2 class="fs-30 fw-800 mt-0">Payment</h2>
         </div>
       </div>
     </ng-container>

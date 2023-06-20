@@ -3,7 +3,7 @@
 <ion-content>
   <section color="dark" class="bg-image">
     <div class="container-lg">
-      <ion-row class="py-30">
+      <ion-row class="py-5">
         <ion-col size="3" class="ion-hide-lg-down">
           <ion-card class="m-0">
             <ion-item color="danger">
@@ -180,9 +180,9 @@
   </section>
   <section class="bg-gray">
     <div class="container-lg">
-      <div class="py-30">
+      <div class="pt-3 py-md-5">
         <ion-card class="mt-0">
-          <ion-row class="p-30">
+          <ion-row class="p-4">
             <ion-col size="12" size-md="6" size-lg="3">
               <ion-row>
                 <ion-col size="3" class="mt-15">
@@ -230,15 +230,12 @@
           </ion-row>
         </ion-card>
       </div>
-      <div class="pt-0 py-30">
+      <div>
         <ion-row>
           <ion-col size="12" size-lg="4">
             <ion-text class="fs-14 fw-400">A WIDE SECTION OF ITEMS</ion-text>
             <h1 class="mt-0 fs-44 fw-600">Top Flash Deal</h1>
           </ion-col>
-          <!-- <ion-col size="12" size-lg="8">
-            <hr>
-          </ion-col> -->
         </ion-row>
         <ion-row>
           <ion-col size="12">
@@ -263,9 +260,9 @@
   </section>
   <section>
     <div class="container-lg">
-      <div class="py-30">
+      <div class="py-md-5">
         <ion-row>
-          <ion-col size="12" size-lg="3">
+          <ion-col class="p-0" size="12" size-lg="3">
             <ion-card>
               <div class="flash-deal-div ion-padding">
                 <p class="header fs-32 fw-600 mb-0 text-white">Top Flash Deal </p>
@@ -305,13 +302,13 @@
                 <ion-text>Accesories</ion-text>
               </ion-item>
             </ion-card>
-            <div class="ion-padding">
-              <img src="assets/images/beg.png" class="d-none d-lg-block" />
+            <div class="ion-padding d-none d-lg-block">
+              <img src="assets/images/beg.png" />
             </div>
           </ion-col>
           <ion-col size="12" size-lg="9">
             <ion-row>
-              <ion-col size="12" size-md="4" size-lg="3" *ngFor="let item of flashList">
+              <ion-col class="p-0" size="12" size-md="4" size-lg="3" *ngFor="let item of flashList">
                 <ion-card>
                   <div class="bg-gray left-side-camera-image">
                     <img [src]="item.image" class="camera-image-height">
@@ -331,7 +328,7 @@
   </section>
   <section class="bg-gray">
     <div class="container-lg">
-      <div class="py-30">
+      <div class="py-md-5">
         <ion-row>
           <ion-col size="12" size-lg="4">
             <ion-card class="back-img-1">
@@ -373,7 +370,7 @@
       </div>
     </div>
     <div class="container-lg">
-      <div class="pt-0 py-30">
+      <div class="pt-0 py-5">
         <ion-row>
           <ion-col size="12" size-lg="5">
             <ion-text>A WIDE SECTION OF ITEMS</ion-text>
@@ -382,8 +379,8 @@
         </ion-row>
         <ion-row>
           <ion-col class="p-0" size-md="6" size-lg="4" *ngFor="let item of BestproductList">
-            <ion-card class="m-0" style="border:1px solid #efefef;">
-              <ion-row class="p-30">
+            <ion-card class="mt-1 m-md-0" style="border:1px solid #efefef;">
+              <ion-row class="p-4">
                 <ion-col size="12" size-md="6">
                   <div class="best-seller-product ">
                     <img [src]="item.image" alt="" class="seller-image-best">
@@ -398,7 +395,7 @@
                     <ion-icon name="star" color="warning"></ion-icon>
                     <ion-icon name="star" color="warning"></ion-icon>
                   </div>
-                  <h3>Relogio Masculino Watches</h3>
+                  <h3 class="m-0">Relogio Masculino Watches</h3>
                   <div class="d-flex py-7">
                     <ion-button shape="rounded" color="danger">Start Buying</ion-button>
                   </div>
@@ -420,7 +417,7 @@
           </ion-col>
         </ion-row>
       </div>
-      <div class="pt-0">
+      <div>
         <ion-row>
           <ion-col size="12" size-lg="6" class="p-0">
             <ion-card class="back-img-orange">
@@ -450,24 +447,9 @@
       </div>
     </div>
   </section>
-  <!-- <section>
-    <ion-row class="cap-section">
-      <ion-col size="7" class="cap-section-left ion-no-padding">
-        <div class="ion-text-center ps-5 mt-120">
-          <h4 class="text-warning">$99.00</h4>
-          <h5 class="text-warning">ALL-NEW-SPORT</h5>
-          <ion-text class="fs-30 text-white fw-600">Everything you need to</ion-text><br>
-          <ion-text class="fs-30 text-white fw-600">Start an online Store</ion-text>
-        </div>
-      </ion-col>
-      <ion-col size="5">
-        <img src="assets/images/cap.png" class="cap-image-set">
-      </ion-col>
-    </ion-row>
-  </section> -->
   <section class="bg-gray pb-5">
     <div class="container-lg">
-      <ion-row class="pt-30">
+      <ion-row class="pt-5">
         <ion-col size="12" size-md="6" size-lg="4">
           <ion-text>A WIDE SECTION OF ITEMS</ion-text>
           <h1 class="mt-0">Bestseller Products</h1>

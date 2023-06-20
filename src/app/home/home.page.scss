@@ -60,6 +60,7 @@ h3 {
   background-image: url('./../../assets/images/slide1.jpeg');
   background-size: cover;
   padding: 25px;
+  margin: 10px;
 
   &.two {
     background-image: url('./../../assets/images/slide2.jpeg');
@@ -204,7 +205,7 @@ h3 {
 
 @media screen and (max-width: 480px) {
   h1 {
-    font-size: 30px;
+    font-size: 27px;
   }
 
   // .best-product-swiper-div {
