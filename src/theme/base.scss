@@ -610,9 +610,52 @@ ion-card-header {
   background-position: left 480px center;
 }
 
-.neon-btn {
-  height: 60px;
-  border-radius: 4px;
+.danger-btn {
+  --background: #ce0b2b;
+  --background-hover: #343a40;
+  --background-hover-opacity: 1;
+  --color-hover: white;
+  --padding-top: 25px;
+  --padding-start: 26px;
+  --padding-end: 26px;
+  --padding-bottom: 25px;
+}
+
+.dark-btn {
+  --background: black;
+  --background-hover: #e9e9e9;
+  --background-hover-opacity: 1;
+  --color-hover: black;
+  --padding-top: 30px;
+  --padding-start: 26px;
+  --padding-end: 26px;
+  --padding-bottom: 30px;
+}
+
+.black-btn {
+  --background: black;
+  --background-hover: #ce0b2b;
+  --background-hover-opacity: 1;
+  --color-hover: white;
+  --padding-top: 15px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-bottom: 15px;
+}
+
+.success-btn {
+  --background: #39b54a;
+  --background-hover: #343a40;
+  --background-hover-opacity: 1;
+  --color-hover: white;
+  --padding-top: 30px;
+  --padding-start: 25px;
+  --padding-end: 25px;
+  --padding-bottom: 30px;
+}
+
+.swiper-div:hover {
+  opacity: 0.5 !important;
 }
 
 ion-item {
@@ -646,16 +689,13 @@ ion-item {
     margin: 0px;
   }
 
-  .neon-btn {
-    height: 45px;
-    border-radius: 4px;
-  }
-
   .pt-140 {
     padding-top: 50px !important;
     padding-bottom: 50px !important;
   }
 }
+
+
 
 @media screen and (max-width: 991px) {
   .p-md-0 {

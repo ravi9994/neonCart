@@ -1,34 +1,39 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true" [color]="'primary'">
   <div class="page-background">
-    <div class="container p-lg-5 py-5
-    ">
+    <div class="container p-lg-5 py-5">
       <ion-card class="card-background card-img reg_form_wrap p-4" [color]="'medium'">
         <ion-grid>
           <ion-row>
             <ion-col size-md="8" size-lg="8">
-              <form>
+              <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
                 <div class="mb-5">
                   <h2 class="ion-text-center fs-40 fw-700 text-dark mt-0">LOGIN</h2>
                 </div>
                 <div class="login-input">
                   <ion-list class="ion-no-padding">
                     <ion-item class="ion-no-padding">
-                      <ion-input placeholder="Username"></ion-input>
+                      <ion-input type="text" placeholder="Username" formControlName="username"></ion-input>
                     </ion-item>
                   </ion-list>
+                  <ion-text *ngIf="submitted && l.username.errors" class="text-danger">
+                    <p *ngIf="submitted && l.username.errors.required">Username is required</p>
+                  </ion-text>
                   <ion-list class="ion-no-padding mt-15">
                     <ion-item class="ion-no-padding">
-                      <ion-input placeholder="Password" type="Password"></ion-input>
+                      <ion-input placeholder="Password" type="Password" formControlName="password"></ion-input>
                     </ion-item>
                   </ion-list>
+                  <ion-text *ngIf="submitted && l.password.errors" class="text-danger">
+                    <p *ngIf="submitted && l.password.errors.required">Password is required</p>
+                  </ion-text>
                   <div class="ion-text-end py-4">
                     <ion-text class="fs-13 fw-500 cursor-pointer" color="primary"
                       [routerLink]="['/auth/forgot-password']">FORGOT
                       PASSWORD?</ion-text>
                   </div>
                   <div>
-                    <ion-button expand="block" class="neon-btn fs-14 fw-700" color="danger" type="submit">LOGIN
+                    <ion-button expand="block" class="danger-btn fs-14 fw-700" type="submit">LOGIN
                     </ion-button>
                   </div>
                   <div class="ion-text-center mt-5">

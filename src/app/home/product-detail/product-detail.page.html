@@ -118,21 +118,24 @@
             <li><button type="button" class="size-btn fs-16 fw-800">SM</button></li>
           </ul>
         </div>
-        <div class="ion-align-items-center d-flex">
-          <div class="quantity_input">
-            <span (click)="changeDecrement()">-</span>
-            <input class="input-number" type="number" [(ngModel)]="qty" (ngModelChange)="changeInputNumber()">
-            <span (click)="changeIncrement()">+</span>
-          </div>
-          <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit"
-            (click)="goTo('home/shopping')">
-            <ion-icon name="bag-outline" class="mr-10 pl-10"></ion-icon>ADD TO CART
-          </ion-button>
-        </div>
+        <ion-row>
+          <ion-col size="12" size-md="4">
+            <div class="quantity_input">
+              <span (click)="changeDecrement()">-</span>
+              <input class="input-number" type="number" [(ngModel)]="qty" (ngModelChange)="changeInputNumber()">
+              <span (click)="changeIncrement()">+</span>
+            </div>
+          </ion-col>
+          <ion-col size="12" size-md="4">
+            <ion-button class="dark-btn fs-14 fw-700 br-0 m-0" type="submit" (click)="goTo('home/shopping')">
+              <ion-icon name="bag-outline" class="mr-10 pl-10"></ion-icon>ADD TO CART
+            </ion-button>
+          </ion-col>
+        </ion-row>
         <div class="d-flex mt-3 ion-align-items-center">
-          <ion-button color="dark"><ion-icon name="heart-outline"></ion-icon></ion-button>
+          <ion-button class="black-btn"><ion-icon name="heart-outline"></ion-icon></ion-button>
           <ion-text class="pl-10">Add To Wishlist</ion-text>
-          <ion-button class="pl-10" color="dark"><ion-icon name="shuffle-outline"></ion-icon></ion-button>
+          <ion-button class="pl-10" class="black-btn"><ion-icon name="shuffle-outline"></ion-icon></ion-button>
           <ion-text class="pl-10">Compare</ion-text>
         </div>
         <hr>
@@ -156,9 +159,9 @@
         <div class="swiper mySwiper1">
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let item of productList">
-              <ion-card class="w-100 br-10 ion-padding">
-                <div class="best-product-swiper-div">
-                  <img [src]="item.image" class="swiper-image-best w-100">
+              <ion-card class="w-100 br-10 ion-padding" style="border:1px solid #D0D0D0;">
+                <div class="best-product-swiper-div swiper-div">
+                  <img [src]="item.image" class="swiper-image-best w-100" (click)="goTo('home/product-detail')">
                 </div>
                 <h3 class="fs-24 fw-600">{{item.title}}</h3>
                 <ion-text class="fs-14 fw-400">{{item.product}}</ion-text>
