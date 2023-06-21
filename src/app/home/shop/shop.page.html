@@ -106,7 +106,7 @@
         </ion-col>
       </ion-row>
       <ion-row class="py-100 order-last order-lg-0">
-        <ion-col size="12" sizeMd="6" sizeLg="3">
+        <ion-col size="12" sizeMd="12" sizeLg="3">
           <div class="card-sidebar ">
             <h3 class="fs-20 fw-700 mb-0">All Categories</h3>
             <div class="py-2">
@@ -178,11 +178,11 @@
                 <hr>
               </div>
               <div>
-                <ion-range aria-label="Range with knob events" (ionKnobMoveEnd)="onIonKnobMoveEnd($event)"></ion-range>
+                <input type="range" value="50" class="w-100" (change)="changeRange($event)">
                 <div>
                   <ion-text class="fs-18 fw-600" color="primary">Price: &nbsp;&nbsp;<span class="text-dark"
                       *ngIf="moveEnd">
-                      ${{ moveEnd }}</span></ion-text>
+                      ${{ moveEnd * 10 }}</span></ion-text>
                 </div>
               </div>
             </div>

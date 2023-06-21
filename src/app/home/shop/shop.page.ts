@@ -18,7 +18,7 @@ export class ShopPage implements OnInit {
     this.getScreenSize();
   }
   swiper: any;
-  moveEnd: RangeValue;
+  moveEnd = 50;
   constructor(private platform: Platform, private router: Router) { }
 
 
@@ -116,8 +116,9 @@ export class ShopPage implements OnInit {
     },
   ]
 
-  onIonKnobMoveEnd(ev: Event) {
-    this.moveEnd = (ev as RangeCustomEvent).detail.value;
+  changeRange(ev) {
+    this.moveEnd = ev.target.value;
+
   }
 
   ngOnInit() {
