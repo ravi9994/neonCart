@@ -39,9 +39,21 @@ h3 {
   font-family: "Open Sans", sans-serif;
 }
 
+.sub-div:hover {
+  text-decoration: underline !important;
+}
+
+
+
 .danger-btn {
-  height: 50px;
-  width: 190px;
+  --background: red;
+  --background-hover: blue;
+  --background-hover-opacity: 1;
+  --color-hover: white;
+  --padding-top: 25px;
+  --padding-start: 26px;
+  --padding-end: 26px;
+  --padding-bottom: 25px;
 }
 
 .back-img {
@@ -118,28 +130,6 @@ ion-card {
   --background: #f0f2f1;
   --color: inherit;
 }
-
-// .cap-section {
-//   border: 1px solid rgb(106, 106, 106);
-//   height: 500px;
-
-//   .cap-section-left {
-//     width: 0;
-//     height: 0;
-//     border-bottom: 500px solid;
-//     border-right: 100px solid transparent;
-//   }
-
-//   .cap-image-set {
-//     position: absolute;
-//     margin-left: -50%;
-//   }
-// }
-
-// .header {
-//   color: white;
-// }
-
 
 .left-side-camera-image {
   min-height: 200px;

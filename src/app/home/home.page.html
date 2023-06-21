@@ -90,8 +90,8 @@
                         <p class="mr-10 fs-16 fw-300 mb-0 mt-3">From</p>
                         <h1 class="m-0">$749</h1>
                       </div>
-                      <ion-button size="default" color="danger" class="danger-btn fs-18 fw-400 ion-margin-top"
-                        shape="round">START
+                      <ion-button size="default" class="danger-btn fs-18 fw-400 ion-margin-top" shape="round"
+                        (click)="goTo('home/product-detail')">START
                         BUYING
                       </ion-button>
                     </ion-col>
@@ -129,7 +129,7 @@
                         <h1 class="m-0">$749</h1>
                       </div>
                       <ion-button size="default" color="danger" class="danger-btn fs-18 fw-400 ion-margin-top"
-                        shape="round">START
+                        shape="round" (click)="goTo('home/product-detail')">START
                         BUYING
                       </ion-button>
                     </ion-col>
@@ -149,7 +149,8 @@
               <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
               <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
               <ion-label class="fs-16 fw-400">Price: $2915.99</ion-label><br>
-              <ion-label class="mt-1 fs-16 fw-600 d-flex ion-align-items-center" role="button">Pre : Order15Now
+              <ion-label class="mt-1 fs-16 fw-600 d-flex ion-align-items-center sub-div" role="button"
+                (click)="goTo('home/product-detail')">Pre : Order15Now
                 <ion-icon name="arrow-forward-outline" class="ms-2"></ion-icon>
               </ion-label>
             </div>
@@ -159,8 +160,9 @@
               <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
               <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
               <ion-text class="fs-16 fw-400">Price :$298.99</ion-text><br>
-              <ion-text class="mt-1 fs-16 fw-600 d-flex ion-align-items-center" role="button">Pre : Order Now <ion-icon
-                  name="arrow-forward-outline" class="ms-2"></ion-icon>
+              <ion-text class="mt-1 fs-16 fw-600 d-flex ion-align-items-center sub-div" role="button"
+                (click)="goTo('home/product-detail')">Pre : Order Now <ion-icon name="arrow-forward-outline"
+                  class="ms-2"></ion-icon>
               </ion-text>
             </div>
           </ion-card>
@@ -169,8 +171,9 @@
               <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
               <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
               <ion-text class="fs-16 fw-400">Price :$298.99</ion-text><br>
-              <ion-text class="mt-1 fs-16 fw-600 d-flex ion-align-items-center" role="button">Pre : Order Now <ion-icon
-                  name="arrow-forward-outline" class="ms-2"></ion-icon>
+              <ion-text class="mt-1 fs-16 fw-600 d-flex ion-align-items-center sub-div" role="button"
+                (click)="goTo('home/product-detail')">Pre : Order Now <ion-icon name="arrow-forward-outline"
+                  class="ms-2"></ion-icon>
               </ion-text>
             </div>
           </ion-card>
@@ -181,7 +184,7 @@
   <section class="bg-gray">
     <div class="container-lg">
       <div class="pt-3 py-md-5">
-        <ion-card class="mt-0">
+        <ion-card class="mt-0" style="border:1px solid #D0D0D0;">
           <ion-row class="p-4">
             <ion-col size="12" size-md="6" size-lg="3">
               <ion-row>
@@ -239,11 +242,12 @@
         </ion-row>
         <ion-row>
           <ion-col size="12">
-            <div class="swiper mySwiper1">
+            <div class="swiper mySwiper1 ">
               <div class="swiper-wrapper">
-                <div class="swiper-slide" *ngFor="let item of productList">
-                  <ion-card class="w-100 br-10 ion-padding" (click)="goTo('home/product-detail')">
-                    <div class="best-product-swiper-div">
+                <div class="swiper-slide " *ngFor="let item of productList">
+                  <ion-card class="w-100 br-10 ion-padding" (click)="goTo('home/product-detail')"
+                    style="border:1px solid #D0D0D0;">
+                    <div class="best-product-swiper-div swiper-div">
                       <img [src]="item.image" class="swiper-image-best w-100">
                     </div>
                     <h3 class="fs-24 fw-600">{{item.title}}</h3>
@@ -309,8 +313,8 @@
           <ion-col size="12" size-lg="9">
             <ion-row>
               <ion-col class="p-0" size="12" size-md="4" size-lg="3" *ngFor="let item of flashList">
-                <ion-card (click)="goTo('home/product-detail')">
-                  <div class="bg-gray left-side-camera-image">
+                <ion-card (click)="goTo('home/product-detail')" style="border:1px solid #D0D0D0;">
+                  <div class="bg-gray left-side-camera-image swiper-div">
                     <img [src]="item.image" class="camera-image-height">
                   </div>
                   <div class="p-3">
@@ -336,7 +340,8 @@
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
                 <ion-label class="fs-16 fw-400">Price: $2915.99</ion-label><br>
-                <ion-label class="mt-1 fs-16 fw-600 d-flex ion-align-items-center" role="button">Pre : Order15Now
+                <ion-label class="mt-1 fs-16 fw-600 d-flex ion-align-items-center sub-div" role="button"
+                  (click)="goTo('home/product-detail')">Pre : Order15Now
                   <ion-icon name="arrow-forward-outline" class="ms-2"></ion-icon>
                 </ion-label>
               </div>
@@ -348,7 +353,8 @@
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
                 <ion-text class="fs-16 fw-400">Price :$298.99</ion-text><br>
-                <ion-text class="mt-1 fs-16 fw-600 d-flex ion-align-items-center" role="button">Pre : Order Now
+                <ion-text class="mt-1 fs-16 fw-600 d-flex ion-align-items-center sub-div" role="button"
+                  (click)="goTo('home/product-detail')">Pre : Order Now
                   <ion-icon name="arrow-forward-outline" class="ms-2"></ion-icon>
                 </ion-text>
               </div>
@@ -360,7 +366,8 @@
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
                 <ion-text class="fs-16 fw-400">Price :$298.99</ion-text><br>
-                <ion-text class="mt-1 fs-16 fw-600 d-flex ion-align-items-center" role="button">Pre : Order Now
+                <ion-text class="mt-1 fs-16 fw-600 d-flex ion-align-items-center sub-div" role="button"
+                  (click)="goTo('home/product-detail')">Pre : Order Now
                   <ion-icon name="arrow-forward-outline" class="ms-2"></ion-icon>
                 </ion-text>
               </div>
@@ -379,10 +386,10 @@
         </ion-row>
         <ion-row>
           <ion-col class="p-0" size-md="6" size-lg="4" *ngFor="let item of BestproductList">
-            <ion-card class="mt-1 m-md-0" style="border:1px solid #efefef;" (click)="goTo('home/product-detail')">
+            <ion-card class="mt-1 m-md-0" style="border:1px solid #D0D0D0;">
               <ion-row class="p-4">
                 <ion-col size="12" size-md="6">
-                  <div class="best-seller-product ">
+                  <div class="best-seller-product swiper-div">
                     <img [src]="item.image" alt="" class="seller-image-best">
                   </div>
                 </ion-col>
@@ -397,7 +404,8 @@
                   </div>
                   <h3 class="m-0">Relogio Masculino Watches</h3>
                   <div class="d-flex py-7">
-                    <ion-button shape="rounded" color="danger">Start Buying</ion-button>
+                    <ion-button shape="rounded" color="danger" (click)="goTo('home/product-detail')">Start
+                      Buying</ion-button>
                   </div>
                   <div class="d-flex py-7">
                     <div class="item_icon">
@@ -425,7 +433,8 @@
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
                 <ion-label class="fs-16 fw-400">Price: $2915.99</ion-label><br>
-                <ion-label class="mt-1 fs-16 fw-600 d-flex ion-align-items-center" role="button">Pre : Order15Now
+                <ion-label class="mt-1 fs-16 fw-600 d-flex ion-align-items-center sub-div" role="button"
+                  (click)="goTo('home/product-detail')">Pre : Order15Now
                   <ion-icon name="arrow-forward-outline" class="ms-2"></ion-icon>
                 </ion-label>
               </div>
@@ -437,7 +446,8 @@
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
                 <ion-label class="fs-16 fw-400">Price: $2915.99</ion-label><br>
-                <ion-label class="mt-1 fs-16 fw-600 d-flex ion-align-items-center" role="button">Pre : Order15Now
+                <ion-label class="mt-1 fs-16 fw-600 d-flex ion-align-items-center sub-div" role="button"
+                  (click)="goTo('home/product-detail')">Pre : Order15Now
                   <ion-icon name="arrow-forward-outline" class="ms-2"></ion-icon>
                 </ion-label>
               </div>
@@ -459,8 +469,8 @@
         <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of sellerList">
           <ion-row>
             <ion-col size="12" size-md="6">
-              <ion-card class="m-0" (click)="goTo('home/product-detail')">
-                <div class="best-product-card-div">
+              <ion-card class="m-0" style="border:1px solid #D0D0D0;" (click)="goTo('home/product-detail')">
+                <div class="best-product-card-div swiper-div">
                   <img [src]="item.image" alt="" class="image-best">
                 </div>
               </ion-card>
