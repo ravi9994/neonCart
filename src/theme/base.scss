@@ -22,6 +22,7 @@
   padding-bottom: 25px;
 }
 
+
 .py-7 {
   padding-top: 7px;
   padding-bottom: 7px;
@@ -35,6 +36,11 @@
 .px-8 {
   padding-left: 8px;
   padding-right: 8px;
+}
+
+.px-10 {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .px-30 {
@@ -355,6 +361,10 @@
   font-size: 16px;
 }
 
+.fs-17 {
+  font-size: 17px;
+}
+
 .fs-18 {
   font-size: 18px;
 }
@@ -572,7 +582,7 @@ ion-card-header {
   background-color: transparent;
 }
 
-.select-expanded{
+.select-expanded {
   box-shadow: none !important;
 }
 
@@ -672,4 +682,27 @@ ion-item {
 
 .color-gray {
   color: gray;
+}
+
+
+
+/// swiper css---
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
