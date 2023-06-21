@@ -140,7 +140,7 @@
 
     </ng-container>
     <ng-container *ngIf="activeTab === 'checkout'">
-      <div class="container-lg">
+      <div class="container-lg mb-3">
         <h2 class="color-dark fw-800 fs-24 py-4">Billing Details</h2>
         <form style="border: 1px solid gray;" class="p-5" [formGroup]="billingForm" (ngSubmit)="onShop()">
           <ion-row>
@@ -388,7 +388,7 @@
     </ng-container>
     <ng-container *ngIf="activeTab === 'order-complete'">
       <div class="container-lg">
-        <div class="mt-5 p-5  text-center" style="border:1px solid gray">
+        <div class="my-5 p-5  text-center" style="border:1px solid gray">
           <h2 class="fs-30 fw-800 mt-0">Congratulation! You've</h2>
           <h2 class="text-danger fs-30 mt-0 fw-800">Completed</h2>
           <h2 class="fs-30 fw-800 mt-0">Payment</h2>

@@ -41,7 +41,6 @@ export class ShopPage implements OnInit {
     },
   ]
 
-
   ProductList = [
     {
       image: './../../assets/images/cameras.png',
@@ -121,6 +120,41 @@ export class ShopPage implements OnInit {
 
   }
 
+  addMore() {
+    const value =
+    {
+      image: './../../assets/images/cameras.png',
+      title: 'Speakers',
+      detail: 'Wireless Audio System Multiroom 360',
+      price: '$685.00'
+    }
+    const value1 =
+    {
+      image: './../../assets/images/alexa.png',
+      title: 'Speakers',
+      detail: 'Wireless Audio System Multiroom 360',
+      price: '$685.00'
+    }
+    const value2 =
+    {
+      image: './../../assets/images/headphone.png',
+      title: 'Speakers',
+      detail: 'Wireless Audio System Multiroom 360',
+      price: '$685.00'
+    }
+    const value3 =
+    {
+      image: './../../assets/images/shoose.png',
+      title: 'Speakers',
+      detail: 'Wireless Audio System Multiroom 360',
+      price: '$685.00'
+    }
+    this.ProductList.push(value);
+    this.ProductList.push(value1);
+    this.ProductList.push(value2);
+    this.ProductList.push(value3);
+  }
+
   ngOnInit() {
     this.platform.ready().then(() => {
       this.getScreenSize();
@@ -135,6 +169,7 @@ export class ShopPage implements OnInit {
       },
     });
   }
+
   getScreenSize() {
     const width = this.platform.width();
     const height = this.platform.height();
