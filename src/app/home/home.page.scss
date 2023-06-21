@@ -23,17 +23,11 @@ h3 {
   text-decoration: underline !important;
 }
 
-
-
 .danger-btn {
   --background: red;
   --background-hover: blue;
   --background-hover-opacity: 1;
   --color-hover: white;
-  --padding-top: 25px;
-  --padding-start: 26px;
-  --padding-end: 26px;
-  --padding-bottom: 25px;
 }
 
 .back-img {
@@ -131,7 +125,6 @@ ion-card {
 
 .best-product-swiper-div {
   height: 200px;
-  // width: 180px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -147,7 +140,6 @@ ion-card {
   justify-content: center;
   align-items: center;
   height: 250px;
-  // width: 170px;
   background-color: #f5f6f9;
   padding: 25px;
 
@@ -159,7 +151,6 @@ ion-card {
 
 .best-product-card-div {
   height: 200px;
-  // width: 200px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -171,27 +162,8 @@ ion-card {
   }
 }
 
-
-@media screen and (max-width:900px) {
-  // .best-product-card-div {
-  //   width: 185px;
-  // }
-}
-
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 27px;
   }
-
-  // .best-product-swiper-div {
-  //   width: 273px;
-  // }
-
-  // .best-seller-product {
-  //   width: 275px;
-  // }
-
-  // .best-product-card-div {
-  //   width: 319px;
-  // }
 }

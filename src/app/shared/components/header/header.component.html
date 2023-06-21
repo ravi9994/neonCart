@@ -73,7 +73,7 @@
             <ion-col size="6">
               <div>
                 <ion-text [color]="'primary'" class="ion-justify-content-end d-flex 16">
-                  ${{  (75 / 100) * totalPayment  }}
+                  ${{ (75 / 100) * totalPayment }}
                 </ion-text>
               </div>
             </ion-col>
@@ -184,10 +184,14 @@
           <p class="mb-0 fs-14">Welcome to Worldwide Online marketplace Store</p>
         </ion-col>
         <ion-col size="4" class="ion-text-end">
-          <ion-icon class="mr-6" name="logo-facebook"></ion-icon>
-          <ion-icon class="mr-6" name="logo-instagram"></ion-icon>
-          <ion-icon class="mr-6" name="logo-twitter"></ion-icon>
-          <ion-icon class="mr-6" name="logo-whatsapp"></ion-icon>
+          <ion-icon class="mr-6 cursor-pointer" name="logo-facebook" role="button"
+            (click)="goToLink('https://www.facebook.com/')"></ion-icon>
+          <ion-icon class="mr-6 cursor-pointer" name="logo-instagram"
+            (click)="goToLink('https://www.instagram.com/accounts/login/')"></ion-icon>
+          <ion-icon class="mr-6 cursor-pointer" name="logo-twitter"
+            (click)="goToLink('https://twitter.com/')"></ion-icon>
+          <ion-icon class="mr-6 cursor-pointer" name="logo-whatsapp"
+            (click)="goToLink('https://www.whatsapp.com/')"></ion-icon>
         </ion-col>
       </ion-row>
     </div>
@@ -197,7 +201,7 @@
       <ion-row>
         <ion-col size-md="6" size-lg="3">
           <div>
-            <img src="assets/images/logo.png" alt="neonCart" (click)="goTo('home')">
+            <img src="assets/images/logo.png" alt="neonCart" (click)="goTo('home')" class="cursor-pointer">
           </div>
         </ion-col>
         <ion-col size-lg="6" class="ion-hide-lg-down">
