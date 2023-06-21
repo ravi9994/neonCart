@@ -74,5 +74,7 @@ export class HeaderComponent implements OnInit {
   deleteFromCart(index: number) {
     this.utilService.deleteFromCart(index);
   }
-
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
 }
