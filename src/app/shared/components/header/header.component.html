@@ -168,7 +168,7 @@
           <ion-icon class="fs-20" name="reorder-three-outline" [color]="'primary'"></ion-icon>
           <ion-text class="ml-10 fs-15 fw-400" [color]="'primary'"> Orders</ion-text>
         </div>
-        <div class="d-flex">
+        <div class="d-flex" (click)="logout()" role="button">
           <ion-icon class="fs-20" name="log-out-outline" [color]="'primary'"></ion-icon>
           <ion-text class="ml-10 fs-15 fw-500" [color]="'primary'"> Logout</ion-text>
         </div>
@@ -269,7 +269,7 @@
                       <ion-icon class="fs-20" name="reorder-three-outline" [color]="'primary'"></ion-icon>
                       <ion-text class="ml-10 fs-15 fw-400" [color]="'primary'"> Orders</ion-text>
                     </div>
-                    <div class="d-flex">
+                    <div class="d-flex" (click)="logout()" role="button">
                       <ion-icon class="fs-20" name="log-out-outline" [color]="'primary'"></ion-icon>
                       <ion-text class="ml-10 fs-15 fw-400" [color]="'primary'"> Logout</ion-text>
                     </div>

@@ -50,11 +50,14 @@ export class HeaderComponent implements OnInit {
     this.menuType = type;
     this.menuController.toggle('end')
   }
-
-  goTo(url) {
+  logout() {
     if (this.isOpenProfilePopover || this.isOpenPagesPopover) {
       this.popoverControl.dismiss();
     }
+    this.utilService.logout();
+  }
+
+  goTo(url) {
     this.isOpenProfilePopover = false;
     this.isOpenPagesPopover = false;
     this.router.navigate([url]);

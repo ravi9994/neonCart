@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
 
@@ -53,7 +54,8 @@ export class UtilService {
 
 
   constructor(
-    private alertController: AlertController
+    private alertController: AlertController,
+    private router: Router,
   ) {
 
   }
@@ -66,6 +68,18 @@ export class UtilService {
         if (cb === 1) {
           this.cartList.splice(index, 1);
           this.detectChangeInCart.next(true);
+        }
+      }
+    );
+  }
+
+  logout() {
+    this.showConfirmationPopup(
+      'Logout',
+      'Are you sure you want to logout?',
+      (cb) => {
+        if (cb === 1) {
+          this.router.navigate(['auth/login']);
         }
       }
     );
