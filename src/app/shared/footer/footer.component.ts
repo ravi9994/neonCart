@@ -15,4 +15,8 @@ export class FooterComponent implements OnInit {
   goTo(url) {
     this.router.navigate([url]);
   }
+
+  goToLink(url: string) {
+    window.open(url, "_blank");
+  }
 }

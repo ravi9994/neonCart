@@ -17,16 +17,16 @@
           <div>
             <h3>Information</h3>
           </div>
-          <div>
-            <span role="button" (click)="goTo('home/aboutus')">About Us</span><br>
-            <span role="button" (click)="goTo('home/contact')">Contact Us</span><br>
+          <div class="cursor-pointer">
+            <span (click)="goTo('home/aboutus')">About Us</span><br>
+            <span (click)="goTo('home/contact')">Contact Us</span><br>
           </div>
         </ion-col>
         <ion-col size="12" sizeMd="3" sizeLg="2">
           <div>
             <h3>Discover</h3>
           </div>
-          <div>
+          <div class="cursor-pointer">
             <span>Men</span><br>
             <span>Women</span><br>
             <span>Home & Living</span>
@@ -36,11 +36,11 @@
           <div>
             <h3>Contact</h3>
           </div>
-          <div>
-            <span>Follow Us On Instagram</span><br>
-            <span>Add to Facebook</span><br>
-            <span>Pinterest</span><br>
-            <span>Google</span>
+          <div class="cursor-pointer">
+            <span (click)="goToLink('https://www.instagram.com/accounts/login/')">Follow Us On Instagram</span><br>
+            <span (click)="goToLink('https://www.facebook.com/')">Add to Facebook</span><br>
+            <span (click)="goToLink('https://twitter.com/')">Twitter</span><br>
+            <span (click)="goToLink('https://families.google/familylink/')">Google</span>
           </div>
         </ion-col>
       </ion-row>

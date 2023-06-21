@@ -2,8 +2,7 @@ import { Component, OnInit, HostListener } from '@angular/core';
 import Swiper from 'swiper';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
-import { RangeCustomEvent } from '@ionic/angular';
-import { RangeValue } from '@ionic/core';
+import { UtilService } from 'src/app/shared/services/util.service';
 
 @Component({
   selector: 'app-shop',
@@ -19,7 +18,11 @@ export class ShopPage implements OnInit {
   }
   swiper: any;
   moveEnd = 50;
-  constructor(private platform: Platform, private router: Router) { }
+  constructor(
+    private platform: Platform,
+    private router: Router,
+    private utilService: UtilService,
+  ) { }
 
 
   cameraList = [
@@ -153,6 +156,18 @@ export class ShopPage implements OnInit {
     this.ProductList.push(value1);
     this.ProductList.push(value2);
     this.ProductList.push(value3);
+  }
+
+  addToCart() {
+    this.utilService.cartList.push({
+      image: 'assets/images/man.jpg',
+      name: 'Beautifully Design Dress',
+      type: 'Clothes',
+      qty: 2,
+      price: '60.00',
+      total: '120.00'
+    });
+    this.utilService.detectChangeInCart.next(true);
   }
 
   ngOnInit() {

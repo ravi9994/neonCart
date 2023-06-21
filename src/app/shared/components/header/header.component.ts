@@ -58,6 +58,9 @@ export class HeaderComponent implements OnInit {
   }
 
   goTo(url) {
+    if (this.isOpenProfilePopover || this.isOpenPagesPopover) {
+      this.popoverControl.dismiss();
+    }
     this.isOpenProfilePopover = false;
     this.isOpenPagesPopover = false;
     this.router.navigate([url]);
