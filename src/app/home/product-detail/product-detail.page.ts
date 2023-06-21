@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
+import { UtilService } from 'src/app/shared/services/util.service';
 import Swiper, { Navigation, Thumbs } from 'swiper';
 
 Swiper.use([Navigation, Thumbs]);
@@ -118,8 +119,10 @@ export class ProductDetailPage implements OnInit {
       product: '21 Products'
     },
   ];
-  constructor(private router: Router,
+  constructor(
+    private router: Router,
     private platform: Platform,
+    private utilService: UtilService,
   ) { }
 
   ngOnInit() {
@@ -145,6 +148,17 @@ export class ProductDetailPage implements OnInit {
         swiper: thumbSwiper,
       },
     });
+  }
+  addToCart() {
+    this.utilService.cartList.push({
+      image: 'assets/images/man.jpg',
+      name: 'Beautifully Design Dress',
+      type: 'Clothes',
+      qty: 2,
+      price: '60.00',
+      total: '120.00'
+    });
+    this.utilService.detectChangeInCart.next(true);
   }
 
   goTo(url) {

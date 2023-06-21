@@ -125,14 +125,18 @@
             <span (click)="changeIncrement()">+</span>
           </div>
           <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit"
-            (click)="goTo('home/shopping')">
+            (click)="addToCart();goTo('home/shopping')">
             <ion-icon name="bag-outline" class="mr-10 pl-10"></ion-icon>ADD TO CART
           </ion-button>
         </div>
         <div class="d-flex mt-3 ion-align-items-center">
-          <ion-button color="dark"><ion-icon name="heart-outline"></ion-icon></ion-button>
+          <ion-button color="dark">
+            <ion-icon name="heart-outline"></ion-icon>
+          </ion-button>
           <ion-text class="pl-10">Add To Wishlist</ion-text>
-          <ion-button class="pl-10" color="dark"><ion-icon name="shuffle-outline"></ion-icon></ion-button>
+          <ion-button class="pl-10" color="dark">
+            <ion-icon name="shuffle-outline"></ion-icon>
+          </ion-button>
           <ion-text class="pl-10">Compare</ion-text>
         </div>
         <hr>

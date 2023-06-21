@@ -32,44 +32,49 @@
             </ion-col>
           </ion-row>
           <hr>
-          <div *ngFor="let item of cartList;let i = index">
-            <ion-row class="p-0 p-md-3">
-              <ion-col class="p-0" size="12" size-md="4">
-                <div class="d-flex text-center">
-                  <div class="ion-align-items-center d-flex">
-                    <ion-buttons class="cart-close-btn">
-                      <ion-button>
-                        <ion-icon name="close" class="fs-30"></ion-icon>
-                      </ion-button>
-                    </ion-buttons>
-                  </div>
-                  <div class="cart-image-div p-10">
-                    <img [src]="item.image" alt="" class="image-set">
-                  </div>
-                </div>
-              </ion-col>
-              <ion-col size="5" size-md="3" class="p-0 ion-align-items-center d-flex">
-                <div>
-                  <h2 class="fs-18 fw-700 ">{{item.name}}</h2>
-                  <span class="text-primary">{{item.type}}</span>
-                </div>
-              </ion-col>
-              <ion-col size="7" size-md="3" class="p-0 ion-align-items-center d-flex text-last">
-                <div class="quantity_input">
-                  <span (click)="changeDecrement(i)">-</span>
-                  <input class="input-number" type="number" [(ngModel)]="item.qty"
-                    (ngModelChange)="changeInputNumber(i)">
-                  <span (click)="changeIncrement(i)">+</span>
-                </div>
-              </ion-col>
-              <ion-col size="12" size-md="2" class="p-0 ion-align-items-center d-flex text-last">
-                <div>
-                  <ion-text class="fs-18 fw-800" [color]="'success'">{{item.price}}</ion-text>
-                </div>
-              </ion-col>
-            </ion-row>
-            <hr>
+          <div *ngIf="cartList && cartList.length <= 0">
+            <h4 class="text-muted fs-16 fw-400">No data found</h4>
           </div>
+          <ng-container *ngIf="cartList && cartList.length > 0">
+            <div *ngFor="let item of cartList;let i = index">
+              <ion-row class="p-0 p-md-3">
+                <ion-col class="p-0" size="12" size-md="4">
+                  <div class="d-flex text-center">
+                    <div class="ion-align-items-center d-flex">
+                      <ion-buttons class="cart-close-btn">
+                        <ion-button (click)="deleteFromCart(i)">
+                          <ion-icon name="close" class="fs-30"></ion-icon>
+                        </ion-button>
+                      </ion-buttons>
+                    </div>
+                    <div class="cart-image-div p-10">
+                      <img [src]="item.image" alt="" class="image-set">
+                    </div>
+                  </div>
+                </ion-col>
+                <ion-col size="5" size-md="3" class="p-0 ion-align-items-center d-flex">
+                  <div>
+                    <h2 class="fs-18 fw-700 ">{{item.name}}</h2>
+                    <span class="text-primary">{{item.type}}</span>
+                  </div>
+                </ion-col>
+                <ion-col size="7" size-md="3" class="p-0 ion-align-items-center d-flex text-last">
+                  <div class="quantity_input">
+                    <span (click)="changeDecrement(i)">-</span>
+                    <input class="input-number" type="number" [(ngModel)]="item.qty"
+                      (ngModelChange)="changeInputNumber(i)">
+                    <span (click)="changeIncrement(i)">+</span>
+                  </div>
+                </ion-col>
+                <ion-col size="12" size-md="2" class="p-0 ion-align-items-center d-flex text-last">
+                  <div>
+                    <ion-text class="fs-18 fw-800" [color]="'success'">${{getTotal(i)}}</ion-text>
+                  </div>
+                </ion-col>
+              </ion-row>
+              <hr>
+            </div>
+          </ng-container>
           <ion-row class="py-5">
             <ion-col size="12" size-md="3">
               <div>
@@ -100,7 +105,7 @@
                       <ion-text class="fs-15 fw-800 text-dark">SUBTOTAL</ion-text>
                     </ion-col>
                     <ion-col size="6" class="ion-justify-content-end d-flex">
-                      <ion-text class="fs-15 fw-800">$197.99</ion-text>
+                      <ion-text class="fs-15 fw-800">${{ totalPayment }}</ion-text>
                     </ion-col>
                   </ion-row>
                   <ion-row>
@@ -116,7 +121,7 @@
                       <ion-text class="fs-15 fw-800 text-dark">TOTAL</ion-text>
                     </ion-col>
                     <ion-col size="6" class="ion-justify-content-end d-flex">
-                      <ion-text class="fs-18 fw-800 text-success">$197.99</ion-text>
+                      <ion-text class="fs-18 fw-800 text-success">${{ totalPayment }}</ion-text>
                     </ion-col>
                   </ion-row>
                 </div>

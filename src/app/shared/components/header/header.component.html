@@ -1,29 +1,34 @@
 <ion-menu side="end" contentId="main-content1" class="custome-width">
   <ng-container *ngIf="menuType === 'cart'">
-    <ion-content>
+    <ion-header mode="ios">
       <ion-menu-toggle>
-        <div class="d-flex ion-justify-content-end py-3 px-3">
+        <div class="d-flex ion-justify-content-end py-3 px-3" role="button">
           <ion-icon name="close-outline" class="fs-30"></ion-icon>
         </div>
       </ion-menu-toggle>
+    </ion-header>
+    <ion-content [scrollY]="false">
       <div class="px-4">
         <ion-grid class="p-0">
-          <ion-row *ngFor="let item of [0,1,2]" class="mb-5">
-            <ion-col size="4" class="p-0">
-              <div>
-                <ion-img src="assets/images/cart_image.jpg" style="width: 100%; height: auto;"></ion-img>
-              </div>
-            </ion-col>
-            <ion-col size="7" class="ion-align-items-center d-flex">
-              <div class="ml-10">
-                <p class="mb-0 fs-15 fw-600">Yellow Blouse</p>
-                <ion-text class="mb-0 fs-15 fw-400" [color]="'primary'">$30.00 </ion-text>
-              </div>
-            </ion-col>
-            <ion-col size="1" class="ion-align-items-center d-flex ion-justify-content-end p-0">
-              <ion-icon name="trash-outline" class="fs-20" [color]="'primary'"></ion-icon>
-            </ion-col>
-          </ion-row>
+          <div class="side-bar-cart-item">
+            <ion-row *ngFor="let item of cartItem;let i = index" class="mb-5">
+              <ion-col size="4" class="p-0">
+                <div class="car-item-image">
+                  <img [src]="item.image" class="cart-image w-100" />
+                </div>
+              </ion-col>
+              <ion-col size="7" class="ion-align-items-center d-flex">
+                <div class="ml-10">
+                  <p class="mb-0 fs-15 fw-600">{{ item.name }}</p>
+                  <ion-text class="mb-0 fs-15 fw-400" [color]="'primary'">${{ getTotal(i) }} </ion-text>
+                </div>
+              </ion-col>
+              <ion-col size="1" class="ion-align-items-center d-flex ion-justify-content-end p-0" role="button">
+                <ion-icon name="trash-outline" class="fs-20" [color]="'primary'" role="button"
+                  (click)="deleteFromCart(i)"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </div>
         </ion-grid>
       </div>
       <hr>
@@ -44,13 +49,17 @@
             </ion-col>
             <ion-col size="6">
               <div class="mb-1">
-                <ion-text class="ion-justify-content-end d-flex 16" [color]="'primary'">$90</ion-text>
+                <ion-text class="ion-justify-content-end d-flex 16" [color]="'primary'">${{ totalPayment }}</ion-text>
               </div>
               <div class="mb-1">
-                <ion-text class="ion-justify-content-end d-flex 16" [color]="'primary'">$4.5</ion-text>
+                <ion-text class="ion-justify-content-end d-flex 16" [color]="'primary'">
+                  ${{ (5 / 100) * totalPayment }}
+                </ion-text>
               </div>
               <div class="mb-1">
-                <ion-text class="ion-justify-content-end d-flex 16" [color]="'primary'">- $18.9</ion-text>
+                <ion-text class="ion-justify-content-end d-flex 16" [color]="'primary'">-
+                  ${{ (20 / 100) * totalPayment}}
+                </ion-text>
               </div>
             </ion-col>
           </ion-row>
@@ -63,7 +72,9 @@
             </ion-col>
             <ion-col size="6">
               <div>
-                <ion-text [color]="'primary'" class="ion-justify-content-end d-flex 16">$75.6</ion-text>
+                <ion-text [color]="'primary'" class="ion-justify-content-end d-flex 16">
+                  ${{  (75 / 100) * totalPayment  }}
+                </ion-text>
               </div>
             </ion-col>
           </ion-row>
@@ -218,8 +229,8 @@
               </ul>
             </li> -->
             <li class="nav-item">
-              <a class="nav-link" id="click-trigger-pages" role="button">Pages</a>
-              <ion-popover trigger="click-trigger-pages" triggerAction="click">
+              <a class="nav-link" id="click-trigger-pages" role="button" (click)="showPagesPopover($event)">Pages</a>
+              <ion-popover #popoverPages [isOpen]="isOpenPagesPopover" (didDismiss)="isOpenPagesPopover = false">
                 <ng-template>
                   <div class="ion-padding cursor-pointer">
                     <div class="d-flex ion-justify-content-between" (click)="goTo('auth/login')">
@@ -252,10 +263,10 @@
             </ion-buttons>
 
             <ion-buttons class="ion-hide-lg-down action-btn">
-              <ion-button fill="solid" id="click-trigger-profile">
+              <ion-button fill="solid" (click)="showModalPopover($event)">
                 <ion-icon name="person-outline"></ion-icon>
               </ion-button>
-              <ion-popover trigger="click-trigger-profile" class="mt-45" triggerAction="click" side="left">
+              <ion-popover #popoverProfile [isOpen]="isOpenProfilePopover" (didDismiss)="isOpenProfilePopover = false">
                 <ng-template>
                   <div class="ion-padding cursor-pointer">
                     <div class="d-flex ion-align-items-center">
