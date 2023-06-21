@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as _ from 'lodash';
 import { UtilService } from 'src/app/shared/services/util.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-shopping',
@@ -13,9 +14,25 @@ export class ShoppingPage implements OnInit {
   cartList: any;
   totalPayment: number = 0;
 
+  billingForm: FormGroup;
+  submitted: boolean = false;
+
   constructor(
     private utilService: UtilService,
-  ) { }
+    private fb: FormBuilder
+  ) {
+    this.billingForm = this.fb.group({
+      firstname: ['', [Validators.required]],
+      lastname: ['', [Validators.required]],
+      companyname: ['', [Validators.required]],
+      country: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      city: ['', [Validators.required]],
+      zipcode: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      email: ['', [Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')]],
+    })
+  }
 
   ngOnInit() {
     this.cartList = this.utilService.cartList;
@@ -60,6 +77,19 @@ export class ShoppingPage implements OnInit {
   deleteFromCart(index: number) {
     this.utilService.deleteFromCart(index);
   }
+  onNext() {
+    this.activeTab = 'checkout';
+  }
 
+  onShop() {
+    this.submitted = true;
+    if (this.billingForm.valid) {
+      this.submitted = false;
+    }
+  }
+
+  get l() {
+    return this.billingForm.controls;
+  }
 }
 

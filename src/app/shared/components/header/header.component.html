@@ -82,16 +82,10 @@
       </div>
       <hr class="mb-0">
       <div class="px-4 py-4">
-        <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit"
-          (click)="goTo('home/shopping')">
+        <ion-button expand="full" class="dark-btn fs-14 fw-700 br-0" type="submit" (click)="goTo('home/shopping')">
           VIEW CART
         </ion-button>
       </div>
-      <!-- <div class="px-4 mt-2">
-        <ion-button expand="full" class="neon-btn fs-14 fw-700 br-0" color="dark" type="submit"
-          (click)="goTo('home/shopping')">CHECKOUT
-        </ion-button>
-      </div> -->
     </ion-content>
   </ng-container>
   <ng-container *ngIf="menuType === 'menu'">
@@ -203,7 +197,7 @@
       <ion-row>
         <ion-col size-md="6" size-lg="3">
           <div>
-            <img src="assets/images/logo.png" alt="neonCart">
+            <img src="assets/images/logo.png" alt="neonCart" (click)="goTo('home')">
           </div>
         </ion-col>
         <ion-col size-lg="6" class="ion-hide-lg-down">
@@ -212,22 +206,8 @@
               <a class="nav-link" (click)="goTo('home')" role="button">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" id="click-trigger" role="button">Shop</a>
+              <a class="nav-link" id="click-trigger" (click)="goTo('home/shop')" role="button">Shop</a>
             </li>
-            <!-- <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Dropdown
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-              </ul>
-            </li> -->
             <li class="nav-item">
               <a class="nav-link" id="click-trigger-pages" role="button" (click)="showPagesPopover($event)">Pages</a>
               <ion-popover #popoverPages [isOpen]="isOpenPagesPopover" (didDismiss)="isOpenPagesPopover = false">

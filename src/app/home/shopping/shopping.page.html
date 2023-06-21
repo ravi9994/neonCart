@@ -39,26 +39,28 @@
             <div *ngFor="let item of cartList;let i = index">
               <ion-row class="p-0 p-md-3">
                 <ion-col class="p-0" size="12" size-md="4">
-                  <div class="d-flex text-center">
-                    <div class="ion-align-items-center d-flex">
+                  <ion-row>
+                    <ion-col size="4" class="ion-align-items-center d-flex">
                       <ion-buttons class="cart-close-btn">
                         <ion-button (click)="deleteFromCart(i)">
                           <ion-icon name="close" class="fs-30"></ion-icon>
                         </ion-button>
                       </ion-buttons>
-                    </div>
-                    <div class="cart-image-div p-10">
-                      <img [src]="item.image" alt="" class="image-set">
-                    </div>
-                  </div>
+                    </ion-col>
+                    <ion-col size="8" size-md="4">
+                      <div class="cart-image-div p-10">
+                        <img [src]="item.image" alt="" class="image-set">
+                      </div>
+                    </ion-col>
+                  </ion-row>
                 </ion-col>
-                <ion-col size="5" size-md="3" class="p-0 ion-align-items-center d-flex">
+                <ion-col size="6" size-md="3" class="p-0 ion-align-items-center d-flex">
                   <div>
-                    <h2 class="fs-18 fw-700 ">{{item.name}}</h2>
+                    <h2 class="fs-18 fw-700 m-0">{{item.name}}</h2>
                     <span class="text-primary">{{item.type}}</span>
                   </div>
                 </ion-col>
-                <ion-col size="7" size-md="3" class="p-0 ion-align-items-center d-flex text-last">
+                <ion-col size="6" size-md="3" class="pt-2 p-md-0 ion-align-items-center d-flex text-last">
                   <div class="quantity_input">
                     <span (click)="changeDecrement(i)">-</span>
                     <input class="input-number" type="number" [(ngModel)]="item.qty"
@@ -66,7 +68,7 @@
                     <span (click)="changeIncrement(i)">+</span>
                   </div>
                 </ion-col>
-                <ion-col size="12" size-md="2" class="p-0 ion-align-items-center d-flex text-last">
+                <ion-col size="6" size-md="2" class="p-0 p-md-0 ion-align-items-center d-flex">
                   <div>
                     <ion-text class="fs-18 fw-800" [color]="'success'">${{getTotal(i)}}</ion-text>
                   </div>
@@ -75,20 +77,20 @@
               <hr>
             </div>
           </ng-container>
-          <ion-row class="py-5">
+          <ion-row class="p-3 py-md-5">
             <ion-col size="12" size-md="3">
               <div>
                 <input type="text" class="form-control custom" id="exampleInputEmail1" aria-describedby="emailHelp"
                   placeholder="Coupon Code">
               </div>
             </ion-col>
-            <ion-col size="12" size-md="2" class="p-0">
-              <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="danger" type="submit">APPLY COUPON
+            <ion-col size="12" size-md="2" class="pt-1">
+              <ion-button expand="block" class="danger-btn fs-14 fw-700 br-0" type="submit">APPLY COUPON
               </ion-button>
             </ion-col>
             <ion-col size="12" size-md="5"></ion-col>
-            <ion-col size="12" size-md="2" class="p-0">
-              <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="primary" type="submit">UPDATE CART
+            <ion-col size="12" size-md="2" class="pt-1">
+              <ion-button expand="block" class="dark-btn fs-14 fw-700 br-0" type="submit">UPDATE CART
               </ion-button>
             </ion-col>
           </ion-row>
@@ -99,7 +101,7 @@
                 <ion-card-header>
                   <h2 class="fs-24 text-dark fw-700 text-center">CART TOTAL</h2>
                 </ion-card-header>
-                <div class="p-1 px-md-5">
+                <div class="p-5 pb-0">
                   <ion-row>
                     <ion-col size="6">
                       <ion-text class="fs-15 fw-800 text-dark">SUBTOTAL</ion-text>
@@ -125,8 +127,8 @@
                     </ion-col>
                   </ion-row>
                 </div>
-                <div class="px-5 mb-30">
-                  <ion-button expand="block" class="neon-btn fs-14 fw-700 br-0" color="success" type="submit">
+                <div class="px-5 mb-5">
+                  <ion-button expand="block" class="success-btn fs-14 fw-700 br-0" type="submit" (click)="onNext()">
                     <span> Proceed to Checkout </span>
                   </ion-button>
                 </div>
@@ -140,28 +142,127 @@
     <ng-container *ngIf="activeTab === 'checkout'">
       <div class="container-lg">
         <h2 class="color-dark fw-800 fs-24 py-4">Billing Details</h2>
-        <form style="border: 1px solid gray;" class="p-4">
+        <form style="border: 1px solid gray;" class="p-5" [formGroup]="billingForm" (ngSubmit)="onShop()">
           <ion-row>
             <ion-col size="12" size-lg="2">
-              <ion-label>First Name:</ion-label>
+              <ion-label>First Name <span class="text-danger">*</span></ion-label>
             </ion-col>
             <ion-col size="12" size-lg="4">
               <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
+                <input class="custom-input w-100" type="text" formControlName="firstname" />
               </div>
+              <ion-text *ngIf="submitted && l.firstname.errors" class="text-danger">
+                <p *ngIf="submitted && l.firstname.errors.required">First Name is required</p>
+              </ion-text>
             </ion-col>
             <ion-col size="12" size-lg="2">
-              <ion-label>Last Name:</ion-label>
+              <ion-label>Last Name <span class="text-danger">*</span></ion-label>
             </ion-col>
             <ion-col size="12" size-lg="4">
               <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
+                <input class="custom-input w-100" type="text" formControlName="lastname" />
               </div>
+              <ion-text *ngIf="submitted && l.lastname.errors" class="text-danger">
+                <p *ngIf="submitted && l.lastname.errors.required">Last Name is required</p>
+              </ion-text>
             </ion-col>
           </ion-row>
           <ion-row class="pt-3">
             <ion-col size="12" size-lg="2">
-              <ion-label>Company Name:</ion-label>
+              <ion-label>Company Name <span class="text-danger">*</span></ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" formControlName="companyname" />
+              </div>
+              <ion-text *ngIf="submitted && l.companyname.errors" class="text-danger">
+                <p *ngIf="submitted && l.companyname.errors.required">Company Name is required</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Address <span class="text-danger">*</span></ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" formControlName="address" />
+              </div>
+              <ion-text *ngIf="submitted && l.address.errors" class="text-danger">
+                <p *ngIf="submitted && l.address.errors.required">Address is required</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Town/City <span class="text-danger">*</span></ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" formControlName="city" />
+              </div>
+              <ion-text *ngIf="submitted && l.city.errors" class="text-danger">
+                <p *ngIf="submitted && l.city.errors.required">Town/City is required</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Country <span class="text-danger">*</span></ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" formControlName="country" />
+              </div>
+              <ion-text *ngIf="submitted && l.country.errors" class="text-danger">
+                <p *ngIf="submitted && l.country.errors.required">Country is required</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Postcode/Zip <span class="text-danger">*</span></ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" formControlName="zipcode" />
+              </div>
+              <ion-text *ngIf="submitted && l.zipcode.errors" class="text-danger">
+                <p *ngIf="submitted && l.zipcode.errors.required">Postcode/Zip is required</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Phone <span class="text-danger">*</span></ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" formControlName="phone" />
+              </div>
+              <ion-text *ngIf="submitted && l.phone.errors" class="text-danger">
+                <p *ngIf="submitted && l.phone.errors.required">Phone is required</p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Email Address <span class="text-danger">*</span></ion-label>
+            </ion-col>
+            <ion-col size="12" size-lg="10">
+              <div class="custom-input-set">
+                <input class="custom-input w-100" type="text" formControlName="email" />
+              </div>
+              <ion-text *ngIf="submitted && l.email.errors" class="text-danger">
+                <p *ngIf="submitted && l.email.errors.required">Email Address is required</p>
+                <p *ngIf="l.email.errors.pattern">Email must be a valid email
+                  address </p>
+              </ion-text>
+            </ion-col>
+          </ion-row>
+          <ion-row class="pt-3">
+            <ion-col size="12" size-lg="2">
+              <ion-label>Order Notes</ion-label>
             </ion-col>
             <ion-col size="12" size-lg="10">
               <div class="custom-input-set">
@@ -169,86 +270,9 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-row class="pt-3">
-            <ion-col size="12" size-lg="2">
-              <ion-label>Country:</ion-label>
-            </ion-col>
-            <ion-col size="12" size-lg="10">
-              <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row class="pt-3">
-            <ion-col size="12" size-lg="2">
-              <ion-label>Address:</ion-label>
-            </ion-col>
-            <ion-col size="12" size-lg="10">
-              <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row class="pt-3">
-            <ion-col size="12" size-lg="2">
-              <ion-label>Town/City:</ion-label>
-            </ion-col>
-            <ion-col size="12" size-lg="10">
-              <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row class="pt-3">
-            <ion-col size="12" size-lg="2">
-              <ion-label>Country:</ion-label>
-            </ion-col>
-            <ion-col size="12" size-lg="10">
-              <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row class="pt-3">
-            <ion-col size="12" size-lg="2">
-              <ion-label>Postcode/Zip:</ion-label>
-            </ion-col>
-            <ion-col size="12" size-lg="10">
-              <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row class="pt-3">
-            <ion-col size="12" size-lg="2">
-              <ion-label>Phone:</ion-label>
-            </ion-col>
-            <ion-col size="12" size-lg="10">
-              <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row class="pt-3">
-            <ion-col size="12" size-lg="2">
-              <ion-label>Email Address:</ion-label>
-            </ion-col>
-            <ion-col size="12" size-lg="10">
-              <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
-              </div>
-            </ion-col>
-          </ion-row>
-          <ion-row class="pt-3">
-            <ion-col size="12" size-lg="2">
-              <ion-label>Order Notes:</ion-label>
-            </ion-col>
-            <ion-col size="12" size-lg="10">
-              <div class="custom-input-set">
-                <input class="custom-input w-100" type="text" />
-              </div>
-            </ion-col>
-          </ion-row>
+          <ion-button expand="block" class="success-btn fs-14 fw-700 br-0 mt-3" type="submit" (click)="onNext()">
+            <span>Save Billing Info</span>
+          </ion-button>
         </form>
         <h2 class="color-dark fw-800 fs-24 py-4">Your Order</h2>
         <div style="border: 1px solid gray;" class="p-4 p-md-5">
@@ -269,18 +293,18 @@
           <hr>
           <div *ngFor="let item of cartList">
             <ion-row class="d-flex ion-align-items-center">
-              <ion-col size="12" size-md="2" size-lg="2">
+              <ion-col size="12" size-md="2" size-lg="2" class="p-0">
                 <div class="cart-image-div p-10">
                   <img [src]="item.image" alt="" class="image-set">
                 </div>
               </ion-col>
-              <ion-col size="6" size-md="2" size-lg="2">
+              <ion-col size="12" size-md="2" size-lg="2" class="p-0">
                 <ion-text class="fw-500 fs-18">{{item.name}}</ion-text>
               </ion-col>
-              <ion-col size="6" size-md="2" size-lg="2" class="text-last">
+              <ion-col size="12" size-md="2" size-lg="2" class="p-0">
                 <ion-text>{{item.price}}</ion-text>
               </ion-col>
-              <ion-col size="6" size-md="2" size-lg="2">
+              <ion-col size="6" size-md="2" size-lg="2" class="p-0">
                 <ion-text>{{item.qty}}</ion-text>
               </ion-col>
               <ion-col size="6" size-md="4" size-lg="4" class="ion-justify-content-center d-flex">
@@ -358,7 +382,7 @@
             </ion-col>
           </ion-row>
           <hr>
-          <ion-button expand="block" color="danger" class="neon-btn">PLACE ORDER</ion-button>
+          <ion-button expand="block" class="danger-btn">PLACE ORDER</ion-button>
         </div>
       </div>
     </ng-container>

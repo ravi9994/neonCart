@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from 'src/app/shared/shared.module';
@@ -13,6 +13,7 @@ import { ForgotPasswordPage } from './forgot-password.page';
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     IonicModule,
     ForgotPasswordPageRoutingModule,
     SharedModule
@@ -23,4 +24,4 @@ import { ForgotPasswordPage } from './forgot-password.page';
   ],
   declarations: [ForgotPasswordPage]
 })
-export class ForgotPasswordPageModule {}
+export class ForgotPasswordPageModule { }

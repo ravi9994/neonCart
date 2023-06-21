@@ -1,3 +1,12 @@
+.friends-segment {
+  ion-segment-button.segment-button-checked {
+    background-color: #ce0b2b !important;
+    --background-checked: var(--ion-color-primary) !important;
+    color: white !important;
+    --indicator-height: 0px;
+  }
+}
+
 .segment-btn {
   background-color: #f8f9fa;
   color: grey
@@ -17,6 +26,12 @@
   }
 }
 
+.danger-btn {
+  --padding-top: 30px;
+  --padding-start: 26px;
+  --padding-end: 26px;
+  --padding-bottom: 30px;
+}
 
 @media (min-width: 768px) and (max-width: 991.98px) {
   .cart-image-div {
