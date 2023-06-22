@@ -63,6 +63,10 @@ ion-checkbox::part(container) {
     padding: 30px;
   }
 
+  .card-sidebar {
+    padding: 20px 20px;
+  }
+
   .mr-10 {
     margin-right: 0px;
   }
@@ -73,7 +77,14 @@ ion-checkbox::part(container) {
   }
 
   .py-100 {
-    padding-top: 40px;
+    padding-top: 0px;
     padding-bottom: 40px;
   }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .py-100 {
+      padding-top: 0px;
+      padding-bottom: 40px;
+    }
 }

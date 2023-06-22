@@ -12,6 +12,15 @@ export class OrderDetailPage implements OnInit {
   searchInputValue: string;
   orderStatus = 'All';
   productType = 'All';
+
+  customCountryOptions: any = {
+    header: 'Order Type',
+  };
+
+  customStatusOptions: any = {
+    header: 'Status',
+  };
+
   orderList: any = [
     {
       created: '10 Jul,2020',
