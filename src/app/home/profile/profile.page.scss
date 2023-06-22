@@ -1,0 +1,33 @@
+.profile-container {
+  position: relative;
+  width: 125px;
+  height: 125px;
+  margin: 21px auto 20px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  padding: 0;
+  background: #fff;
+
+
+  .profile-photo {
+    width: 115px;
+    height: 115px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .edit-icons {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    right: -8px;
+    bottom: -8px;
+  }
+}
+
+input.custom {
+  height: 40px;
+  font-size: 12px;
+  background-color: #f3f4f6;
+}
+
