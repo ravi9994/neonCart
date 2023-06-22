@@ -1,9 +1,9 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import Swiper from 'swiper';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { UtilService } from 'src/app/shared/services/util.service';
-
+import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay]);
 @Component({
   selector: 'app-shop',
   templateUrl: './shop.page.html',
@@ -120,7 +120,6 @@ export class ShopPage implements OnInit {
 
   changeRange(ev) {
     this.moveEnd = ev.target.value;
-
   }
 
   addMore() {
@@ -175,15 +174,17 @@ export class ShopPage implements OnInit {
       this.getScreenSize();
     });
     const swiper = new Swiper(".mySwiper", {
-      pagination: {
-        el: ".swiper-pagination",
-      },
       autoplay: {
         delay: 2500,
-        disableOnInteraction: false,
+        disableOnInteraction: true,
       },
     });
+
+
+
   }
+
+
 
   getScreenSize() {
     const width = this.platform.width();
@@ -192,41 +193,16 @@ export class ShopPage implements OnInit {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 1,
         spaceBetween: 30,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
-
       });
     } else if (width <= 990) {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 3,
         spaceBetween: 30,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
       });
     } else {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 5,
         spaceBetween: 30,
-        autoplay: {
-          delay: 2500,
-          disableOnInteraction: false,
-        },
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
-        },
       });
     }
   }

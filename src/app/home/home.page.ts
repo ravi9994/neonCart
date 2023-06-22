@@ -1,7 +1,8 @@
 import { Component, HostListener } from '@angular/core';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
-import Swiper from 'swiper';
+import Swiper, { Autoplay, Navigation, Pagination } from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay]);
 @Component({
   selector: 'app-home',
   templateUrl: 'home.page.html',
@@ -223,6 +224,10 @@ export class HomePage {
       pagination: {
         el: ".swiper-pagination",
       },
+      autoplay: {
+        delay: 2500,
+        disableOnInteraction: true,
+      },
     });
 
   }
@@ -233,27 +238,27 @@ export class HomePage {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 1,
         spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
         },
       });
     } else if (width <= 990) {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 3,
         spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
         },
       });
     } else {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 5,
         spaceBetween: 30,
-        pagination: {
-          el: ".swiper-pagination",
-          clickable: true,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
         },
       });
     }

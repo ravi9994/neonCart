@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { UtilService } from 'src/app/shared/services/util.service';
-import Swiper, { Navigation, Thumbs } from 'swiper';
+import Swiper, { Autoplay, Navigation, Pagination, Thumbs } from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 
-Swiper.use([Navigation, Thumbs]);
 @Component({
   selector: 'app-product-detail',
   templateUrl: './product-detail.page.html',
@@ -172,16 +172,28 @@ export class ProductDetailPage implements OnInit {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 1,
         spaceBetween: 30,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
       });
     } else if (width <= 990) {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 3,
         spaceBetween: 30,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
       });
     } else {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 5,
         spaceBetween: 30,
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
       });
     }
   }
