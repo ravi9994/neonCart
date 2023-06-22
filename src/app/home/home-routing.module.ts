@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePage } from './home.page';
+import { AuthGuard } from '../shared/guard/auth.guard';
 
 const routes: Routes = [
   {
@@ -9,7 +10,8 @@ const routes: Routes = [
   },
   {
     path: 'shopping',
-    loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingPageModule)
+    loadChildren: () => import('./shopping/shopping.module').then(m => m.ShoppingPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'product-detail',
@@ -25,11 +27,13 @@ const routes: Routes = [
   },
   {
     path: 'cart',
-    loadChildren: () => import('./cart/cart.module').then(m => m.CartPageModule)
+    loadChildren: () => import('./cart/cart.module').then(m => m.CartPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'order',
-    loadChildren: () => import('./order/order.module').then(m => m.OrderPageModule)
+    loadChildren: () => import('./order/order.module').then(m => m.OrderPageModule),
+    canActivate: [AuthGuard]
   },
   {
     path: 'shop',
@@ -37,9 +41,9 @@ const routes: Routes = [
   },
   {
     path: 'profile',
-    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule),
+    canActivate: [AuthGuard]
   },
-
 ];
 
 @NgModule({

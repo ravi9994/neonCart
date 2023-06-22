@@ -1,5 +1,8 @@
 import { Component, OnInit, SimpleChanges } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { localStorageKeys } from 'src/app/shared/enum/enum';
+import { UtilService } from 'src/app/shared/services/util.service';
 
 @Component({
   selector: 'app-profile',
@@ -7,14 +10,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./profile.page.scss'],
 })
 export class ProfilePage implements OnInit {
+
   UserProfileForm: FormGroup;
   submitted: boolean = false;
   userDetail;
-
   fileName: string;
   file: File;
   imageUrl = 'assets/images/profile.png'
-  constructor(private fb: FormBuilder,) {
+
+  constructor(
+    private fb: FormBuilder,
+    private utilService: UtilService,
+    private router: Router,
+  ) {
     this.UserProfileForm = this.fb.group({
       first_name: ['', [Validators.required]],
       last_name: ['', [Validators.required]],
@@ -22,23 +30,42 @@ export class ProfilePage implements OnInit {
       phone_number: ['', [Validators.required]],
       address: ['', [Validators.required]],
       city: ['', [Validators.required]]
-    })
+    });
   }
 
   ngOnInit() {
-    this.userDetail = JSON.parse(localStorage.getItem("userDetail"));
-    this.UserProfileForm.patchValue({
-      first_name: this.userDetail.firstname,
-      last_name: this.userDetail.lastname,
-      email: this.userDetail.email,
-      phone_number: this.userDetail.phone_number,
-    });
+  }
+
+  ionViewWillEnter() {
+    this.userDetail = this.utilService.getLocalStorage(localStorageKeys.userDetails);
+    if (this.userDetail) {
+      this.UserProfileForm.patchValue({
+        first_name: this.userDetail.firstName,
+        last_name: this.userDetail.lastName,
+        email: this.userDetail.email,
+        phone_number: this.userDetail.number,
+        address: this.userDetail.address ? this.userDetail.address : null,
+        city: this.userDetail.city ? this.userDetail.city : null
+      });
+    }
   }
 
   onLogin() {
     this.submitted = true;
     if (this.UserProfileForm.valid) {
       this.submitted = false;
+      const params = {
+        email: this.UserProfileForm.value.email,
+        firstName: this.UserProfileForm.value.first_name,
+        lastName: this.UserProfileForm.value.last_name,
+        number: this.UserProfileForm.value.phone_number,
+        address: this.UserProfileForm.value.address,
+        city: this.UserProfileForm.value.city,
+        type: 'Seller',
+      };
+      UtilService.loginUserDetails = params;
+      this.utilService.setLocalStorage(localStorageKeys.userDetails, params);
+      this.router.navigate(['home']);
     }
   }
 

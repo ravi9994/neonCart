@@ -1,14 +1,21 @@
 import { Injectable } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
-import { AlertController } from '@ionic/angular';
+import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { BehaviorSubject } from 'rxjs';
+import * as CryptoJS from "crypto-js";
+import { environment } from 'src/environments/environment';
+import { localStorageKeys } from '../enum/enum';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UtilService {
   public detectChangeInCart: BehaviorSubject<any> = new BehaviorSubject(false);
-
+  public loader = null;
+  public static isLogin: boolean;
+  public static loginUserDetails;
   cartList = [
     {
       image: './../../../assets/images/cameras.png',
@@ -52,12 +59,60 @@ export class UtilService {
     },
   ]
 
-
   constructor(
     private alertController: AlertController,
     private router: Router,
+    public loadingCtrl: LoadingController,
+    public toastCtrl: ToastController,
   ) {
+    if (this.getLocalStorage(localStorageKeys.isLogin)) {
+      UtilService.isLogin = true;
+    }
+    if (this.getLocalStorage(localStorageKeys.userDetails)) {
+      UtilService.loginUserDetails = this.getLocalStorage(localStorageKeys.userDetails);
+    }
+  }
 
+  cryptoConfig = {
+    keySize: 16,
+    iv: CryptoJS.enc.Utf8.parse(environment.SECRETKEY),
+    mode: CryptoJS.mode.ECB,
+    padding: CryptoJS.pad.Pkcs7,
+  };
+
+  encryptUsingAES256(data) {
+    return CryptoJS.AES.encrypt(
+      JSON.stringify(data),
+      environment.SECRETKEY,
+      this.cryptoConfig
+    ).toString();
+  }
+
+  decryptUsingAES256(data) {
+    const decrypted = CryptoJS.AES.decrypt(
+      data,
+      environment.SECRETKEY,
+      this.cryptoConfig
+    ).toString(CryptoJS.enc.Utf8);
+    return JSON.parse(decrypted);
+  }
+
+  setLocalStorage(key, value) {
+    value = this.encryptUsingAES256(value);
+    localStorage.setItem(key, value);
+  }
+
+  getLocalStorage(key) {
+    if (localStorage.getItem(key)) {
+      return this.decryptUsingAES256(localStorage.getItem(key));
+    }
+    return null;
+  }
+
+  markFormGroupDirty(formGroup: FormGroup) {
+    Object.keys(formGroup.controls).forEach((key) => {
+      formGroup.get(key)?.markAsDirty();
+    });
   }
 
   deleteFromCart(index: number) {
@@ -79,6 +134,9 @@ export class UtilService {
       'Are you sure you want to logout?',
       (cb) => {
         if (cb === 1) {
+          UtilService.isLogin = false;
+          UtilService.loginUserDetails = null;
+          localStorage.clear();
           this.router.navigate(['auth/login']);
         }
       }
@@ -109,6 +167,41 @@ export class UtilService {
     });
 
     await alert.present();
+  }
+
+
+
+  async showLoading(message: string = 'Please wait') {
+    await this.loadingCtrl.create({
+      message,
+      animated: true
+    }).then(loader => {
+      this.loader = loader;
+      this.loader.present();
+    });
+  }
+  async showToastSuccess(message: string = "") {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 3000,
+      color: "success",
+    });
+    toast.present();
+  }
+
+  async showToastError(message: string = "") {
+    const toast = await this.toastCtrl.create({
+      message,
+      duration: 3000,
+      color: "danger",
+    });
+    toast.present();
+  }
+
+  async dismissLoading() {
+    if (this.loader) {
+      this.loader.dismiss();
+    }
   }
 
 

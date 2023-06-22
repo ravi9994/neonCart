@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { localStorageKeys } from 'src/app/shared/enum/enum';
+import { UtilService } from 'src/app/shared/services/util.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.page.html',
@@ -11,7 +13,8 @@ export class LoginPage implements OnInit {
   submitted: boolean = false;
   constructor(
     private fb: FormBuilder,
-    private router: Router
+    private router: Router,
+    private utilService: UtilService,
   ) {
     this.loginForm = this.fb.group({
       username: ['', [Validators.required]],
@@ -26,8 +29,24 @@ export class LoginPage implements OnInit {
     this.submitted = true;
     if (this.loginForm.valid) {
       this.submitted = false;
-      this.router.navigate(['/home']);
-
+      if (this.loginForm.value.username == 'test@gmail.com' && this.loginForm.value.password == 'Test@123') {
+        const params = {
+          email: 'test@gmail.com',
+          firstName: 'Johan',
+          lastName: 'doe',
+          number: 7698918171,
+          type: 'Seller',
+        };
+        this.utilService.setLocalStorage(localStorageKeys.userDetails, params);
+        this.utilService.setLocalStorage(localStorageKeys.isLogin, true);
+        this.utilService.setLocalStorage(localStorageKeys.accessToken, 'STORENEONCART!@£TEST001');
+        UtilService.isLogin = true;
+        UtilService.loginUserDetails = params;
+        this.router.navigate(['/home']);
+        this.utilService.showToastSuccess('Login successfully');
+      } else {
+        this.utilService.showToastError('Enter valid email and password');
+      }
     }
   }
 

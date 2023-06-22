@@ -7,8 +7,8 @@
         </div>
       </ion-menu-toggle>
     </ion-header>
-    <ion-content [scrollY]="false">
-      <div class="px-2">
+    <ion-content>
+      <div class="ps-2 pe-3">
         <ion-grid class="p-0">
           <div class="side-bar-cart-item">
             <ion-row *ngFor="let item of cartItem;let i = index" class="mb-5">
@@ -95,86 +95,76 @@
           <ion-icon name="close-outline" class="fs-30"></ion-icon>
         </div>
       </ion-menu-toggle>
-      <div class="d-flex ion-text-center px-4">
+      <div class="d-flex ion-text-center px-4" *ngIf="UtilService.isLogin">
         <img class="profile-img" src="assets/images/profile.png" alt="">
         <div class="ml-10 ion-text-start">
-          <h5 class="my-0 fs-20 fw-700">Johan Doe</h5>
-          <p class="fs-12 mb-0 fw-500">Seller</p>
+          <h5 class="my-0 fs-20 fw-700">{{ UtilService.loginUserDetails.firstName }}
+            {{ UtilService.loginUserDetails.lastName }} <span class="fs-14 fw-400 text-muted"> (CEO)</span> </h5>
+          <p class="fs-16 mb-0 fw-500">{{ UtilService.loginUserDetails.type }}</p>
+        </div>
+      </div>
+      <div class="d-flex ion-text-center px-4" *ngIf="!UtilService.isLogin">
+        <img class="profile-img" src="assets/images/user_icon.png" alt="">
+        <div class="ml-10 ion-text-start">
+          <h5 class="my-0 fs-20 fw-700">Demo <span class="fs-14 fw-400 text-muted"> (Post)</span> </h5>
+          <p class="fs-16 mb-0 fw-500">Test</p>
         </div>
       </div>
       <div class="px-3 py-4">
         <div>
           <hr>
         </div>
-        <ion-card class="m-0">
-          <ion-item color="light" (click)="goTo('home')">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="home-outline" class="mr-10 fs-20"></ion-icon>Home
-            </ion-text>
-          </ion-item>
-        </ion-card>
-        <ion-card class="my-4 mx-0">
-          <ion-item color="light" (click)="goTo('home/shop')">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="card-outline" class="mr-10 fs-20"></ion-icon>Shop
-            </ion-text>
-          </ion-item>
-        </ion-card>
-        <ion-card class="my-4 mx-0">
-          <ion-item color="light" (click)="goTo('auth/login')">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="log-in-outline" class="mr-10 fs-20"></ion-icon>Login
-            </ion-text>
-          </ion-item>
-        </ion-card>
-        <ion-card class="my-4 mx-0">
-          <ion-item color="light" (click)="goTo('auth/register')">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="checkbox-outline" class="mr-10 fs-20"></ion-icon>
-              Registration
-            </ion-text>
-          </ion-item>
-        </ion-card>
-        <ion-card class="my-4 mx-0">
-          <ion-item color="light" (click)="goTo('home/aboutus')">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="albums-outline" class="mr-10 fs-20"></ion-icon>
-              <ion-label>About Us</ion-label>
-            </ion-text>
-          </ion-item>
-        </ion-card>
-        <ion-card class="my-4 mx-0">
-          <ion-item color="light" (click)="goTo('home/contact')">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="call-outline" class="mr-10 fs-20"></ion-icon>
-              <ion-label>Contact</ion-label>
-            </ion-text>
-          </ion-item>
-        </ion-card>
-        <ion-card class="my-4 mx-0">
-          <ion-item color="light" (click)="goTo('home/profile')">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="person-circle-outline" class="mr-10 fs-20"></ion-icon>
-              <ion-label>Profile</ion-label>
-            </ion-text>
-          </ion-item>
-        </ion-card>
-        <ion-card class="my-4 mx-0">
-          <ion-item color="light" (click)="goTo('/home/order/order-detail')">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="document-text-outline" class="mr-10 fs-20"></ion-icon>
-              <ion-label>Orders</ion-label>
-            </ion-text>
-          </ion-item>
-        </ion-card>
-        <ion-card class="my-4 mx-0">
-          <ion-item color="light" (click)="logout()">
-            <ion-text class="d-flex ion-align-items-center">
-              <ion-icon name="lock-closed-outline" class="mr-10 fs-20"></ion-icon>
-              <ion-label>Logout</ion-label>
-            </ion-text>
-          </ion-item>
-        </ion-card>
+        <div class="ion-padding menu-item-text" (click)="goTo('home')">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="home-outline" class="mr-10 fs-20"></ion-icon>Home
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('home/shop')">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="card-outline" class="mr-10 fs-20"></ion-icon>Shop
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('auth/login')" *ngIf="!UtilService.isLogin">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="log-in-outline" class="mr-10 fs-20"></ion-icon>Login
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('auth/register')" *ngIf="!UtilService.isLogin">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="checkbox-outline" class="mr-10 fs-20"></ion-icon>
+            Registration
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('home/aboutus')">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="albums-outline" class="mr-10 fs-20"></ion-icon>
+            <ion-label>About Us</ion-label>
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('home/contact')">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="call-outline" class="mr-10 fs-20"></ion-icon>
+            <ion-label>Contact</ion-label>
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('home/profile')" *ngIf="UtilService.isLogin">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="person-circle-outline" class="mr-10 fs-20"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('/home/order/order-detail')" *ngIf="UtilService.isLogin">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="document-text-outline" class="mr-10 fs-20"></ion-icon>
+            <ion-label>Orders</ion-label>
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="logout()" *ngIf="UtilService.isLogin">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="lock-closed-outline" class="mr-10 fs-20"></ion-icon>
+            <ion-label>Logout</ion-label>
+          </ion-text>
+        </div>
       </div>
     </ion-content>
   </ng-container>
@@ -215,7 +205,7 @@
             <li class="nav-item">
               <a class="nav-link" id="click-trigger" (click)="goTo('home/shop')" role="button">Shop</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" *ngIf="!UtilService.isLogin">
               <a class="nav-link" id="click-trigger-pages" role="button" (click)="showPagesPopover($event)">Pages</a>
               <ion-popover #popoverPages [isOpen]="isOpenPagesPopover" (didDismiss)="isOpenPagesPopover = false">
                 <ng-template>
@@ -249,7 +239,7 @@
               </ion-button>
             </ion-buttons>
 
-            <ion-buttons class="ion-hide-lg-down action-btn">
+            <ion-buttons class="ion-hide-lg-down action-btn" *ngIf="UtilService.isLogin">
               <ion-button fill="solid" (click)="showModalPopover($event)">
                 <ion-icon name="person-outline"></ion-icon>
               </ion-button>
@@ -259,14 +249,15 @@
                     <div class="d-flex ion-align-items-center">
                       <img class="profile-img" src="assets/images/profile.png" alt="">
                       <div class="ml-10">
-                        <h5 class="my-0 fs-15">Johan Doe</h5>
-                        <p class="fs-12  mb-0 fw-500">Seller</p>
+                        <h5 class="my-0 fs-15">{{ UtilService.loginUserDetails.firstName }}
+                          {{ UtilService.loginUserDetails.lastName }}</h5>
+                        <p class="fs-12  mb-0 fw-500">{{ UtilService.loginUserDetails.type }}</p>
                       </div>
                     </div>
                     <hr>
-                    <div class="d-flex">
+                    <div class="d-flex" (click)="goTo('home/profile')">
                       <ion-icon class="fs-20" name="person-circle-outline" [color]="'primary'"></ion-icon>
-                      <ion-text class="ml-10 fs-15 fw-400" [color]="'primary'" (click)="goTo('home/profile')"> Profile
+                      <ion-text class="ml-10 fs-15 fw-400" [color]="'primary'"> Profile
                       </ion-text>
                     </div>
                     <div class="d-flex py-2">
@@ -286,7 +277,7 @@
               </ion-popover>
             </ion-buttons>
 
-            <ion-buttons class="action-btn" id="main-content1">
+            <ion-buttons class="action-btn" id="main-content1" *ngIf="UtilService.isLogin">
               <ion-button fill="solid" (click)="toggleMenu('cart')">
                 <ion-icon name="cart-outline"></ion-icon>
               </ion-button>

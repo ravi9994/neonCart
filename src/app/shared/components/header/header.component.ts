@@ -19,6 +19,7 @@ export class HeaderComponent implements OnInit {
   isOpenPagesPopover: boolean = false;
   cartItem;
   totalPayment: number = 0;
+  UtilService = UtilService;
 
   constructor(
     private menuController: MenuController,

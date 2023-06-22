@@ -33,7 +33,7 @@
                 <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
                   <ion-label class="fs-14">Email</ion-label>
                   <input type="email" class="form-control custom" formControlName="email" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Email">
+                    aria-describedby="emailHelp" placeholder="Email" readonly>
                   <ion-text *ngIf="submitted && l.email.errors" class="text-danger">
                     <p *ngIf="submitted && l.email.errors.required">Email is required</p>
                   </ion-text>
