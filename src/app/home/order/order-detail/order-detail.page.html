@@ -12,66 +12,76 @@
             </ion-row>
             <ion-row>
               <ion-col size="12" sizeLg="4" class="p-0">
-                <ion-searchbar placeholder="Search by any order..."></ion-searchbar>
+                <ion-searchbar [(ngModel)]="searchInputValue" placeholder="Search by any product"
+                  (ionInput)=" filterData()">
+                </ion-searchbar>
               </ion-col>
               <ion-col sizeLg="4"></ion-col>
               <ion-col size="6" sizeLg="2" class="d-flex ion-align-items-center">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Products</option>
-                  <option value="1">Camera</option>
-                  <option value="2">Bluetooth</option>
-                  <option value="3">Speaker</option>
+                <select class="form-select" aria-placeholder="Product type" [(ngModel)]="productType"
+                  (ngModelChange)="filterData()">
+                  <option value="All">All</option>
+                  <option value="Clothes">Clothes</option>
+                  <option value="Electronic">Electronic</option>
+                  <option value="Fashion">Fashion</option>
                 </select>
               </ion-col>
               <ion-col size="6" sizeLg="2" class="d-flex ion-align-items-center">
-                <select class="form-select" aria-label="Default select example">
-                  <option selected>Status</option>
-                  <option value="1">Cancelled</option>
-                  <option value="2">Booked</option>
-                  <option value="3">In Cart</option>
-                  <option value="3">Closed</option>
-                  <option value="3">Request</option>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="orderStatus"
+                  (ngModelChange)="filterData()">
+                  <option value="All">All</option>
+                  <option value="Cancelled">Cancelled</option>
+                  <option value="Booked">Booked</option>
+                  <option value="In Cart">In Cart</option>
+                  <option value="Closed">Closed</option>
+                  <option value="Request">Request</option>
                 </select>
               </ion-col>
             </ion-row>
             <hr>
             <ion-row class="main-row-bg  p-0">
-              <ion-col size="1" class="ion-justify-content-center d-flex">
-                <h2 class="fs-18 fw-500 ">CREATED</h2>
-              </ion-col>
-              <ion-col size="1" class="ion-justify-content-center d-flex">
+              <ion-col size="3" class="ion-justify-content-center d-flex">
                 <h2 class="fs-18 fw-500">PRODUCT</h2>
               </ion-col>
               <ion-col size="2" class="ion-justify-content-center d-flex">
-                <h2 class="fs-18 fw-500">STAT TIME</h2>
+                <h2 class="fs-18 fw-500 ">ORDER TYPE</h2>
               </ion-col>
               <ion-col size="2" class="ion-justify-content-center d-flex">
-                <h2 class="fs-18 fw-500">END TIME</h2>
+                <h2 class="fs-18 fw-500 ">ORDER DATE</h2>
               </ion-col>
               <ion-col size="2" class="ion-justify-content-center d-flex">
-                <h2 class="fs-18 fw-500 ">STATUS</h2>
-              </ion-col>
-              <ion-col size="2" class="ion-justify-content-center d-flex">
-                <h2 class="fs-18 fw-500 ">DELIVERY STATUS</h2>
+                <h2 class="fs-18 fw-500">DELIVERY DATE</h2>
               </ion-col>
               <ion-col size="1" class="ion-justify-content-center d-flex">
                 <h2 class="fs-18 fw-500 ">PRICE</h2>
+              </ion-col>
+              <ion-col size="1" class="ion-justify-content-center d-flex">
+                <h2 class="fs-18 fw-500 ">STATUS</h2>
               </ion-col>
               <ion-col size="1" class="ion-justify-content-center d-flex">
                 <h2 class="fs-18 fw-500 ">Action</h2>
               </ion-col>
             </ion-row>
             <hr>
+            <div *ngIf="orderList && orderList.length <= 0">
+              <h3 class="fs-16 fw-400 text-muted ms-4">No data found</h3>
+            </div>
             <div *ngFor="let item of orderList">
               <ion-row>
-                <ion-col size="1" class="ion-justify-content-center d-flex">
-                  <div>
-                    <ion-text class="fs-15 fw-300 text-dark">{{item.created}}</ion-text>
-                  </div>
-                </ion-col>
-                <ion-col size="1" class="ion-justify-content-center d-flex">
+                <ion-col size="3" class="ion-justify-content-center d-flex">
                   <div>
                     <ion-text class="fs-15 fw-300 text-dark">{{item.product}}</ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="2" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300 text-dark">{{item.type}}
+                    </ion-text>
+                  </div>
+                </ion-col>
+                <ion-col size="2" class="ion-justify-content-center d-flex">
+                  <div>
+                    <ion-text class="fs-15 fw-300 text-dark">{{item.created}}</ion-text>
                   </div>
                 </ion-col>
                 <ion-col size="2" class="ion-justify-content-center d-flex">
@@ -79,29 +89,18 @@
                     <ion-text class="fs-15 fw-300 text-dark">{{item.start_time}}</ion-text>
                   </div>
                 </ion-col>
-                <ion-col size="2" class="ion-justify-content-center d-flex">
+                <ion-col size="1" class="ion-justify-content-center d-flex">
                   <div>
-                    <ion-text class="fs-15 fw-300 text-dark">{{item.end_time}}</ion-text>
+                    <ion-text class="fs-15 fw-300" [color]="'success'">{{item.price}}</ion-text>
                   </div>
                 </ion-col>
-                <ion-col size="2" class="ion-justify-content-center d-flex">
+                <ion-col size="1" class="ion-justify-content-center d-flex">
                   <div>
                     <ion-text class="fs-15 fw-300 text-dark">
                       <ion-badge [ngClass]="(item.status === 'Cancelled') ? 'cancelled-bg' : (item.status === 'Booked') ? 'booked-bg':
                   (item.status === 'Request') ? 'request-bg' : 'other-bg'">{{item.status}}
                       </ion-badge>
                     </ion-text>
-                  </div>
-                </ion-col>
-                <ion-col size="2" class="ion-justify-content-center d-flex">
-                  <div>
-                    <ion-text class="fs-15 fw-300 text-dark">{{item.delivery_status}}
-                    </ion-text>
-                  </div>
-                </ion-col>
-                <ion-col size="1" class="ion-justify-content-center d-flex">
-                  <div>
-                    <ion-text class="fs-15 fw-300" [color]="'success'">{{item.price}}</ion-text>
                   </div>
                 </ion-col>
                 <ion-col size="1" class="ion-justify-content-center d-flex cursor-pointer">
@@ -122,27 +121,34 @@
       <h2 class="m-0">Orders</h2>
       <ion-row>
         <ion-col size="12" sizeLg="3">
-          <!-- <ion-searchbar show-cancel-button="focus" placeholder="Search by any order..." mode="ios" class="p-0">
-          </ion-searchbar> -->
-          <ion-searchbar placeholder="Search by any order..." class="p-0" mode="ios"></ion-searchbar>
+          <ion-searchbar [(ngModel)]="searchInputValue" placeholder="Search by any product" (ionInput)=" filterData()"
+            class="p-0" mode="ios">
+          </ion-searchbar>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="6">
-          <ion-select label="Products">
-            <ion-select-option value="Camera">Camera</ion-select-option>
-            <ion-select-option value="Bluetooth">Bluetooth</ion-select-option>
-            <ion-select-option value="Speaker">Speaker</ion-select-option>
+          <ion-select placeholder="Product Type" [(ngModel)]="productType" (ngModelChange)="filterData()">
+            <ion-select-option value="All">All</ion-select-option>
+            <ion-select-option value="Fashion">Fashion</ion-select-option>
+            <ion-select-option value="Electronic">Electronic</ion-select-option>
+            <ion-select-option value="Clothes">Clothes</ion-select-option>
           </ion-select>
         </ion-col>
         <ion-col size="6">
-          <ion-select label="Status">
-            <ion-select-option value="Camera">Camera</ion-select-option>
-            <ion-select-option value="Bluetooth">Bluetooth</ion-select-option>
-            <ion-select-option value="Speaker">Speaker</ion-select-option>
+          <ion-select placeholder="Status" [(ngModel)]="orderStatus" (ngModelChange)="filterData()">
+            <ion-select-option value="All">All</ion-select-option>
+            <ion-select-option value="Cancelled">Cancelled</ion-select-option>
+            <ion-select-option value="Booked">Booked</ion-select-option>
+            <ion-select-option value="In Cart">In Cart</ion-select-option>
+            <ion-select-option value="Closed">Closed</ion-select-option>
+            <ion-select-option value="Request">Request</ion-select-option>
           </ion-select>
         </ion-col>
       </ion-row>
+    </div>
+    <div *ngIf="orderList && orderList.length <= 0">
+      <h3 class="fs-16 fw-400 text-muted ion-margin">No data found</h3>
     </div>
     <div *ngFor="let item of orderList">
       <ion-card class="ion-hide-lg-up main-row-bg p-0 ion-margin-top">
@@ -169,19 +175,19 @@
           <hr class="ion-no-margin">
           <ion-row>
             <ion-col>
-              <ion-text class="fs-15 fw-300">START TIME</ion-text>
+              <ion-text class="fs-15 fw-300">DELIVERY TYPE</ion-text>
             </ion-col>
             <ion-col class="ion-justify-content-end d-flex">
-              <ion-text class="fs-15 fw-300 text-dark">{{item.start_time}}</ion-text>
+              <ion-text class="fs-15 fw-300 text-dark">{{item.type}}</ion-text>
             </ion-col>
           </ion-row>
           <hr class="ion-no-margin">
           <ion-row>
             <ion-col>
-              <ion-text class="fs-15 fw-300">END TIME</ion-text>
+              <ion-text class="fs-15 fw-300">ORDER DATE</ion-text>
             </ion-col>
             <ion-col class="ion-justify-content-end d-flex">
-              <ion-text class="fs-15 fw-300 text-dark">{{item.end_time}}</ion-text>
+              <ion-text class="fs-15 fw-300 text-dark">{{item.start_time}}</ion-text>
             </ion-col>
           </ion-row>
           <hr class="ion-no-margin">
@@ -196,15 +202,6 @@
                   {{item.status}}
                 </ion-badge>
               </ion-text>
-            </ion-col>
-          </ion-row>
-          <hr class="ion-no-margin">
-          <ion-row>
-            <ion-col>
-              <ion-text class="fs-15 fw-300">DELIVERY STATUS</ion-text>
-            </ion-col>
-            <ion-col class="ion-justify-content-end d-flex">
-              <ion-text class="fs-15 fw-300 text-dark">{{item.delivery_status}}</ion-text>
             </ion-col>
           </ion-row>
           <hr class="ion-no-margin">
