@@ -10,9 +10,6 @@ export class ProfilePage implements OnInit {
   UserProfileForm: FormGroup;
   submitted: boolean = false;
   userDetail;
-
-  fileName: string;
-  file: File;
   imageUrl = 'assets/images/profile.png'
   constructor(private fb: FormBuilder,) {
     this.UserProfileForm = this.fb.group({
@@ -27,12 +24,14 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
     this.userDetail = JSON.parse(localStorage.getItem("userDetail"));
-    this.UserProfileForm.patchValue({
-      first_name: this.userDetail.firstname,
-      last_name: this.userDetail.lastname,
-      email: this.userDetail.email,
-      phone_number: this.userDetail.phone_number,
-    });
+    if (this.userDetail) {
+      this.UserProfileForm.patchValue({
+        first_name: this.userDetail.firstname,
+        last_name: this.userDetail.lastname,
+        email: this.userDetail.email,
+        phone_number: this.userDetail.phone_number,
+      });
+    }
   }
 
   onLogin() {
