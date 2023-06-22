@@ -156,13 +156,9 @@
           </div>
         </div>
         <hr />
-        <div class="d-flex">
+        <div class="d-flex" (click)="goTo('/home/profile')">
           <ion-icon class="fs-20" name="person-circle-outline" [color]="'primary'"></ion-icon>
           <ion-text class="ml-10 fs-15 fw-500" [color]="'primary'"> Profile</ion-text>
-        </div>
-        <div class="d-flex py-2">
-          <ion-icon class="fs-20" name="settings-outline" [color]="'primary'"></ion-icon>
-          <ion-text class="ml-10 fs-15 fw-500" [color]="'primary'"> Settings</ion-text>
         </div>
         <div class="d-flex mb-2" (click)="goTo('/home/order/order-detail')">
           <ion-icon class="fs-20" name="reorder-three-outline" [color]="'primary'"></ion-icon>

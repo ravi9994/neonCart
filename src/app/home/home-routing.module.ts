@@ -29,12 +29,17 @@ const routes: Routes = [
   },
   {
     path: 'order',
-    loadChildren: () => import('./order/order.module').then( m => m.OrderPageModule)
+    loadChildren: () => import('./order/order.module').then(m => m.OrderPageModule)
   },
   {
     path: 'shop',
-    loadChildren: () => import('./shop/shop.module').then( m => m.ShopPageModule)
+    loadChildren: () => import('./shop/shop.module').then(m => m.ShopPageModule)
   },
+  {
+    path: 'profile',
+    loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule)
+  },
+
 ];
 
 @NgModule({

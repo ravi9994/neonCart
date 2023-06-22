@@ -160,12 +160,12 @@ export class ShopPage implements OnInit {
 
   addToCart() {
     this.utilService.cartList.push({
-      image: 'assets/images/man.jpg',
-      name: 'Beautifully Design Dress',
-      type: 'Clothes',
+      image: 'assets/images/shop_image.png',
+      name: 'Virtual Reality Headsets',
+      type: 'Electronic',
       qty: 2,
-      price: '60.00',
-      total: '120.00'
+      price: '200.00',
+      total: '400.00'
     });
     this.utilService.detectChangeInCart.next(true);
   }
