@@ -135,7 +135,7 @@
 }
 
 .mr-10 {
-  margin-right: 10px;
+  margin-right: 10px !important;
 }
 
 .pl-10 {
@@ -727,6 +727,12 @@ ion-item {
 
 .cursor-pointer {
   cursor: pointer !important;
+}
+
+.icon-inner,
+.ionicon,
+svg {
+  display: none !important;
 }
 
 /// swiper css---
