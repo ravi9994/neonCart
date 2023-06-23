@@ -58,6 +58,35 @@ export class UtilService {
       total: '30.00'
     },
   ]
+  public static favoritesItems = [
+    {
+      image: './../../assets/images/camera2.png',
+      title: 'Canon 100D',
+      detail: 'Super quality and features to this camera',
+      price: 950,
+      brands: 'Canon',
+      color: 'Black',
+      type: 'Camera'
+    },
+    {
+      image: './../../assets/images/shirt1.jpeg',
+      title: "Men's shirts",
+      detail: 'Formal white shirt',
+      price: 100,
+      brands: 'PeterEngland',
+      color: 'White',
+      type: 'Shirt'
+    },
+    {
+      image: './../../assets/images/raincoat1.png',
+      title: 'BABA Raincoat',
+      detail: 'Double Kapad Raincort 100% waterproof',
+      price: 400,
+      brands: 'BABA',
+      color: 'Yellow',
+      type: 'Raincoat'
+    },
+  ]
 
   constructor(
     private alertController: AlertController,

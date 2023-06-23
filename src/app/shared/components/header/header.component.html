@@ -135,6 +135,11 @@
             <ion-icon name="card-outline" class="mr-10 fs-20"></ion-icon>Shop
           </ion-text>
         </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('home/cart')">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="heart-outline" class="mr-10 fs-20"></ion-icon>Favorites
+          </ion-text>
+        </div>
         <div class="ion-padding menu-item-text" (click)="goTo('home/profile')" *ngIf="UtilService.isLogin">
           <ion-text class="d-flex ion-align-items-center">
             <ion-icon name="person-circle-outline" class="mr-10 fs-20"></ion-icon>
@@ -277,6 +282,11 @@
               </ion-popover>
             </ion-buttons>
 
+            <ion-buttons class="ion-hide-lg-down action-btn" id="main-content1" *ngIf="UtilService.isLogin">
+              <ion-button fill="solid" (click)="goTo('home/cart')">
+                <ion-icon name="heart-outline"></ion-icon>
+              </ion-button>
+            </ion-buttons>
             <ion-buttons class="action-btn" id="main-content1" *ngIf="UtilService.isLogin">
               <ion-button fill="solid" (click)="toggleMenu('cart')">
                 <ion-icon name="cart-outline"></ion-icon>
