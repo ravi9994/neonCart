@@ -1,9 +1,8 @@
 <app-header></app-header>
-
 <ion-content>
   <section color="dark" class="bg-image">
     <div class="container-lg">
-      <ion-row class="py-5">
+      <ion-row class="py-3 py-lg-5">
         <ion-col size="3" class="ion-hide-lg-down">
           <ion-card class="m-0">
             <ion-item color="danger">
@@ -88,7 +87,7 @@
             </ion-item>
           </ion-card>
         </ion-col>
-        <ion-col size-md="12" size-lg="6">
+        <ion-col size-md="8" size-lg="6" class="padding-bottom">
           <div class="bg-yellow h-100">
             <div class="swiper mySwiper bg-yellow">
               <div class="swiper-wrapper">
@@ -153,8 +152,8 @@
             </div>
           </div>
         </ion-col>
-        <ion-col size="12" size-lg="3">
-          <ion-card class="back-img ion-padding mt-0 m-sm-0">
+        <ion-col size="12" size-md="4" size-lg="3" class="three-card">
+          <ion-card class="back-img smart-card m-sm-0">
             <div class="item_title">
               <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
               <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
@@ -193,49 +192,49 @@
   </section>
   <section class="bg-gray">
     <div class="container-lg">
-      <div class="pt-3 py-md-5">
-        <ion-card class="mt-0" style="border:1px solid #D0D0D0;">
-          <ion-row class="p-4">
+      <div class="py-3 py-md-5 ">
+        <ion-card class="m-1" style="border:1px solid #D0D0D0;">
+          <ion-row class="p-4 p-md-5 ion-align-items-center">
             <ion-col size="12" size-md="6" size-lg="3">
               <ion-row>
-                <ion-col size="3" class="mt-15">
+                <ion-col size="3">
                   <img src="./../../assets/images/car.png" alt="">
                 </ion-col>
                 <ion-col size="9">
-                  <h3 class="fs-14 fw-800">FREE DELIVERY</h3>
+                  <h3 class="fs-14 fw-800 mt-0">FREE DELIVERY</h3>
                   <ion-text class="fs-14 fw-400">For all Order Over $120</ion-text>
                 </ion-col>
               </ion-row>
             </ion-col>
             <ion-col size="12" size-md="6" size-lg="3">
               <ion-row>
-                <ion-col size="3" class="mt-15">
+                <ion-col size="3">
                   <img src="./../../assets/images/hand.png" alt="">
                 </ion-col>
                 <ion-col size="9">
-                  <h3 class="fs-14 fw-800">FRIENDLY SERVICES</h3>
+                  <h3 class="fs-14 fw-800 mt-0">FRIENDLY SERVICES</h3>
                   <ion-text class="fs-14 fw-400">30 day satisfaction</ion-text>
                 </ion-col>
               </ion-row>
             </ion-col>
             <ion-col size="12" size-md="6" size-lg="3">
               <ion-row>
-                <ion-col size="3" class="mt-15">
+                <ion-col size="3">
                   <img src="./../../assets/images/message.png" alt="">
                 </ion-col>
                 <ion-col size="9">
-                  <h3 class="fs-14 fw-800">24/7 HELP CENTER</h3>
+                  <h3 class="fs-14 fw-800 mt-0">24/7 HELP CENTER</h3>
                   <ion-text class="fs-14 fw-400">Dedicated 24/7 support</ion-text>
                 </ion-col>
               </ion-row>
             </ion-col>
             <ion-col size="12" size-md="6" size-lg="3">
               <ion-row>
-                <ion-col size="3" class="mt-15">
+                <ion-col size="3">
                   <img src="./../../assets/images/payment.png" alt="">
                 </ion-col>
                 <ion-col size="9">
-                  <h3 class="fs-14 fw-800">SAFE PAYMENT</h3>
+                  <h3 class="fs-14 fw-800 mt-0">SAFE PAYMENT</h3>
                   <ion-text class="fs-14 fw-400">100% secure payment</ion-text>
                 </ion-col>
               </ion-row>
@@ -244,18 +243,18 @@
         </ion-card>
       </div>
       <div>
-        <ion-row>
+        <ion-row class="pb-3">
           <ion-col size="12" size-lg="4">
             <ion-text class="fs-14 fw-400">A WIDE SECTION OF ITEMS</ion-text>
-            <h1 class="mt-0 fs-44 fw-600">Top Flash Deal</h1>
+            <h1 class="m-0 fs-44 fw-600">Top Flash Deal</h1>
           </ion-col>
         </ion-row>
-        <ion-row>
+        <ion-row class="pb-3 pb-md-5">
           <ion-col size="12">
-            <div class="swiper mySwiper1 ">
+            <div class="swiper mySwiper1">
               <div class="swiper-wrapper">
-                <div class="swiper-slide " *ngFor="let item of productList">
-                  <ion-card class="w-100 br-10 ion-padding" (click)="goTo('home/product-detail')"
+                <div class="swiper-slide" *ngFor="let item of productList">
+                  <ion-card class="w-100 br-10 m-0" (click)="goTo('home/product-detail')"
                     style="border:1px solid #D0D0D0;">
                     <div class="best-product-swiper-div swiper-div">
                       <img [src]="item.image" class="swiper-image-best w-100">
@@ -273,16 +272,16 @@
   </section>
   <section>
     <div class="container-lg">
-      <div class="py-md-5">
-        <ion-row>
+      <div class="py-3 py-md-5">
+        <ion-row class="pb-3">
           <ion-col size="12" size-lg="4">
             <ion-text class="fs-14 fw-400">A WIDE SECTION OF ITEMS</ion-text>
-            <h1 class="mt-0 fs-44 fw-600">Top Flash Deal</h1>
+            <h1 class="m-0 fs-44 fw-600">Top Flash Deal</h1>
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col class="p-0" size="12" size-md="4" size-lg="3" *ngFor="let item of flashList">
-            <ion-card (click)="goTo('home/product-detail')" style="border:1px solid #D0D0D0;">
+          <ion-col size="12" size-md="4" size-lg="3" *ngFor="let item of flashList">
+            <ion-card class="m-0" (click)="goTo('home/product-detail')" style="border:1px solid #D0D0D0;">
               <div class="bg-gray left-side-camera-image swiper-div">
                 <img [src]="item.image" class="camera-image-height">
               </div>
@@ -299,10 +298,10 @@
   </section>
   <section class="bg-gray">
     <div class="container-lg">
-      <div class="py-md-5">
+      <div class="py-3 py-md-5">
         <ion-row>
           <ion-col size="12" size-lg="4">
-            <ion-card class="back-img-1">
+            <ion-card class="back-img-1 m-0">
               <div class="item_title">
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
@@ -315,7 +314,7 @@
             </ion-card>
           </ion-col>
           <ion-col size="12" size-lg="4">
-            <ion-card class="back-img-1 two">
+            <ion-card class="back-img-1 two m-0">
               <div class="item_title">
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
@@ -328,7 +327,7 @@
             </ion-card>
           </ion-col>
           <ion-col size="12" size-lg="4">
-            <ion-card class="back-img-1 three">
+            <ion-card class="back-img-1 three m-0">
               <div class="item_title">
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
@@ -344,19 +343,19 @@
       </div>
     </div>
     <div class="container-lg">
-      <div class="pt-0 py-5">
-        <ion-row>
+      <div class="pt-0 py-3 py-md-5">
+        <ion-row class="pb-3">
           <ion-col size="12" size-lg="5">
-            <ion-text>A WIDE SECTION OF ITEMS</ion-text>
-            <h1 class="mt-0">Bestseller Products</h1>
+            <ion-text class="fs-14 fw-400">A WIDE SECTION OF ITEMS</ion-text>
+            <h1 class="m-0 fs-44 fw-600">Bestseller Products</h1>
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col class="p-0" size-md="6" size-lg="4" *ngFor="let item of BestproductList">
-            <ion-card class="mt-1 m-md-0" style="border:1px solid #D0D0D0;">
+          <ion-col size="12" size-md="4" size-lg="4" *ngFor="let item of BestproductList">
+            <ion-card class="mt-1 m-md-0" style="border:1px solid #D0D0D0;border-radius: 0px;">
               <ion-row class="p-4">
                 <ion-col size="12" size-md="6">
-                  <div class="best-seller-product swiper-div">
+                  <div class="best-seller-product swiper-div" (click)="goTo('home/product-detail')">
                     <img [src]="item.image" alt="" class="seller-image-best">
                   </div>
                 </ion-col>
@@ -394,8 +393,8 @@
       </div>
       <div>
         <ion-row>
-          <ion-col size="12" size-lg="6" class="p-0">
-            <ion-card class="back-img-orange">
+          <ion-col size="12" size-lg="6">
+            <ion-card class="back-img-orange m-0">
               <div class="item_title p-4">
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
@@ -407,8 +406,8 @@
               </div>
             </ion-card>
           </ion-col>
-          <ion-col size="12" size-lg="6" class="p-0">
-            <ion-card class="back-img-blue">
+          <ion-col size="12" size-lg="6">
+            <ion-card class="back-img-blue m-0">
               <div class="item_title p-4">
                 <h5 class="mb-0 fs-16 fw-500">Smart Phone BestSeller</h5>
                 <h5 class="pt-0 mt-0 fs-16 fw-500">Product 2019</h5>
@@ -424,25 +423,25 @@
       </div>
     </div>
   </section>
-  <section class="bg-gray pb-5">
+  <section class="bg-gray py-3 py-md-5">
     <div class="container-lg">
-      <ion-row class="pt-md-5">
+      <ion-row class="pb-3">
         <ion-col size="12" size-md="6" size-lg="4">
-          <ion-text>A WIDE SECTION OF ITEMS</ion-text>
-          <h1 class="mt-0">Bestseller Products</h1>
+          <ion-text class="fs-14 fw-400">A WIDE SECTION OF ITEMS</ion-text>
+          <h1 class="m-0 fs-44 fw-600">Bestseller Products</h1>
         </ion-col>
       </ion-row>
       <ion-row>
         <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of sellerList">
           <ion-row>
-            <ion-col size="12" size-md="6">
+            <ion-col size="6" size-md="6" class="pl-0">
               <ion-card class="m-0" style="border:1px solid #D0D0D0;" (click)="goTo('home/product-detail')">
                 <div class="best-product-card-div swiper-div">
                   <img [src]="item.image" alt="" class="image-best">
                 </div>
               </ion-card>
             </ion-col>
-            <ion-col size="12" size-md="6" class="mt-10 mt-md-0">
+            <ion-col size="6" size-md="6" class="mt-10 mt-md-0 ">
               <ion-text>Speaker</ion-text>
               <h3 style="color: rgb(0, 98, 189);">Red Wireless Headphone Solo 2 HD</h3>
               <ion-text>$ 2100</ion-text>

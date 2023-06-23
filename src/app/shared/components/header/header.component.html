@@ -110,20 +110,10 @@
           <p class="fs-16 mb-0 fw-500">Test</p>
         </div>
       </div>
+      <div class="px-3 pt-4">
+        <hr class="m-0">
+      </div>
       <div class="px-3 py-4">
-        <div>
-          <hr>
-        </div>
-        <div class="ion-padding menu-item-text" (click)="goTo('home')">
-          <ion-text class="d-flex ion-align-items-center">
-            <ion-icon name="home-outline" class="mr-10 fs-20"></ion-icon>Home
-          </ion-text>
-        </div>
-        <div class="ion-padding menu-item-text" (click)="goTo('home/shop')">
-          <ion-text class="d-flex ion-align-items-center">
-            <ion-icon name="card-outline" class="mr-10 fs-20"></ion-icon>Shop
-          </ion-text>
-        </div>
         <div class="ion-padding menu-item-text" (click)="goTo('auth/login')" *ngIf="!UtilService.isLogin">
           <ion-text class="d-flex ion-align-items-center">
             <ion-icon name="log-in-outline" class="mr-10 fs-20"></ion-icon>Login
@@ -135,16 +125,14 @@
             Registration
           </ion-text>
         </div>
-        <div class="ion-padding menu-item-text" (click)="goTo('home/aboutus')">
+        <div class="ion-padding menu-item-text" (click)="goTo('home')">
           <ion-text class="d-flex ion-align-items-center">
-            <ion-icon name="albums-outline" class="mr-10 fs-20"></ion-icon>
-            <ion-label>About Us</ion-label>
+            <ion-icon name="home-outline" class="mr-10 fs-20"></ion-icon>Home
           </ion-text>
         </div>
-        <div class="ion-padding menu-item-text" (click)="goTo('home/contact')">
+        <div class="ion-padding menu-item-text" (click)="goTo('home/shop')">
           <ion-text class="d-flex ion-align-items-center">
-            <ion-icon name="call-outline" class="mr-10 fs-20"></ion-icon>
-            <ion-label>Contact</ion-label>
+            <ion-icon name="card-outline" class="mr-10 fs-20"></ion-icon>Shop
           </ion-text>
         </div>
         <div class="ion-padding menu-item-text" (click)="goTo('home/profile')" *ngIf="UtilService.isLogin">
@@ -157,6 +145,18 @@
           <ion-text class="d-flex ion-align-items-center">
             <ion-icon name="document-text-outline" class="mr-10 fs-20"></ion-icon>
             <ion-label>Orders</ion-label>
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('home/aboutus')">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="albums-outline" class="mr-10 fs-20"></ion-icon>
+            <ion-label>About Us</ion-label>
+          </ion-text>
+        </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('home/contact')">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="call-outline" class="mr-10 fs-20"></ion-icon>
+            <ion-label>Contact</ion-label>
           </ion-text>
         </div>
         <div class="ion-padding menu-item-text" (click)="logout()" *ngIf="UtilService.isLogin">

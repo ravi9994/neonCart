@@ -51,6 +51,7 @@ export class HeaderComponent implements OnInit {
     this.menuType = type;
     this.menuController.toggle('end')
   }
+
   logout() {
     if (this.isOpenProfilePopover || this.isOpenPagesPopover) {
       this.popoverControl.dismiss();
@@ -71,7 +72,6 @@ export class HeaderComponent implements OnInit {
     this.popover.event = e;
     this.isOpenProfilePopover = true;
   }
-
 
   showPagesPopover(e) {
     this.popoverPages.event = e;

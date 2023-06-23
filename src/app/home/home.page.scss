@@ -167,7 +167,27 @@ ion-card {
 }
 
 @media screen and (max-width: 480px) {
+  .padding-bottom {
+    padding-bottom: 0px;
+  }
+
   h1 {
     font-size: 27px;
+  }
+
+  .swiper-slide img {
+    width: 80%;
+    height: 100%;
+    object-fit: cover;
+    align-items: center;
+    display: initial;
+  }
+
+  .three-card {
+    padding-top: 0px;
+
+    .smart-card {
+      margin-top: 30px !important;
+    }
   }
 }

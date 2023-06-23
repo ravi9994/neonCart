@@ -188,7 +188,6 @@
   margin-top: 7px;
 }
 
-
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -244,9 +243,6 @@
   margin-bottom: 6px;
 }
 
-.mt-4 {
-  margin-top: 4px !important;
-}
 
 .mt-40 {
   margin-top: 40px;
@@ -691,9 +687,10 @@ ion-item {
   }
 
   .pt-140 {
-    padding-top: 50px !important;
-    padding-bottom: 50px !important;
+    padding-top: 30px !important;
+    padding-bottom: 30px !important;
   }
+
 }
 
 
@@ -715,6 +712,7 @@ ion-item {
   .quantity_input input {
     width: 70px;
   }
+
 }
 
 .color-dark {
@@ -757,7 +755,6 @@ swiper {
 }
 
 
-.select-box-color-remove{
-    --highlight-color:none !important;
-
+.select-box-color-remove {
+  --highlight-color: none !important;
 }

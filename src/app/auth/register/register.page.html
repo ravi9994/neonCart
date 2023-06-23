@@ -8,7 +8,7 @@
             <ion-col size-md="8" size-lg="8">
               <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
                 <div class="mb-5">
-                  <h2 class="ion-text-start fs-40 fw-700 text-dark mt-0">REGISTER</h2>
+                  <h2 class="ion-text-center fs-40 fw-700 text-dark mt-0">REGISTER</h2>
                 </div>
                 <div>
                   <ion-list class="ion-no-padding">
@@ -55,8 +55,8 @@
                   </ion-text>
                   <ion-list class="ion-no-padding mt-15">
                     <ion-item class="ion-no-padding">
-                      <ion-input type="password" placeholder="Password" type="password"
-                        formControlName="password"></ion-input>
+                      <ion-input type="password" placeholder="Password" type="password" formControlName="password">
+                      </ion-input>
                     </ion-item>
                   </ion-list>
                   <ion-text *ngIf="submitted && l.password.errors" class="text-danger">
