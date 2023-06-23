@@ -16,7 +16,7 @@
     </div>
     <ng-container *ngIf="activeTab === 'shopping-card'">
       <div class="container-lg">
-        <ion-grid class="ion-text-wrap ion-margin-top">
+        <ion-grid class="ion-text-wrap ion-margin-top p-0">
           <ion-row class="main-row-bg ion-hide-sm-down">
             <ion-col size="4" class="ion-align-items-center d-flex">
               <h2 class="fs-18 fw-800 m-0">PHOTO</h2>
@@ -77,31 +77,30 @@
               <hr>
             </div>
           </ng-container>
-          <ion-row class="p-3 py-md-5">
-            <ion-col size="12" size-md="3">
+          <ion-row class="py-3">
+            <ion-col size="12" size-md="3" class="p-0">
               <div>
                 <input type="text" class="form-control custom" id="exampleInputEmail1" aria-describedby="emailHelp"
                   placeholder="Coupon Code">
               </div>
             </ion-col>
-            <ion-col size="12" size-md="2" class="pt-1">
-              <ion-button expand="block" class="danger-btn fs-14 fw-700 br-0" type="submit">APPLY COUPON
+            <ion-col size="12" size-md="2" class="mt-2 mt-md-0 pl-md-5 p-0">
+              <ion-button expand="block" class="danger-btn fs-14 fw-700 br-0 m-0" type="submit">APPLY COUPON
               </ion-button>
             </ion-col>
-            <ion-col size="12" size-md="5"></ion-col>
-            <ion-col size="12" size-md="2" class="pt-1">
-              <ion-button expand="block" class="dark-btn fs-14 fw-700 br-0" type="submit">UPDATE CART
+            <ion-col size="12" size-md="4"></ion-col>
+            <ion-col size="12" size-md="2" class="pt-2 p-0">
+              <ion-button expand="block" class="dark-btn fs-14 fw-700 br-0 m-0" type="submit">UPDATE CART
               </ion-button>
             </ion-col>
           </ion-row>
-
           <ion-row class="ion-justify-content-end d-flex">
-            <ion-col size="12" size-lg="4">
-              <ion-card class="m-0">
+            <ion-col size="12" size-lg="4" class="p-0">
+              <ion-card class="m-0" style="border:1px solid #D0D0D0;">
                 <ion-card-header>
                   <h2 class="fs-24 text-dark fw-700 text-center">CART TOTAL</h2>
                 </ion-card-header>
-                <div class="p-5 pb-0">
+                <div class="p-4 p-md-5 pb-0">
                   <ion-row>
                     <ion-col size="6">
                       <ion-text class="fs-15 fw-800 text-dark">SUBTOTAL</ion-text>
@@ -141,8 +140,8 @@
     </ng-container>
     <ng-container *ngIf="activeTab === 'checkout'">
       <div class="container-lg mb-3">
-        <h2 class="color-dark fw-800 fs-24 py-4">Billing Details</h2>
-        <form style="border: 1px solid gray;" class="p-5" [formGroup]="billingForm" (ngSubmit)="onShop()">
+        <h2 class="color-dark fw-800 fs-24 py-4 m-0">Billing Details</h2>
+        <form style="border: 1px solid gray;" class="p-3" [formGroup]="billingForm" (ngSubmit)="onShop()">
           <ion-row>
             <ion-col size="12" size-lg="2">
               <ion-label>First Name <span class="text-danger">*</span></ion-label>
@@ -270,11 +269,13 @@
               </div>
             </ion-col>
           </ion-row>
-          <ion-button expand="block" class="success-btn fs-14 fw-700 br-0 mt-3" type="submit" (click)="onNext()">
-            <span>Save Billing Info</span>
-          </ion-button>
+          <div class="py-3">
+            <ion-button expand="block" class="success-btn fs-14 fw-700 br-0 mt-3" type="submit" (click)="onNext()">
+              <span>Save Billing Info</span>
+            </ion-button>
+          </div>
         </form>
-        <h2 class="color-dark fw-800 fs-24 py-4">Your Order</h2>
+        <h2 class="color-dark fw-800 fs-24 py-4 m-0">Your Order</h2>
         <div style="border: 1px solid gray;" class="p-4 p-md-5">
           <ion-row class="text-dark ion-hide-sm-down">
             <ion-col size="4" class="ion-justify-content-center d-flex">

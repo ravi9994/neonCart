@@ -33,11 +33,17 @@
   --padding-bottom: 30px;
 }
 
+.pl-md-5 {
+  margin-left: 10px;
+}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
   .cart-image-div {
     min-height: 115px;
     min-width: 115px;
   }
+
+
 }
 
 @media screen and (max-width: 480px) {
@@ -60,5 +66,24 @@
   .text-last {
     justify-content: end !important;
     display: flex;
+  }
+
+  .danger-btn {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+  }
+
+  .dark-btn {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+  }
+
+  .success-btn {
+    --padding-top: 20px;
+    --padding-bottom: 20px;
+  }
+
+  .pl-md-5 {
+    margin-left: 0px;
   }
 }
