@@ -1,7 +1,7 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true">
-  <div class="container p-lg-5">
-    <ion-card class="px-md-4 py-4">
+  <div class="container py-3 py-md-5">
+    <ion-card class="px-md-4 m-1">
       <ion-grid>
         <ion-row>
           <ion-col size="12">
@@ -21,10 +21,10 @@
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="12" sizeLg="6">
-            <h1 class="text-dark">Order ID: 452452565</h1>
+          <ion-col size="12" sizeMd="6" sizeLg="6" class="ion-align-items-center d-flex">
+            <h1 class="text-dark my-0 mt-lg-1">Order ID: 452452565</h1>
           </ion-col>
-          <ion-col size="12" sizeLg="6" class="d-flex ion-justify-content-end ion-align-items-center">
+          <ion-col size="12" sizeMd="6" sizeLg="6" class="d-flex ion-justify-content-end ">
             <ion-button color="tertiary">
               Track order
               <ion-icon slot="end" name="locate-outline"></ion-icon>
@@ -35,24 +35,25 @@
           <ion-col>
             <ion-text class="fs-18 fw-400">Order date: Feb 16,2022</ion-text> <span class="px-3 fs-20">|</span>
             <ion-text class="fs-20 fw-400" color="success">
-              <ion-icon name="airplane-outline" class="fs-20"></ion-icon> Estimated delivery: May 14,2022
+              <ion-icon name="airplane-outline" class="fs-20 d-none d-md-inline-block "></ion-icon> Estimated delivery:
+              May 14,2022
             </ion-text>
           </ion-col>
         </ion-row>
         <hr>
         <ion-row class="py-2" *ngFor="let item of productList">
-          <ion-col size="12" sizeMd="3" sizeLg="2">
+          <ion-col size="3" sizeMd="3" sizeLg="2">
             <div class="cart-image-div">
               <img [src]="item.image" alt="" class="image-set">
             </div>
           </ion-col>
-          <ion-col size="7" sizeMd="5" sizeLg="6" class="d-flex ion-align-items-center">
+          <ion-col size="5" sizeMd="5" sizeLg="6" class="d-flex ion-align-items-center">
             <div class="px-8">
               <h2 class="fs-22 ml-10 fw-500">{{item.title}}</h2>
               <span class="ml-10 fs-20 text-medium">{{item.product}}</span>
             </div>
           </ion-col>
-          <ion-col size="5" sizeMd="4" sizeLg="4" class="d-flex ion-align-items-center ion-justify-content-end">
+          <ion-col size="4" sizeMd="4" sizeLg="4" class="d-flex ion-align-items-center ion-justify-content-end">
             <div class="px-8">
               <h2 class="fs-22 fw-500 text-dark">{{item.price}}</h2>
               <ion-text class=" fs-20 text-medium">Qty: {{item.qty}}</ion-text>
@@ -60,7 +61,7 @@
           </ion-col>
         </ion-row>
         <hr>
-        <ion-row>
+        <ion-row class="pb-3">
           <ion-col size="12" sizeMd="6" sizeLg="6">
             <h2 class="text-dark">Payment</h2>
             <ion-text class="fs-20">Visa**56</ion-text>

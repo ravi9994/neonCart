@@ -1,82 +1,87 @@
 <app-header></app-header>
 <ion-content [fullscreen]="true" [color]="'primary'">
-  <div class="page-background">
-    <div class="container p-lg-5 py-5">
+  <ion-row class="page-background">
+    <ion-col class="container py-md-5 py-3">
       <ion-card class="card-background reg_form_wrap p-4" [color]="'medium'">
-        <ion-grid>
-          <form [formGroup]="UserProfileForm" (ngSubmit)="onLogin()">
-            <div class="profile-container">
-              <img [src]="imageUrl" class="profile-photo" />
-              <img src="assets/images/edit.svg" class="edit-icons" id="file" />
+        <form [formGroup]="UserProfileForm" (ngSubmit)="onLogin()">
+          <div class="profile-container">
+            <div class="avatar" *ngIf="!imageUrl">
+              <img src="assets/images/profile.png" class="profile-photo" />
             </div>
-            <div>
-              <ion-row class="ion-justify-content-center">
-                <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
-                  <ion-label class="fs-14">First Name</ion-label>
-                  <input type="text" class="form-control custom" formControlName="first_name" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="First Name">
-                  <ion-text *ngIf="submitted && l.first_name.errors" class="text-danger">
-                    <p *ngIf="submitted && l.first_name.errors.required">First Name is required</p>
-                  </ion-text>
-                </ion-col>
-                <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
-                  <ion-label class="fs-14">Last Name</ion-label>
-                  <input type="text" class="form-control custom" formControlName="last_name" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Last Name">
-                  <ion-text *ngIf="submitted && l.last_name.errors" class="text-danger">
-                    <p *ngIf="submitted && l.last_name.errors.required">Last Name is required</p>
-                  </ion-text>
-                </ion-col>
-              </ion-row>
-
-              <ion-row class="ion-justify-content-center">
-                <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
-                  <ion-label class="fs-14">Email</ion-label>
-                  <input type="email" class="form-control custom" formControlName="email" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Email" readonly>
-                  <ion-text *ngIf="submitted && l.email.errors" class="text-danger">
-                    <p *ngIf="submitted && l.email.errors.required">Email is required</p>
-                  </ion-text>
-                </ion-col>
-                <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
-                  <ion-label class="fs-14">Phone Number</ion-label>
-                  <input type="number" class="form-control custom" formControlName="phone_number"
-                    id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Phone Number">
-                  <ion-text *ngIf="submitted && l.phone_number.errors" class="text-danger">
-                    <p *ngIf="submitted && l.phone_number.errors.required">Phone Number is required</p>
-                  </ion-text>
-                </ion-col>
-              </ion-row>
-
-              <ion-row class="ion-justify-content-center">
-                <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
-                  <ion-label class="fs-14">Address</ion-label>
-                  <input type="text" class="form-control custom" formControlName="address" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="Address">
-                  <ion-text *ngIf="submitted && l.address.errors" class="text-danger">
-                    <p *ngIf="submitted && l.address.errors.required">Address is required</p>
-                  </ion-text>
-                </ion-col>
-                <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
-                  <ion-label class="fs-14">City</ion-label>
-                  <input type="text" class="form-control custom" formControlName="city" id="exampleInputEmail1"
-                    aria-describedby="emailHelp" placeholder="City">
-                  <ion-text *ngIf="submitted && l.city.errors" class="text-danger">
-                    <p *ngIf="submitted && l.city.errors.required">City is required</p>
-                  </ion-text>
-                </ion-col>
-              </ion-row>
-              <ion-row class="ion-justify-content-center py-3">
-                <ion-col size="6" size-md="6" size-lg="4">
-                  <ion-button expand="full" color="danger" class=" fs-14 fw-700 br-0" type="submit">Save
-                  </ion-button>
-                </ion-col>
-              </ion-row>
+            <div class="avatar" *ngIf="imageUrl">
+              <img [src]="imageUrl" class="profile-photo" alt="avatar" height="80" width="80" />
             </div>
-          </form>
-        </ion-grid>
+            <input type="file" #image_upload hidden (change)="onFileChange($event)" />
+            <img src="assets/images/edit.svg" (click)="image_upload.click()" class="edit-icons cursor-pointer"
+              id="file" />
+          </div>
+          <div>
+            <ion-row class="ion-justify-content-center">
+              <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
+                <ion-label class="fs-14">First Name</ion-label>
+                <input type="text" class="form-control custom" formControlName="first_name" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" placeholder="First Name">
+                <ion-text *ngIf="submitted && l.first_name.errors" class="text-danger">
+                  <p *ngIf="submitted && l.first_name.errors.required">First Name is required</p>
+                </ion-text>
+              </ion-col>
+              <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
+                <ion-label class="fs-14">Last Name</ion-label>
+                <input type="text" class="form-control custom" formControlName="last_name" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" placeholder="Last Name">
+                <ion-text *ngIf="submitted && l.last_name.errors" class="text-danger">
+                  <p *ngIf="submitted && l.last_name.errors.required">Last Name is required</p>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="ion-justify-content-center">
+              <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
+                <ion-label class="fs-14">Email</ion-label>
+                <input type="email" class="form-control custom" formControlName="email" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" placeholder="Email" readonly>
+                <ion-text *ngIf="submitted && l.email.errors" class="text-danger">
+                  <p *ngIf="submitted && l.email.errors.required">Email is required</p>
+                </ion-text>
+              </ion-col>
+              <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
+                <ion-label class="fs-14">Phone Number</ion-label>
+                <input type="number" class="form-control custom" formControlName="phone_number" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" placeholder="Phone Number">
+                <ion-text *ngIf="submitted && l.phone_number.errors" class="text-danger">
+                  <p *ngIf="submitted && l.phone_number.errors.required">Phone Number is required</p>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+
+            <ion-row class="ion-justify-content-center">
+              <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
+                <ion-label class="fs-14">Address</ion-label>
+                <input type="text" class="form-control custom" formControlName="address" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" placeholder="Address">
+                <ion-text *ngIf="submitted && l.address.errors" class="text-danger">
+                  <p *ngIf="submitted && l.address.errors.required">Address is required</p>
+                </ion-text>
+              </ion-col>
+              <ion-col size="12" size-md="6" size-lg="5" class="mt-3">
+                <ion-label class="fs-14">City</ion-label>
+                <input type="text" class="form-control custom" formControlName="city" id="exampleInputEmail1"
+                  aria-describedby="emailHelp" placeholder="City">
+                <ion-text *ngIf="submitted && l.city.errors" class="text-danger">
+                  <p *ngIf="submitted && l.city.errors.required">City is required</p>
+                </ion-text>
+              </ion-col>
+            </ion-row>
+            <ion-row class="ion-justify-content-center py-3">
+              <ion-col size="6" size-md="6" size-lg="4">
+                <ion-button expand="full" color="danger" class=" fs-14 fw-700 br-0" type="submit">Save
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </div>
+        </form>
       </ion-card>
-    </div>
-  </div>
+    </ion-col>
+  </ion-row>
   <app-footer></app-footer>
 </ion-content>

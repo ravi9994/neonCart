@@ -16,7 +16,8 @@ export class ProfilePage implements OnInit {
   userDetail;
   fileName: string;
   file: File;
-  imageUrl = 'assets/images/profile.png'
+  imageUrl;
+
 
   constructor(
     private fb: FormBuilder,
@@ -35,6 +36,18 @@ export class ProfilePage implements OnInit {
 
   ngOnInit() {
   }
+
+  onFileChange(e) {
+    var file = e.target.files[0];
+    let reader = new FileReader();
+    reader.onload = (event: any) => {
+      this.imageUrl = event.target.result;
+    }
+    reader.readAsDataURL(file);
+
+
+  }
+
 
   ionViewWillEnter() {
     this.userDetail = this.utilService.getLocalStorage(localStorageKeys.userDetails);

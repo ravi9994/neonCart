@@ -238,28 +238,28 @@ export class HomePage {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 1,
         spaceBetween: 30,
-        // autoplay: {
-        //   delay: 2500,
-        //   disableOnInteraction: true,
-        // },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
       });
     } else if (width <= 990) {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 3,
         spaceBetween: 30,
-        // autoplay: {
-        //   delay: 2500,
-        //   disableOnInteraction: true,
-        // },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
       });
     } else {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 5,
         spaceBetween: 30,
-        // autoplay: {
-        //   delay: 2500,
-        //   disableOnInteraction: true,
-        // },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
       });
     }
   }

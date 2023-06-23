@@ -2,7 +2,7 @@
 <ion-content>
   <section>
     <div class="container-lg">
-      <ion-row class="py-5">
+      <ion-row class="py-3 py-md-5">
         <ion-col size="12" sizeMd="6" sizeLg="6">
           <div class="d-flex ion-align-items-center ">
             <ion-text class="fw-500 cursor-pointer" color="dark" (click)="goTo('home')">
@@ -19,7 +19,7 @@
         <ion-col size-md="12" size-lg="9">
           <div class="swiper mySwiper bg-black">
             <div class="swiper-wrapper">
-              <div class="swiper-slide" data-swiper-autoplay="2000">
+              <div class="swiper-slide">
                 <ion-row class="swiper-padding">
                   <ion-col size="12" size-md="6" sizeLg="5">
                     <div class="mr-10">
@@ -42,7 +42,7 @@
                   </ion-col>
                 </ion-row>
               </div>
-              <div class="swiper-slide" data-swiper-autoplay="2000">
+              <div class="swiper-slide">
                 <ion-row class="swiper-padding">
                   <ion-col size="12" size-md="6" sizeLg="5">
                     <div class="mr-10">
@@ -65,7 +65,7 @@
                   </ion-col>
                 </ion-row>
               </div>
-              <div class="swiper-slide" data-swiper-autoplay="2000">
+              <div class="swiper-slide">
                 <ion-row class="swiper-padding">
                   <ion-col size="12" size-md="6" sizeLg="5">
                     <div class="mr-10">
@@ -91,9 +91,9 @@
             </div>
           </div>
         </ion-col>
-        <ion-col size="12" sizeLg="3" class="py-5 py-lg-0">
+        <ion-col size="12" sizeLg="3" class="pt-3 pt-lg-0">
           <ion-row>
-            <ion-col size="6" sizeMd="3" size-lg="6" *ngFor="let item of cameraList" class="pt-0 px-0 px-lg-2">
+            <ion-col size="6" sizeMd="3" size-lg="6" *ngFor="let item of cameraList" class="px-0 px-lg-2">
               <div class="item-image cursor-pointer" (click)="goTo('home/product-detail')">
                 <img [src]="item.image" class="camera-image-height">
               </div>
@@ -104,7 +104,7 @@
           </ion-row>
         </ion-col>
       </ion-row>
-      <ion-row class="py-100 order-last order-lg-0">
+      <ion-row class="py-3 py-md-5 order-last order-lg-0">
         <ion-col size="12" sizeMd="12" sizeLg="3">
           <div class="card-sidebar ">
             <h3 class="fs-20 fw-700 mb-0">All Categories</h3>
@@ -264,14 +264,14 @@
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col class="d-flex ion-justify-content-center my-5">
+            <ion-col class="d-flex ion-justify-content-center py-3 py-md-5">
               <ion-button size="default" type="submit" class="danger-btn fs-18 fw-700 " (click)="addMore()">
                 Load more
               </ion-button>
             </ion-col>
           </ion-row>
           <ion-row>
-            <ion-col>
+            <ion-col class="p-0">
               <div>
                 <img src="../../../assets/images/shoppage-image.jpg">
               </div>

@@ -117,7 +117,7 @@ export class ShopPage implements OnInit {
     {
       image: './../../assets/images/pent2.jpeg',
       title: "Men's pent",
-      detail: 'Formal mens pent for best quality and kapad',
+      detail: 'Formal mens pent for best quality and kapad ',
       price: 150,
       brands: 'PeterEngland',
       color: 'Black',
