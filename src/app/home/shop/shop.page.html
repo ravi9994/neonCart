@@ -93,7 +93,7 @@
         </ion-col>
         <ion-col size="12" sizeLg="3" class="py-5 py-lg-0">
           <ion-row>
-            <ion-col size="6" sizeMd="3" size-lg="6" *ngFor="let item of cameraList" class="pt-0">
+            <ion-col size="6" sizeMd="3" size-lg="6" *ngFor="let item of cameraList" class="pt-0 px-0 px-lg-2">
               <div class="item-image cursor-pointer" (click)="goTo('home/product-detail')">
                 <img [src]="item.image" class="camera-image-height">
               </div>
@@ -117,57 +117,57 @@
                   <ion-item slot="header" color="light">
                     <ion-label>Wearable Technology (84)</ion-label>
                   </ion-item>
-                  <div class="p-1 cursor-pointer" slot="content">Lights</div>
-                  <div class="p-1 cursor-pointer" slot="content">Raincoats</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shorts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Pants</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shirts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Tires</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Camera')">Camera</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Shirt')">Shirt</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Raincoat')">Raincoat</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Pent')">Pent</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Sorts')">Sorts</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Light')">Light</div>
                 </ion-accordion>
                 <ion-accordion value="second">
                   <ion-item slot="header" color="light">
                     <ion-label>Android VR (36)</ion-label>
                   </ion-item>
-                  <div class="p-1 cursor-pointer" slot="content">Lights</div>
-                  <div class="p-1 cursor-pointer" slot="content">Raincoats</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shorts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Pants</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shirts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Tires</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Camera')">Camera</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Shirt')">Shirt</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Raincoat')">Raincoat</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Pent')">Pent</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Sorts')">Sorts</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Light')">Light</div>
                 </ion-accordion>
                 <ion-accordion value="third">
                   <ion-item slot="header" color="light">
                     <ion-label>iOS VR (8)</ion-label>
                   </ion-item>
-                  <div class="p-1 cursor-pointer" slot="content">Lights</div>
-                  <div class="p-1 cursor-pointer" slot="content">Raincoats</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shorts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Pants</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shirts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Tires</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Camera')">Camera</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Shirt')">Shirt</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Raincoat')">Raincoat</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Pent')">Pent</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Sorts')">Sorts</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Light')">Light</div>
                 </ion-accordion>
                 <ion-accordion value="fourth">
                   <ion-item slot="header" color="light">
                     <ion-label>Video Consoles (18)
                     </ion-label>
                   </ion-item>
-                  <div class="p-1 cursor-pointer" slot="content">Lights</div>
-                  <div class="p-1 cursor-pointer" slot="content">Raincoats</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shorts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Pants</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shirts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Tires</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Camera')">Camera</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Shirt')">Shirt</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Raincoat')">Raincoat</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Pent')">Pent</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Sorts')">Sorts</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Light')">Light</div>
                 </ion-accordion>
                 <ion-accordion value="fifth">
                   <ion-item slot="header" color="light">
                     <ion-label>Accesories (31)</ion-label>
                   </ion-item>
-                  <div class="p-1 cursor-pointer" slot="content">Lights</div>
-                  <div class="p-1 cursor-pointer" slot="content">Raincoats</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shorts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Pants</div>
-                  <div class="p-1 cursor-pointer" slot="content">Shirts</div>
-                  <div class="p-1 cursor-pointer" slot="content">Tires</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Camera')">Camera</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Shirt')">Shirt</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Raincoat')">Raincoat</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Pent')">Pent</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Sorts')">Sorts</div>
+                  <div class="p-1 cursor-pointer" slot="content" (click)="changeTouchValue('Light')">Light</div>
                 </ion-accordion>
               </ion-accordion-group>
             </div>
@@ -177,11 +177,11 @@
                 <hr>
               </div>
               <div>
-                <input type="range" value="50" class="w-100" (change)="changeRange($event)">
+                <input type="range" class="w-100" [(ngModel)]="priceRangeValue" (change)="filterData()">
                 <div>
                   <ion-text class="fs-18 fw-600" color="primary">Price: &nbsp;&nbsp;<span class="text-dark"
-                      *ngIf="moveEnd">
-                      ${{ moveEnd * 10 }}</span></ion-text>
+                      *ngIf="priceRangeValue">
+                      ${{ priceRangeValue * 10 }}</span></ion-text>
                 </div>
               </div>
             </div>
@@ -191,19 +191,27 @@
                 <hr>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end" checked="true">Oculus Rift</ion-checkbox>
+                <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="Canon">Canon
+                </ion-checkbox>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end">Huawei</ion-checkbox>
+                <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="PeterEngland">Peter
+                  England</ion-checkbox>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end">HTC</ion-checkbox>
+                <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="BABA">BABA</ion-checkbox>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end">Samsung</ion-checkbox>
+                <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="RICHLOOK">RICHLOOK
+                </ion-checkbox>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end">Envato</ion-checkbox>
+                <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="Happywomen">Happy women
+                </ion-checkbox>
+              </div>
+              <div>
+                <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="Ujala">Ujala
+                </ion-checkbox>
               </div>
             </div>
             <div class="mt-5">
@@ -212,24 +220,31 @@
                 <hr>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end" checked="true">Black</ion-checkbox>
+                <ion-checkbox labelPlacement="end" value="Black" (ionChange)="onChangeColors($event)">Black
+                </ion-checkbox>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end">White</ion-checkbox>
+                <ion-checkbox labelPlacement="end" value="White" (ionChange)="onChangeColors($event)">White
+                </ion-checkbox>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end">Blue</ion-checkbox>
+                <ion-checkbox labelPlacement="end" value="Blue" (ionChange)="onChangeColors($event)">Blue</ion-checkbox>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end">Green</ion-checkbox>
+                <ion-checkbox labelPlacement="end" value="Green" (ionChange)="onChangeColors($event)">Green
+                </ion-checkbox>
               </div>
               <div>
-                <ion-checkbox labelPlacement="end">Yellow</ion-checkbox>
+                <ion-checkbox labelPlacement="end" value="Yellow" (ionChange)="onChangeColors($event)">Yellow
+                </ion-checkbox>
+              </div>
+              <div>
+                <ion-checkbox labelPlacement="end" value="Grey" (ionChange)="onChangeColors($event)">Grey</ion-checkbox>
               </div>
             </div>
           </div>
         </ion-col>
-        <ion-col size="12" sizeLg="9" class="px-4">
+        <ion-col size="12" sizeLg="9" class="px-lg-4">
           <ion-row>
             <ion-col size="12" sizeMd="3" sizeLg="3" class="p-0" *ngFor="let item of ProductList">
               <div class="product-item cursor-pointer" (click)="goTo('home/product-detail')">
@@ -243,7 +258,7 @@
                   <h3 class="fs-17 fw-500 my-1">{{item.detail}}</h3>
                 </div>
                 <div>
-                  <ion-text class="fs-17 text-dark">{{item.price}}</ion-text>
+                  <ion-text class="fs-17 text-dark">${{item.price}}</ion-text>
                 </div>
               </div>
             </ion-col>
