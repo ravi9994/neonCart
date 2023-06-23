@@ -3,27 +3,29 @@
   <div class="container-lg">
     <h1 class="fw-800 fs-30">Product Detail</h1>
     <ion-row>
-      <ion-col size="12" size-lg="4">
-        <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
-          <div class="swiper-wrapper ">
-            <div class="swiper-slide">
-              <img src="assets/images/man.jpg" />
+      <ion-col size="12" size-md="6" size-lg="4" class="pl-0">
+        <div>
+          <div style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff" class="swiper mySwiper2">
+            <div class="swiper-wrapper ">
+              <div class="swiper-slide">
+                <img src="assets/images/man.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/pink.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/darkpink.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/tshirt.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img src="assets/images/blueman.jpg" />
+              </div>
             </div>
-            <div class="swiper-slide">
-              <img src="assets/images/pink.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/images/darkpink.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/images/tshirt.jpg" />
-            </div>
-            <div class="swiper-slide">
-              <img src="assets/images/blueman.jpg" />
-            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
           </div>
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
         </div>
         <div thumbsSlider="" class="swiper thumbSwiper">
           <div class="swiper-wrapper">
@@ -45,9 +47,9 @@
           </div>
         </div>
       </ion-col>
-      <ion-col size="12" size-lg="8" class="px-md-5">
+      <ion-col size="12" size-md="6" size-lg="8">
         <ion-row>
-          <ion-col size="12">
+          <ion-col size="12" class="pl-0">
             <div>
               <h2 class="color-dark fw-800 fs-30 m-0">Beautifully Design Dress</h2>
               <h2 class="fw-800 fs-30 color-gray">$30.00 - $40.00</h2>
@@ -56,27 +58,27 @@
         </ion-row>
         <hr>
         <ion-row>
-          <ion-col size="12" size-lg="2">
+          <ion-col size="12" size-lg="2" class="pl-0">
             <div class="d-flex">
               <h2 class="color-dark fw-800 fs-16 m-0 pr-14">Brands:</h2>
               <h2 class="color-dark fw-800 fs-16 m-0">TMS</h2>
             </div>
           </ion-col>
-          <ion-col size="12" size-lg="2">
+          <ion-col size="12" size-lg="2" class="pl-0">
             <ion-icon name="star" color="warning"></ion-icon>
             <ion-icon name="star" color="warning"></ion-icon>
             <ion-icon name="star" color="warning"></ion-icon>
             <ion-icon name="star" color="warning"></ion-icon>
             <ion-icon name="star" color="warning"></ion-icon>
           </ion-col>
-          <ion-col size="12" size-lg="5">
+          <ion-col size="12" size-lg="5" class="pl-0">
             <div class="d-flex">
-              <h2 class="color-dark fw-800 fs-16 m-0 pl-10">4 Review(s) | Add Your Review</h2>
+              <h2 class="color-dark fw-800 fs-16 m-0 pl-md-10">4 Review(s) | Add Your Review</h2>
             </div>
           </ion-col>
         </ion-row>
         <ion-row>
-          <ion-col size="12">
+          <ion-col size="12" class="pl-0">
             <ion-text class="fs-16 fw-400">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
               tempor
               incididunt ut
@@ -90,17 +92,17 @@
         <div>
           <h2 class="fw-800 fs-18">COLOR</h2>
           <div class="d-flex">
-            <ion-buttons class="action-btn1">
+            <ion-buttons class="action-btn1" [ngClass]="color === 'brown'?'border-class':''" (click)="color='brown'">
               <ion-button>
               </ion-button>
             </ion-buttons>
             <ion-text class="ml-6 ion-justify-content-center ion-align-items-center d-flex">Brown</ion-text>
-            <ion-buttons class="action-btn2">
+            <ion-buttons class="action-btn2" [ngClass]="color === 'gray'?'border-class':''" (click)="color='gray'">
               <ion-button>
               </ion-button>
             </ion-buttons>
             <ion-text class="ml-6 ion-justify-content-center ion-align-items-center d-flex">Gray</ion-text>
-            <ion-buttons class="action-btn3">
+            <ion-buttons class="action-btn3" [ngClass]="color === 'red'?'border-class':''" (click)="color='red'">
               <ion-button>
               </ion-button>
             </ion-buttons>
@@ -110,21 +112,25 @@
         <div>
           <h2 class="fw-800 fs-18">SIZE</h2>
           <ul class="p-0 d-flex">
-            <li><button type="button" class="size-btn fs-16 fw-800">XL</button></li>
-            <li><button type="button" class="size-btn fs-16 fw-800">L</button></li>
-            <li><button type="button" class="size-btn fs-16 fw-800">M</button></li>
-            <li><button type="button" class="size-btn fs-16 fw-800">SM</button></li>
+            <li><button type="button" class="size-btn fs-16 fw-800" [ngClass]="size === 'xl'? 'active-class':''"
+                (click)="size='xl'">XL</button></li>
+            <li class="pl-10"><button type="button" class="size-btn fs-16 fw-800"
+                [ngClass]="size === 'l'? 'active-class':''" (click)="size='l'">L</button></li>
+            <li class="pl-10"><button type="button" class="size-btn fs-16 fw-800"
+                [ngClass]="size === 'm'? 'active-class':''" (click)="size='m'">M</button></li>
+            <li class="pl-10"><button type="button" class="size-btn fs-16 fw-800"
+                [ngClass]="size === 'sm'? 'active-class':''" (click)="size='sm'">SM</button></li>
           </ul>
         </div>
         <ion-row>
-          <ion-col size="12" size-md="4">
+          <ion-col size="12" size-lg="4" class="pl-0">
             <div class="quantity_input">
               <span (click)="changeDecrement()">-</span>
               <input class="input-number" type="number" [(ngModel)]="qty" (ngModelChange)="changeInputNumber()">
               <span (click)="changeIncrement()">+</span>
             </div>
           </ion-col>
-          <ion-col size="12" size-md="4">
+          <ion-col size="12" size-lg="4" class="pl-0">
             <ion-button class="dark-btn fs-14 fw-700 br-0 m-0" type="submit" (click)="addToCart();
               goTo('home/shopping')">
               <ion-icon name="bag-outline" class="mr-10 pl-10">
@@ -132,36 +138,34 @@
             </ion-button>
           </ion-col>
         </ion-row>
-        <div class="d-flex mt-3 ion-align-items-center">
+        <div class="d-flex ion-align-items-center pl-0 mt-md-3 mt-lg-0">
           <ion-button class="black-btn">
             <ion-icon name="heart-outline"></ion-icon>
           </ion-button>
           <ion-text class="pl-10">Add To Wishlist</ion-text>
-          <ion-button class="black-btn pl-10"><ion-icon name="shuffle-outline"></ion-icon></ion-button>
-          <ion-text class="pl-10">Compare</ion-text>
         </div>
         <hr>
-        <div class="d-flex">
-          <h2 class="fw-800 fs-16">SKU:</h2>
-          <ion-text class="mt-3 pl-10">U2012</ion-text>
+        <div class="d-flex mt-3">
+          <h2 class="fw-800 fs-16 m-0">SKU:</h2>
+          <ion-text class="pl-10">U2012</ion-text>
         </div>
-        <div class="d-flex">
-          <h2 class="fw-800 fs-16">Categories:</h2>
-          <ion-text class="mt-3 ml-3 pl-10">Dress,Handbag,T-shirts</ion-text>
+        <div class="d-flex mt-3">
+          <h2 class="fw-800 fs-16 m-0">Categories:</h2>
+          <ion-text class="ml-3 pl-10">Dress,Handbag,T-shirts</ion-text>
         </div>
-        <div class="d-flex">
-          <h2 class="fw-800 fs-16">Tags:</h2>
-          <ion-text class="mt-3 ml-3 pl-10">Hot,Women</ion-text>
+        <div class="d-flex mt-3">
+          <h2 class="fw-800 fs-16 m-0">Tags:</h2>
+          <ion-text class="ml-3 pl-10">Hot,Women</ion-text>
         </div>
       </ion-col>
     </ion-row>
     <hr>
     <ion-row class="my-4">
-      <ion-col size="12">
+      <ion-col size="12" class="p-0">
         <div class="swiper mySwiper1">
           <div class="swiper-wrapper">
             <div class="swiper-slide" *ngFor="let item of productList">
-              <ion-card class="w-100 br-10 ion-padding" style="border:1px solid #D0D0D0;">
+              <ion-card class="w-100 br-10 ion-padding m-0" style="border:1px solid #D0D0D0;">
                 <div class="best-product-swiper-div swiper-div">
                   <img [src]="item.image" class="swiper-image-best w-100" (click)="goTo('home/product-detail')">
                 </div>

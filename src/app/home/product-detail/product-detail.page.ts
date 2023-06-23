@@ -12,6 +12,8 @@ Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 })
 export class ProductDetailPage implements OnInit {
   qty: number = 0;
+  size = 'xl';
+  color = 'brown';
   productList: any = [
     {
       image: './../../assets/images/remote.png',

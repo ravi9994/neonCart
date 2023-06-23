@@ -65,22 +65,24 @@ ul {
   list-style: none;
 }
 
+.active-class {
+  background-color: #ce0b2b !important;
+  color: white !important;
+}
+
+.border-class {
+  border: 2px solid black;
+}
+
 .size-btn {
   border: 1px solid black;
   background-color: white;
   padding: 15px 10px;
   width: 50px;
-  margin-left: 10px;
-
-  &:hover {
-    background-color: #ce0b2b;
-    color: white
-  }
 }
 
 .best-product-swiper-div {
   height: 200px;
-  width: 175px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -112,16 +114,23 @@ ul {
   background-color: #e9e9e9;
 }
 
-//  @media screen and (max-width:900px) {
-//    .mySwiper2 {
-//      height: 40%;
-//      width: 100%;
-//    }
-//  }
+@media screen and (max-width:900px) {}
 
 
 @media screen and (max-width:480px) {
-  .best-product-swiper-div {
-    width: 285px;
+  .fs-30 {
+    font-size: 26px;
+  }
+
+  .dark-btn {
+    --padding-top: 20px;
+    --padding-start: 10px;
+    --padding-end: 20px;
+    --padding-bottom: 20px;
+  }
+
+  .black-btn {
+    --padding-start: 15px;
+    --padding-end: 15px;
   }
 }
