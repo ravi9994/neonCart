@@ -16,7 +16,7 @@ export class ProfilePage implements OnInit {
   userDetail;
   fileName: string;
   file: File;
-  imageUrl;
+  imageUrl = 'assets/images/profile.png';
 
 
   constructor(
@@ -52,6 +52,7 @@ export class ProfilePage implements OnInit {
   ionViewWillEnter() {
     this.userDetail = this.utilService.getLocalStorage(localStorageKeys.userDetails);
     if (this.userDetail) {
+      this.imageUrl = this.userDetail.image;
       this.UserProfileForm.patchValue({
         first_name: this.userDetail.firstName,
         last_name: this.userDetail.lastName,
@@ -75,6 +76,7 @@ export class ProfilePage implements OnInit {
         address: this.UserProfileForm.value.address,
         city: this.UserProfileForm.value.city,
         type: 'Seller',
+        image: this.imageUrl
       };
       UtilService.loginUserDetails = params;
       this.utilService.setLocalStorage(localStorageKeys.userDetails, params);

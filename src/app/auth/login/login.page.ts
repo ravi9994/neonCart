@@ -36,6 +36,7 @@ export class LoginPage implements OnInit {
           lastName: 'doe',
           number: 7698918171,
           type: 'Seller',
+          image: 'assets/images/profile.png'
         };
         this.utilService.setLocalStorage(localStorageKeys.userDetails, params);
         this.utilService.setLocalStorage(localStorageKeys.isLogin, true);

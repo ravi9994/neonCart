@@ -12,6 +12,7 @@ Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 })
 export class ProductDetailPage implements OnInit {
   qty: number = 0;
+  isFavorites: boolean = false;
   size = 'xl';
   color = 'brown';
   productList: any = [
@@ -130,7 +131,28 @@ export class ProductDetailPage implements OnInit {
   ngOnInit() {
   }
 
+  addRemoveFavorites() {
+    this.isFavorites = !this.isFavorites;
+    if (this.isFavorites) {
+      UtilService.favoritesItems.push({
+        image: './../../assets/images/sorts1.jpeg',
+        title: 'Sorts',
+        detail: 'Best sorts for mens and women both',
+        price: 800,
+        brands: 'Happywomen',
+        color: 'Black',
+        type: 'Sorts'
+      });
+    } else {
+      let findIndex = UtilService.favoritesItems.findIndex((obj) => obj.title == 'Sorts');
+      if (findIndex !== -1) {
+        UtilService.favoritesItems.splice(findIndex, 1);
+      }
+    }
+  }
+
   ionViewWillEnter(): void {
+    this.isFavorites = false;
     this.platform.ready().then(() => {
       this.getScreenSize();
     });

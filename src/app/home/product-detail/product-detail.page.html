@@ -137,7 +137,7 @@
           </ion-col>
         </ion-row>
         <div class="d-flex ion-align-items-center pl-0 mt-md-3 mt-lg-0">
-          <ion-button class="black-btn">
+          <ion-button class="black-btn" [color]="isFavorites ? 'danger':''" (click)="addRemoveFavorites()">
             <ion-icon name="heart-outline"></ion-icon>
           </ion-button>
           <ion-text class="pl-10">Add To Wishlist</ion-text>

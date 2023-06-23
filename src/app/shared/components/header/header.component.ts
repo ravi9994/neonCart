@@ -20,6 +20,7 @@ export class HeaderComponent implements OnInit {
   cartItem;
   totalPayment: number = 0;
   UtilService = UtilService;
+  searchBoxValue;
 
   constructor(
     private menuController: MenuController,
@@ -58,8 +59,16 @@ export class HeaderComponent implements OnInit {
     }
     this.utilService.logout();
   }
+  searchValue() {
+    this.router.navigate([`home/search/${this.searchBoxValue}`]);
+  }
+
+  changeSearchValue(event) {
+    this.searchBoxValue = event.target.value;
+  }
 
   goTo(url) {
+    this.isShow = false;
     if (this.isOpenProfilePopover || this.isOpenPagesPopover) {
       this.popoverControl.dismiss();
     }

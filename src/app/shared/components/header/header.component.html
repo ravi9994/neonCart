@@ -96,7 +96,7 @@
         </div>
       </ion-menu-toggle>
       <div class="d-flex ion-text-center px-4" *ngIf="UtilService.isLogin">
-        <img class="profile-img" src="assets/images/profile.png" alt="">
+        <img class="profile-img" [src]="UtilService.loginUserDetails.image">
         <div class="ml-10 ion-text-start">
           <h5 class="my-0 fs-20 fw-700">{{ UtilService.loginUserDetails.firstName }}
             {{ UtilService.loginUserDetails.lastName }} <span class="fs-14 fw-400 text-muted"> (CEO)</span> </h5>
@@ -252,7 +252,7 @@
                 <ng-template>
                   <div class="ion-padding cursor-pointer">
                     <div class="d-flex ion-align-items-center">
-                      <img class="profile-img" src="assets/images/profile.png" alt="">
+                      <img class="profile-img" [src]="UtilService.loginUserDetails.image">
                       <div class="ml-10">
                         <h5 class="my-0 fs-15">{{ UtilService.loginUserDetails.firstName }}
                           {{ UtilService.loginUserDetails.lastName }}</h5>
@@ -304,7 +304,9 @@
       </ion-row>
       <ion-row *ngIf="isShow">
         <ion-col>
-          <ion-searchbar class="p-0" color="light" mode="ios"></ion-searchbar>
+          <ion-searchbar class="p-0" color="light" mode="ios" (ionInput)="changeSearchValue($event)"></ion-searchbar>
+          <ion-icon name="checkmark-sharp" class="search-submit" color="dark" (click)="searchValue()"
+            *ngIf="searchBoxValue"></ion-icon>
         </ion-col>
       </ion-row>
     </div>
