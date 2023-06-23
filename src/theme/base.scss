@@ -762,3 +762,14 @@ swiper {
 .select-box-color-remove {
   --highlight-color: none !important;
 }
+
+
+.search-page-searchbar {
+  .searchbar-input-container {
+    height: 50px !important;
+
+    .searchbar-input {
+      background-color: #b9b9b8 !important;
+    }
+  }
+}

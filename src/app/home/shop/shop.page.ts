@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { UtilService } from 'src/app/shared/services/util.service';
 import * as _ from 'lodash';
@@ -24,11 +24,37 @@ export class ShopPage implements OnInit {
   filterBrand: any = [];
   touchTypeValue;
   oldProductList;
+  pageType = 'shop';
+  globalSearchValue;
   constructor(
     private platform: Platform,
     private router: Router,
     private utilService: UtilService,
-  ) { }
+    private activeRoute: ActivatedRoute,
+  ) {
+    let value = this.activeRoute.snapshot.paramMap.get('value');
+    if (value) {
+      this.pageType = 'search';
+      this.globalSearchValue = value;
+    }
+  }
+
+  ionViewWillEnter() {
+    let value = this.activeRoute.snapshot.paramMap.get('value');
+    if (value) {
+      this.pageType = 'search';
+      this.globalSearchValue = value;
+      this.touchTypeValue = value;
+      setTimeout(() => {
+        this.filterData();
+      }, 50);
+    }
+  }
+
+  changeSearchValue(event) {
+    this.touchTypeValue = event.target.value;
+    this.filterData();
+  }
 
 
   cameraList = [

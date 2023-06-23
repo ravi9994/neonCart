@@ -38,6 +38,14 @@ li {
   background: #efe9e9d1;
 }
 
+.search-submit {
+  position: absolute;
+  right: 42px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: -37px;
+  font-weight: 900;
+}
 
 @media (min-width: 1200px) {
   .custome-width {

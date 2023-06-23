@@ -40,6 +40,10 @@ const routes: Routes = [
     loadChildren: () => import('./shop/shop.module').then(m => m.ShopPageModule)
   },
   {
+    path: 'search/:value',
+    loadChildren: () => import('./shop/shop.module').then(m => m.ShopPageModule)
+  },
+  {
     path: 'profile',
     loadChildren: () => import('./profile/profile.module').then(m => m.ProfilePageModule),
     canActivate: [AuthGuard]
