@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-order',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OrderPage implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
@@ -33,6 +34,9 @@ export class OrderPage implements OnInit {
       price: '$549.00',
       qty: '3'
     },
-
   ]
+
+  goTo(url) {
+    this.router.navigate([url]);
+  }
 }
