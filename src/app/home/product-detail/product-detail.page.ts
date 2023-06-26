@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { UtilService } from 'src/app/shared/services/util.service';
+import { PhotoViewer } from '@awesome-cordova-plugins/photo-viewer/ngx';
+
 import Swiper, { Autoplay, Navigation, Pagination, Thumbs } from 'swiper';
 Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
 
@@ -126,9 +128,14 @@ export class ProductDetailPage implements OnInit {
     private router: Router,
     private platform: Platform,
     private utilService: UtilService,
+    private photoViewer: PhotoViewer,
   ) { }
 
   ngOnInit() {
+  }
+
+  showImage(imageUrl) {
+    this.photoViewer.show(imageUrl);
   }
 
   addRemoveFavorites() {
