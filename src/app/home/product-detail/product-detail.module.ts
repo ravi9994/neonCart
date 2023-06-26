@@ -8,7 +8,6 @@ import { ProductDetailPageRoutingModule } from './product-detail-routing.module'
 
 import { ProductDetailPage } from './product-detail.page';
 import { SharedModule } from 'src/app/shared/shared.module';
-import { PhotoViewer } from '@awesome-cordova-plugins/photo-viewer/ngx';
 
 
 @NgModule({
@@ -22,8 +21,5 @@ import { PhotoViewer } from '@awesome-cordova-plugins/photo-viewer/ngx';
   declarations: [
     ProductDetailPage,
   ],
-  providers: [
-    PhotoViewer,
-  ]
 })
 export class ProductDetailPageModule { }
