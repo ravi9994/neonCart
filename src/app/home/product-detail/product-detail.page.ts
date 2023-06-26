@@ -4,8 +4,8 @@ import { Platform } from '@ionic/angular';
 import { UtilService } from 'src/app/shared/services/util.service';
 import { IonContent } from '@ionic/angular';
 
-import Swiper, { Autoplay, Navigation, Pagination, Thumbs } from 'swiper';
-Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
+import Swiper, { Autoplay, Navigation, Pagination, Thumbs ,Zoom} from 'swiper';
+Swiper.use([Navigation, Pagination, Autoplay, Thumbs, Zoom]);
 
 @Component({
   selector: 'app-product-detail',
@@ -171,6 +171,7 @@ export class ProductDetailPage implements OnInit {
       watchSlidesProgress: true,
     });
     var swiper2 = new Swiper(".mySwiper2", {
+      zoom: true,
       spaceBetween: 10,
       navigation: {
         nextEl: ".swiper-button-next",
