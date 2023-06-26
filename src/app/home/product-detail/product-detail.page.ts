@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { Platform } from '@ionic/angular';
 import { UtilService } from 'src/app/shared/services/util.service';
 import { PhotoViewer } from '@awesome-cordova-plugins/photo-viewer/ngx';
+import { IonContent } from '@ionic/angular';
 
 import Swiper, { Autoplay, Navigation, Pagination, Thumbs } from 'swiper';
 Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
@@ -13,6 +14,7 @@ Swiper.use([Navigation, Pagination, Autoplay, Thumbs]);
   styleUrls: ['./product-detail.page.scss'],
 })
 export class ProductDetailPage implements OnInit {
+  @ViewChild(IonContent) content: IonContent;
   qty: number = 0;
   isFavorites: boolean = false;
   size = 'xl';
@@ -157,8 +159,12 @@ export class ProductDetailPage implements OnInit {
       }
     }
   }
+  scrollToTop() {
+    this.content.scrollToTop(400);
+  }
 
   ionViewWillEnter(): void {
+    this.scrollToTop();
     this.isFavorites = false;
     this.platform.ready().then(() => {
       this.getScreenSize();

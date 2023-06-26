@@ -165,7 +165,8 @@
             <div class="swiper-slide" *ngFor="let item of productList">
               <ion-card class="w-100 br-10 ion-padding m-0" style="border:1px solid #D0D0D0;">
                 <div class="best-product-swiper-div swiper-div">
-                  <img [src]="item.image" class="swiper-image-best w-100" (click)="goTo('home/product-detail')">
+                  <img [src]="item.image" class="swiper-image-best w-100"
+                    (click)="scrollToTop(); goTo('home/product-detail')">
                 </div>
                 <h3 class="fs-24 fw-600">{{item.title}}</h3>
                 <ion-text class="fs-14 fw-400">{{item.product}}</ion-text>

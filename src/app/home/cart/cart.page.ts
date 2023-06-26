@@ -20,6 +20,8 @@ export class CartPage implements OnInit {
   }
 
   goTO(url) {
+    console.log('go to');
+
     this.router.navigate([url]);
   }
 

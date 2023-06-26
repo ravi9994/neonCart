@@ -31,9 +31,9 @@
             <!-- <div class="favorites-image-div p-10">
               <img [src]="item.image" class="image-set" role="button" (click)="goTO('/home/product-detail')">
             </div> -->
-             <div class="cart-image-div p-10">
-               <img [src]="item.image" alt="" class="image-set">
-             </div>
+            <div class="cart-image-div p-10">
+              <img [src]="item.image" alt="" class="image-set" (click)="goTO('/home/product-detail')" role="button">
+            </div>
           </ion-col>
           <ion-col size="12" sizeLg="2" class="ion-align-items-center d-flex">
             <div>
