@@ -1,7 +1,3 @@
-.container-lg {
-  max-width: 1630px;
-}
-
 .bg-black {
   background-color: rgb(19, 19, 21) !important;
 }
@@ -49,9 +45,7 @@ ion-checkbox::part(container) {
   max-height: 100%;
   height: 340px;
   padding: 15px;
-  border-right: 1px solid #ebebeb;
-  border-left: 1px solid #ebebeb;
-  border-bottom: 1px solid #ebebeb;
+  border: 1px solid #ebebeb;
 }
 
 @media screen and (max-width: 480px) {
