@@ -1,0 +1,66 @@
+li {
+  list-style: none;
+}
+
+.profile-img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+}
+
+.car-item-image {
+  min-height: 100px;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .cart-image {
+    max-height: 85px;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.side-bar-cart-item {
+  height: 500px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.menu-item-text {
+  cursor: pointer;
+  border-radius: 10px;
+  margin-top: 5px;
+  background: #f3f5f6;
+}
+
+.search-submit {
+  position: absolute;
+  right: 42px;
+  cursor: pointer;
+  font-size: 20px;
+  margin-top: -37px;
+  font-weight: 900;
+}
+
+@media (min-width: 1200px) {
+  .custome-width {
+    --width: 350px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .side-bar-cart-item {
+    height: 785px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .side-bar-cart-item {
+    height: 435px !important;
+  }
+}

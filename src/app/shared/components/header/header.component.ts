@@ -30,27 +30,11 @@ export class HeaderComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.cartItem = this.utilService.cartList;
-    this.utilService.detectChangeInCart.subscribe((res) => {
-      this.checkTotalPayment();
-    });
-    this.checkTotalPayment();
-  }
-
-  checkTotalPayment() {
-    this.totalPayment = 0;
-    this.cartItem.map((obj) => {
-      this.totalPayment = this.totalPayment + (obj.qty * Number(obj.total));
-    });
-  }
-
-  getTotal(index: number) {
-    return this.cartItem[index].qty * Number(this.cartItem[index].total);
   }
 
   async toggleMenu(type) {
-    this.menuType = type;
-    this.menuController.toggle('end')
+    UtilService.menuType = type;
+    this.menuController.toggle('end');
   }
 
   logout() {
@@ -59,6 +43,7 @@ export class HeaderComponent implements OnInit {
     }
     this.utilService.logout();
   }
+
   searchValue() {
     this.router.navigate([`home/search/${this.searchBoxValue}`]);
   }
@@ -68,6 +53,7 @@ export class HeaderComponent implements OnInit {
   }
 
   goTo(url) {
+    this.menuController.close();
     this.isShow = false;
     if (this.isOpenProfilePopover || this.isOpenPagesPopover) {
       this.popoverControl.dismiss();
