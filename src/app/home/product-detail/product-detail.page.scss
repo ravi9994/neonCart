@@ -102,6 +102,7 @@ ul {
   display: inline-flex;
   justify-content: center;
   border: 2px solid black;
+
 }
 
 .quantity_input span {
@@ -136,4 +137,17 @@ ul {
     --padding-start: 15px;
     --padding-end: 15px;
   }
+
+    .quantity_input {
+      margin-top: 0px;
+      height: 45px;
+      padding: 0px 11px;
+      text-align: center;
+      align-items: center;
+      border-radius: 5px;
+      display: inline-flex;
+      justify-content: center;
+      border: 2px solid black;
+    }
+
 }

@@ -20,6 +20,7 @@ export class ShopPage implements OnInit {
   swiper: any;
   addMoreNumber = 9;
   filterColors: any = [];
+  filterCategory: any = [];
   priceRangeValue = 100;
   filterBrand: any = [];
   touchTypeValue;
@@ -44,7 +45,7 @@ export class ShopPage implements OnInit {
     if (value) {
       this.pageType = 'search';
       this.globalSearchValue = value;
-      this.touchTypeValue = value;
+      this.filterCategory.push(this.globalSearchValue.toLowerCase());
       setTimeout(() => {
         this.filterData();
       }, 50);
@@ -52,7 +53,10 @@ export class ShopPage implements OnInit {
   }
 
   changeSearchValue(event) {
-    this.touchTypeValue = event.target.value;
+    let value = event.target.value;
+    if (event.target.checked) {
+      this.filterCategory.push(value.toLowerCase());
+    }
     this.filterData();
   }
 
@@ -190,9 +194,15 @@ export class ShopPage implements OnInit {
   filterData() {
     let filterData;
 
-    if (this.touchTypeValue) {
-      filterData = this.oldProductList.filter((obj) => obj.type == this.touchTypeValue);
-      this.touchTypeValue = false;
+    if (this.filterCategory && this.filterCategory.length > 0) {
+      if (filterData) {
+        filterData = filterData.filter((obj) =>
+          this.filterCategory.includes(obj.type));
+      } else {
+        filterData = this.oldProductList.filter((obj) =>
+          this.filterCategory.includes(obj.type.toLowerCase())
+        );
+      }
     }
 
     if (this.filterColors && this.filterColors.length > 0) {
@@ -255,8 +265,14 @@ export class ShopPage implements OnInit {
     });
   }
 
-  changeTouchValue(value) {
-    this.touchTypeValue = value;
+  changeTouchValue(event) {
+    let value = event.target.value;
+    if (event.target.checked) {
+      this.filterCategory.push(value.toLowerCase());
+    } else {
+      let findIndex = this.filterCategory.findIndex(obj => obj === value);
+      this.filterCategory.splice(findIndex, 1);
+    };
     this.filterData();
   }
 
