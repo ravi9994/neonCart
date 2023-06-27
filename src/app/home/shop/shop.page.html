@@ -16,7 +16,7 @@
             </div>
           </ion-col>
           <ion-col size="12" sizeMd="6" class="d-flex ion-justify-content-end">
-            <ion-button class="black-btn" (click)="onViewTableChange()"><img src="./../../../assets/images/items.png"
+            <ion-button class="black-btn" (click)="onViewTableChange()"><img src="assets/images/items.png"
                 alt=""></ion-button>
             <ion-button class="black-btn" (click)="onViewCardChange()"><ion-icon
                 name="card-outline"></ion-icon></ion-button>
@@ -147,7 +147,7 @@
             </div>
           </div>
         </ion-col>
-        <ion-col size="12" sizeLg="9" class="px-lg-4">
+        <ion-col size="12" sizeLg="9" [ngClass]="pageType === 'search' ? 'py-lg-3' : ''">
           <div *ngIf="ProductList && ProductList.length <= 0">
             <h3 class="fs-16 fw-400 text-muted">No data found</h3>
           </div>
@@ -175,7 +175,8 @@
                 <ion-card style="border:1px solid #D0D0D0;" class="m-1">
                   <ion-row>
                     <ion-col size="6">
-                      <div class="card-image m-0" style="background-color: #f2f2f2;">
+                      <div class="card-image m-0 cursor-pointer" style="background-color: #f2f2f2;"
+                        (click)="goTo('home/product-detail')">
                         <img [src]="item.image" class="camera-image-height">
                       </div>
                     </ion-col>
