@@ -47,4 +47,9 @@ textarea.custom {
   .custom-padding {
     padding: 0px !important;
   }
+
+    .dark-btn {
+      --padding-top: 20px;
+      --padding-bottom: 20px;
+    }
 }

@@ -82,7 +82,7 @@
       </div>
       <hr class="mb-0">
       <div class="px-4 py-4">
-        <ion-button expand="full" class="dark-btn fs-14 fw-700 br-0" type="submit" shape="round"
+        <ion-button expand="block" class="dark-btn fs-14 fw-700 br-0" type="submit"
           (click)="goTo('home/shopping')">
           VIEW CART
         </ion-button>
@@ -126,6 +126,12 @@
             Registration
           </ion-text>
         </div>
+        <div class="ion-padding menu-item-text" (click)="goTo('home/profile')" *ngIf="UtilService.isLogin">
+          <ion-text class="d-flex ion-align-items-center">
+            <ion-icon name="person-circle-outline" class="mr-10 fs-20"></ion-icon>
+            <ion-label>Profile</ion-label>
+          </ion-text>
+        </div>
         <div class="ion-padding menu-item-text" (click)="goTo('home')">
           <ion-text class="d-flex ion-align-items-center">
             <ion-icon name="home-outline" class="mr-10 fs-20"></ion-icon>Home
@@ -141,12 +147,7 @@
             <ion-icon name="heart-outline" class="mr-10 fs-20"></ion-icon>Favorites
           </ion-text>
         </div>
-        <div class="ion-padding menu-item-text" (click)="goTo('home/profile')" *ngIf="UtilService.isLogin">
-          <ion-text class="d-flex ion-align-items-center">
-            <ion-icon name="person-circle-outline" class="mr-10 fs-20"></ion-icon>
-            <ion-label>Profile</ion-label>
-          </ion-text>
-        </div>
+
         <div class="ion-padding menu-item-text" (click)="goTo('/home/order/order-detail')" *ngIf="UtilService.isLogin">
           <ion-text class="d-flex ion-align-items-center">
             <ion-icon name="document-text-outline" class="mr-10 fs-20"></ion-icon>
