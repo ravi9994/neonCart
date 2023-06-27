@@ -13,7 +13,6 @@ export class HomePage {
   onWindowResize(event: any) {
     this.getScreenSize();
   }
-
   swiper: any;
   swiper1: any;
   swiperActiveIndex: number = 0;
@@ -210,14 +209,14 @@ export class HomePage {
     {
       image: './../../assets/images/cameras.png',
     },
-  ]
+  ];
+
   constructor(private platform: Platform,
     private router: Router) {
   }
 
   ngOnInit(): void {
     this.platform.ready().then(() => {
-      // Platform is ready, you can now access its properties
       this.getScreenSize();
     });
     const swiper = new Swiper(".mySwiper", {
@@ -229,8 +228,8 @@ export class HomePage {
         disableOnInteraction: true,
       },
     });
-
   }
+
   getScreenSize() {
     const width = this.platform.width();
     const height = this.platform.height();
@@ -256,13 +255,14 @@ export class HomePage {
       var swiper1 = new Swiper(".mySwiper1", {
         slidesPerView: 5,
         spaceBetween: 30,
-        // autoplay: {
-        //   delay: 2500,
-        //   disableOnInteraction: true,
-        // },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: true,
+        },
       });
     }
   }
+
   goTo(url) {
     this.router.navigate([url]);
   }

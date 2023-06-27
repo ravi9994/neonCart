@@ -3,7 +3,6 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { localStorageKeys } from 'src/app/shared/enum/enum';
 import { UtilService } from 'src/app/shared/services/util.service';
-
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -17,7 +16,6 @@ export class ProfilePage implements OnInit {
   fileName: string;
   file: File;
   imageUrl = 'assets/images/profile.png';
-
 
   constructor(
     private fb: FormBuilder,
@@ -44,8 +42,6 @@ export class ProfilePage implements OnInit {
       this.imageUrl = event.target.result;
     }
     reader.readAsDataURL(file);
-
-
   }
 
 

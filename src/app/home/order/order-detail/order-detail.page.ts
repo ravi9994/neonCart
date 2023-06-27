@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import * as e from 'express';
 import * as _ from 'lodash';
 @Component({
   selector: 'app-order-detail',

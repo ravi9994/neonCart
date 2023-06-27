@@ -3,8 +3,8 @@
   <section>
     <div class="container-lg">
       <ng-container *ngIf="pageType == 'shop'">
-        <ion-row class="py-3 py-lg-4">
-          <ion-col size="12" sizeMd="6" sizeLg="6">
+        <ion-row class="py-3 py-lg-4 ion-align-items-center">
+          <ion-col size="12" sizeMd="6">
             <div class="d-flex ion-align-items-center ">
               <ion-text class="fs-20 fw-500 cursor-pointer" color="dark" (click)="goTo('home')">
                 Home
@@ -14,6 +14,12 @@
                 Shop Page
               </ion-text>
             </div>
+          </ion-col>
+          <ion-col size="12" sizeMd="6" class="d-flex ion-justify-content-end">
+            <ion-button class="black-btn" (click)="onViewTableChange()"><img src="./../../../assets/images/items.png"
+                alt=""></ion-button>
+            <ion-button class="black-btn" (click)="onViewCardChange()"><ion-icon
+                name="card-outline"></ion-icon></ion-button>
           </ion-col>
         </ion-row>
       </ng-container>
@@ -25,7 +31,7 @@
       </ng-container>
 
       <ion-row class="order-last order-lg-0">
-        <ion-col size="12" sizeMd="12" sizeLg="3" *ngIf="!globalSearchValue">
+        <ion-col size="12" sizeMd="12" sizeLg="3" *ngIf="pageType !== 'search'">
           <div class="card-sidebar m-0">
             <div>
               <ion-accordion-group [multiple]="true" [value]="['first']">
@@ -146,31 +152,59 @@
             <h3 class="fs-16 fw-400 text-muted">No data found</h3>
           </div>
           <ion-row>
-            <ion-col size="12" sizeMd="4" class="p-0" *ngFor="let item of ProductList">
-              <div class="product-item cursor-pointer" (click)="goTo('home/product-detail')">
-                <div class="item-image" style="background-color: #f2f2f2;">
-                  <img [src]="item.image" class="camera-image-height">
+            <ng-container *ngIf="isTableView">
+              <ion-col size="12" sizeMd="4" class="p-0" *ngFor="let item of ProductList">
+                <div class="product-item cursor-pointer" (click)="goTo('home/product-detail')">
+                  <div class="item-image" style="background-color: #f2f2f2;">
+                    <img [src]="item.image" class="camera-image-height">
+                  </div>
+                  <div>
+                    <h3 class="fs-20 fw-600 my-1 color-dark">{{item.title}}</h3>
+                  </div>
+                  <div>
+                    <ion-text class="fs-16">{{item.detail}}</ion-text>
+                  </div>
+                  <div>
+                    <ion-text class="fs-17 fw-600 text-success">${{item.price}}</ion-text>
+                  </div>
                 </div>
-                <div>
-                  <ion-text class="fs-13">{{item.title}}</ion-text>
-                </div>
-                <div>
-                  <h3 class="fs-17 fw-500 my-1">{{item.detail}}</h3>
-                </div>
-                <div>
-                  <ion-text class="fs-17 text-dark">${{item.price}}</ion-text>
-                </div>
-              </div>
-            </ion-col>
+              </ion-col>
+            </ng-container>
+            <ng-container *ngIf="isCardView">
+              <ion-col size="12" sizeMd="4" class="p-0" *ngFor="let item of ProductList">
+                <ion-card style="border:1px solid #D0D0D0;" class="m-1">
+                  <ion-row>
+                    <ion-col size="6">
+                      <div class="card-image m-0" style="background-color: #f2f2f2;">
+                        <img [src]="item.image" class="camera-image-height">
+                      </div>
+                    </ion-col>
+                    <ion-col size="6">
+                      <div>
+                        <h3 class="fs-20 fw-600 my-1 color-dark">{{item.title}}</h3>
+                      </div>
+                      <div>
+                        <ion-text class="fs-16">{{item.detail}}</ion-text>
+                      </div>
+                      <div>
+                        <ion-text class="fs-17 fw-600 text-success">${{item.price}}</ion-text>
+                      </div>
+                    </ion-col>
+                  </ion-row>
+                </ion-card>
+              </ion-col>
+            </ng-container>
           </ion-row>
-          <ion-row *ngIf="ProductList && ProductList.length > 0 && !globalSearchValue">
-            <ion-col class="d-flex ion-justify-content-center py-3 py-md-5">
-              <ion-button size="default" type="submit" shape="round" class="danger-btn fs-18 fw-700 "
-                (click)="addMore()">
-                Load more
-              </ion-button>
-            </ion-col>
-          </ion-row>
+          <ng-container *ngIf="pageType !== 'search'">
+            <ion-row *ngIf="ProductList && ProductList.length > 0">
+              <ion-col class="d-flex ion-justify-content-center py-3 py-md-5">
+                <ion-button size="default" type="submit" shape="round" class="danger-btn fs-18 fw-700 "
+                  (click)="addMore()">
+                  Load more
+                </ion-button>
+              </ion-col>
+            </ion-row>
+          </ng-container>
         </ion-col>
       </ion-row>
     </div>

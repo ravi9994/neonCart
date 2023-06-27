@@ -4,7 +4,7 @@ import { Platform } from '@ionic/angular';
 import { UtilService } from 'src/app/shared/services/util.service';
 import { IonContent } from '@ionic/angular';
 
-import Swiper, { Autoplay, Navigation, Pagination, Thumbs ,Zoom} from 'swiper';
+import Swiper, { Autoplay, Navigation, Pagination, Thumbs, Zoom } from 'swiper';
 Swiper.use([Navigation, Pagination, Autoplay, Thumbs, Zoom]);
 
 @Component({
@@ -134,7 +134,6 @@ export class ProductDetailPage implements OnInit {
   ngOnInit() {
   }
 
-
   addRemoveFavorites() {
     this.isFavorites = !this.isFavorites;
     if (this.isFavorites) {
@@ -154,6 +153,7 @@ export class ProductDetailPage implements OnInit {
       }
     }
   }
+
   scrollToTop() {
     this.content.scrollToTop(400);
   }
@@ -182,6 +182,7 @@ export class ProductDetailPage implements OnInit {
       },
     });
   }
+
   addToCart() {
     this.utilService.cartList.push({
       image: 'assets/images/man.jpg',

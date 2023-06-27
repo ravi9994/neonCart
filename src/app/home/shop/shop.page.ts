@@ -13,7 +13,6 @@ Swiper.use([Navigation, Pagination, Autoplay]);
 
 export class ShopPage implements OnInit {
   @HostListener('window:resize', ['$event'])
-
   onWindowResize(event: any) {
     this.getScreenSize();
   }
@@ -27,6 +26,8 @@ export class ShopPage implements OnInit {
   oldProductList;
   pageType = 'shop';
   globalSearchValue;
+  isCardView: boolean = false;
+  isTableView: boolean = true;
   constructor(
     private platform: Platform,
     private router: Router,
@@ -60,7 +61,6 @@ export class ShopPage implements OnInit {
     this.filterData();
   }
 
-
   cameraList = [
     {
       image: './../../assets/images/alexa.png',
@@ -78,7 +78,7 @@ export class ShopPage implements OnInit {
       image: './../../assets/images/remote.png',
       title: 'TV Remote',
     },
-  ]
+  ];
 
   ProductList = [
     {
@@ -189,7 +189,7 @@ export class ShopPage implements OnInit {
       color: 'White',
       type: 'Light'
     },
-  ]
+  ];
 
   filterData() {
     let filterData;
@@ -331,9 +331,16 @@ export class ShopPage implements OnInit {
     }
   }
 
-
   goTo(url) {
     this.router.navigate([url]);
   }
 
+  onViewTableChange() {
+    this.isTableView = true;
+    this.isCardView = false;
+  }
+  onViewCardChange() {
+    this.isCardView = true;
+    this.isTableView = false;
+  }
 }

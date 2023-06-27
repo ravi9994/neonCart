@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
 @Component({
   selector: 'app-order',
   templateUrl: './order.page.html',
@@ -34,7 +33,7 @@ export class OrderPage implements OnInit {
       price: '$549.00',
       qty: '3'
     },
-  ]
+  ];
 
   goTo(url) {
     this.router.navigate([url]);

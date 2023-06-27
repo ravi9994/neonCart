@@ -2,14 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Platform } from '@ionic/angular';
 declare var google: any;
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.page.html',
   styleUrls: ['./contact.page.scss'],
 })
 export class ContactPage implements OnInit {
-
   ContactForm: FormGroup;
   submitted: boolean = false;
   constructor(private fb: FormBuilder, private platform: Platform,) {
@@ -20,7 +18,6 @@ export class ContactPage implements OnInit {
       message: ['', [Validators.required]]
     })
   }
-
 
   ngOnInit() {
     this.platform.ready().then(() => {

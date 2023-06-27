@@ -23,6 +23,21 @@
   }
 }
 
+.card-image {
+  min-height: 165px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ededed;
+  background-color: #ffffff;
+  margin-bottom: 13px;
+
+  .camera-image-height {
+    max-height: 130px;
+    height: 100%;
+  }
+}
+
 .card-sidebar {
   padding: 40px 30px;
   border: 2px solid #ededed;
@@ -46,6 +61,14 @@ ion-checkbox::part(container) {
   height: 340px;
   padding: 15px;
   border: 1px solid #ebebeb;
+}
+
+.black-btn {
+  --background: black;
+  --padding-top: 20px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --padding-bottom: 20px;
 }
 
 @media screen and (max-width: 480px) {
@@ -72,4 +95,6 @@ ion-checkbox::part(container) {
     --padding-end: 20px;
     --padding-bottom: 5px;
   }
+
+
 }
