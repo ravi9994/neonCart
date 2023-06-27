@@ -37,7 +37,7 @@
                           dignissim lacus scelerisque sit amet. Proin malesuada
                         </p>
                         <ion-button size="default" class="danger-btn fs-18 fw-700 ion-margin-top" (click)="addToCart();
-                        goTo('home/shopping')">
+                        goTo('home/shopping')" shape="round">
                           Add To Cart
                         </ion-button>
                       </div>
@@ -188,7 +188,7 @@
                 <hr>
               </div>
               <div>
-                <input type="range" class="w-100" [(ngModel)]="priceRangeValue" (change)="filterData()">
+                <input type="range" class="w-100" role="button" [(ngModel)]="priceRangeValue" (change)="filterData()">
                 <div>
                   <ion-text class="fs-18 fw-600" color="primary">Price: &nbsp;&nbsp;<span class="text-dark"
                       *ngIf="priceRangeValue">
@@ -279,7 +279,8 @@
           </ion-row>
           <ion-row *ngIf="ProductList && ProductList.length > 0">
             <ion-col class="d-flex ion-justify-content-center py-3 py-md-5">
-              <ion-button size="default" type="submit" class="danger-btn fs-18 fw-700 " (click)="addMore()">
+              <ion-button size="default" type="submit" shape="round" class="danger-btn fs-18 fw-700 "
+                (click)="addMore()">
                 Load more
               </ion-button>
             </ion-col>
