@@ -16,6 +16,7 @@ export class UtilService {
   public loader = null;
   public static isLogin: boolean;
   public static loginUserDetails;
+  public static menuType: string = 'menu';
   cartList = [
     {
       image: './../../../assets/images/cameras.png',
