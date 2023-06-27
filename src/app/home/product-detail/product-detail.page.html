@@ -13,22 +13,22 @@
             </div>
             <div class="swiper-slide">
               <div class="swiper-zoom-container">
-                <img src="assets/images/pink.jpg" />
+                <img src="assets/images/shirt1.jpeg" />
               </div>
             </div>
             <div class="swiper-slide">
               <div class="swiper-zoom-container">
-                <img src="assets/images/darkpink.jpg" />
+                <img src="assets/images/pent1.jpeg" />
               </div>
             </div>
             <div class="swiper-slide">
               <div class="swiper-zoom-container">
-                <img src="assets/images/tshirt.jpg" />
+                <img src="assets/images/sirt2.jpeg" />
               </div>
             </div>
             <div class="swiper-slide">
               <div class="swiper-zoom-container">
-                <img src="assets/images/blueman.jpg" />
+                <img src="assets/images/raincoat1.png" />
               </div>
             </div>
           </div>
@@ -41,16 +41,16 @@
               <img src="assets/images/man.jpg" />
             </div>
             <div class="swiper-slide">
-              <img src="assets/images/pink.jpg" />
+              <img src="assets/images/shirt1.jpeg" />
             </div>
             <div class="swiper-slide">
-              <img src="assets/images/darkpink.jpg" />
+              <img src="assets/images/pent1.jpeg" />
             </div>
             <div class="swiper-slide">
-              <img src="assets/images/tshirt.jpg" />
+              <img src="assets/images/sirt2.jpeg" />
             </div>
             <div class="swiper-slide">
-              <img src="assets/images/blueman.jpg" />
+              <img src="assets/images/raincoat1.png" />
             </div>
           </div>
         </div>
@@ -119,7 +119,7 @@
         </div>
         <div>
           <h2 class="fw-800 fs-18">SIZE</h2>
-          <ul class="p-0 d-flex">
+          <ul class="p-0 mb-0 d-flex">
             <li><button type="button" class="size-btn fs-16 fw-800" [ngClass]="size === 'xl'? 'active-class':''"
                 (click)="size='xl'">XL</button></li>
             <li class="pl-10"><button type="button" class="size-btn fs-16 fw-800"
@@ -131,14 +131,14 @@
           </ul>
         </div>
         <ion-row>
-          <ion-col size="12" size-lg="4" class="pl-0">
+          <ion-col size="12" size-lg="4" class="pl-0 mt-2">
             <div class="quantity_input">
               <span (click)="changeDecrement()">-</span>
               <input class="input-number" type="number" [(ngModel)]="qty" (ngModelChange)="changeInputNumber()">
               <span (click)="changeIncrement()">+</span>
             </div>
           </ion-col>
-          <ion-col size="12" size-lg="4" class="pl-0">
+          <ion-col size="12" size-lg="4" class="pl-0 mt-0 mt-lg-2">
             <ion-button class="dark-btn fs-14 fw-700 br-0 m-0" type="submit" (click)="addToCart();
               goTo('home/shopping')">
               <ion-icon name="bag-outline" class="mr-10 pl-10">
@@ -146,7 +146,7 @@
             </ion-button>
           </ion-col>
         </ion-row>
-        <div class="d-flex ion-align-items-center pl-0 mt-md-3 mt-lg-0">
+        <div class="d-flex ion-align-items-center pl-0 mt-md-3 mt-lg-1">
           <ion-button class="black-btn" [color]="isFavorites ? 'danger':''" (click)="addRemoveFavorites()">
             <ion-icon name="heart-outline"></ion-icon>
           </ion-button>
