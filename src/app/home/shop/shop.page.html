@@ -139,111 +139,40 @@
                 </ion-accordion>
               </ion-accordion-group>
             </div>
-            <<<<<<< HEAD=======<div class="mt-5">
-              <h3 class="fs-20 fw-700 mb-0">FILTERS</h3>
-              <div class="pt-2">
-                <hr>
-              </div>
-              <div>
-                <input type="range" class="w-100" role="button" [(ngModel)]="priceRangeValue" (change)="filterData()">
+          </div>
+        </ion-col>
+        <ion-col size="12" sizeLg="9" class="px-lg-4">
+          <div *ngIf="ProductList && ProductList.length <= 0">
+            <h3 class="fs-16 fw-400 text-muted">No data found</h3>
+          </div>
+          <ion-row>
+            <ion-col size="12" sizeMd="4" class="p-0" *ngFor="let item of ProductList">
+              <div class="product-item cursor-pointer" (click)="goTo('home/product-detail')">
+                <div class="item-image" style="background-color: #f2f2f2;">
+                  <img [src]="item.image" class="camera-image-height">
+                </div>
                 <div>
-                  <ion-text class="fs-18 fw-600" color="primary">Price: &nbsp;&nbsp;<span class="text-dark"
-                      *ngIf="priceRangeValue">
-                      ${{ priceRangeValue * 10 }}</span></ion-text>
+                  <ion-text class="fs-13">{{item.title}}</ion-text>
+                </div>
+                <div>
+                  <h3 class="fs-17 fw-500 my-1">{{item.detail}}</h3>
+                </div>
+                <div>
+                  <ion-text class="fs-17 text-dark">${{item.price}}</ion-text>
                 </div>
               </div>
-          </div>
-          <div class="mt-5">
-            <h3 class="fs-20 fw-700 mb-0">BRANDS</h3>
-            <div class="py-2">
-              <hr>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="Canon">Canon
-              </ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="PeterEngland">Peter
-                England</ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="BABA">BABA</ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="RICHLOOK">RICHLOOK
-              </ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="Happywomen">Happy women
-              </ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" (ionChange)="onChangeBrands($event)" value="Ujala">Ujala
-              </ion-checkbox>
-            </div>
-          </div>
-          <div class="mt-5">
-            <h3 class="fs-20 fw-700 mb-0">COLORS</h3>
-            <div class="py-2">
-              <hr>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" value="Black" (ionChange)="onChangeColors($event)">Black
-              </ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" value="White" (ionChange)="onChangeColors($event)">White
-              </ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" value="Blue" (ionChange)="onChangeColors($event)">Blue</ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" value="Green" (ionChange)="onChangeColors($event)">Green
-              </ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" value="Yellow" (ionChange)="onChangeColors($event)">Yellow
-              </ion-checkbox>
-            </div>
-            <div>
-              <ion-checkbox labelPlacement="end" value="Grey" (ionChange)="onChangeColors($event)">Grey</ion-checkbox>
-            </div>
-          </div>
-          >>>>>>> 312b77cbf9f7266a74faf516ae4c00b1cb784b9a
-    </div>
-    </ion-col>
-    <ion-col size="12" sizeLg="9" class="px-lg-4">
-      <div *ngIf="ProductList && ProductList.length <= 0">
-        <h3 class="fs-16 fw-400 text-muted">No data found</h3>
-      </div>
-      <ion-row>
-        <ion-col size="12" sizeMd="4" class="p-0" *ngFor="let item of ProductList">
-          <div class="product-item cursor-pointer" (click)="goTo('home/product-detail')">
-            <div class="item-image" style="background-color: #f2f2f2;">
-              <img [src]="item.image" class="camera-image-height">
-            </div>
-            <div>
-              <ion-text class="fs-13">{{item.title}}</ion-text>
-            </div>
-            <div>
-              <h3 class="fs-17 fw-500 my-1">{{item.detail}}</h3>
-            </div>
-            <div>
-              <ion-text class="fs-17 text-dark">${{item.price}}</ion-text>
-            </div>
-          </div>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="ProductList && ProductList.length > 0 && !globalSearchValue">
+            <ion-col class="d-flex ion-justify-content-center py-3 py-md-5">
+              <ion-button size="default" type="submit" shape="round" class="danger-btn fs-18 fw-700 "
+                (click)="addMore()">
+                Load more
+              </ion-button>
+            </ion-col>
+          </ion-row>
         </ion-col>
       </ion-row>
-      <ion-row *ngIf="ProductList && ProductList.length > 0 && !globalSearchValue">
-        <ion-col class="d-flex ion-justify-content-center py-3 py-md-5">
-          <ion-button size="default" type="submit" shape="round" class="danger-btn fs-18 fw-700 " (click)="addMore()">
-            Load more
-          </ion-button>
-        </ion-col>
-      </ion-row>
-    </ion-col>
-    </ion-row>
     </div>
   </section>
   <app-footer></app-footer>
